@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - B.G Affordable Housing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="js/imageHandler.js"></script>
+</head>
+<body class="admin-page">
+    <div id="page" class="site">
+        <header id="masthead" class="site-header">
+            <div class="site-branding">
+                <p class="site-title"><a href="index.html" rel="home">B.G Affordable Housing</a></p>
+                <p class="site-description">Admin Panel - Property Management</p>
+            </div>
+            <nav id="site-navigation" class="main-navigation">
+                <div class="menu-main-container">
+                    <ul id="menu-main" class="menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="our-properties.html">Our Properties</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li class="current-menu-item"><a href="admin.html">Admin</a></li>
+                    </ul>
+                </div>
+                <div class="admin-logout">
+                    <button id="logout-btn" class="btn-logout">Logout</button>
+                </div>
+            </nav>
+        </header>
+        
+        <main id="main" class="site-main">
+            <section class="admin-hero">
+                <h1>Property Management Dashboard</h1>
+                <p>Update and manage property listings</p>
+            </section>
+            
+            <section class="admin-content">
+                <div class="container">
+                    <div class="admin-sidebar">
+                        <div class="admin-menu">
+                            <h3>Management</h3>
+                            <ul>
+                                <li class="active"><a href="#properties">Properties</a></li>
+                                <li><a href="#add-property">Add Property</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-main">
+                        <div id="properties" class="admin-section active">
+                            <h2>Manage Properties</h2>
+                            <div class="property-list-admin">
+                                <div class="property-card-admin">
+                                    <div class="property-header">
+                                        <h3>4541 Fairfield Dr, Bethesda, MD</h3>
+                                        <div class="property-actions">
+                                            <button class="btn-edit">Edit</button>
+                                            <button class="btn-delete">Delete</button>
+                                        </div>
+                                    </div>
+                                    <div class="property-details-admin">
+                                        <div class="property-image-preview">
+                                            <img src="IMAGES/Screen Shot 2025-11-19 at 12.51.49 PM.png" alt="Property Image">
+                                        </div>
+                                        <div class="property-info-admin">
+                                            <p><strong>Price:</strong> $2,000/month</p>
+                                            <p><strong>Bedrooms:</strong> 3</p>
+                                            <p><strong>Bathrooms:</strong> 1</p>
+                                            <p><strong>Square Feet:</strong> 980 sqft</p>
+                                            <p><strong>Status:</strong> <span class="status-available">Available</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="property-description-admin">
+                                        <p><strong>Description:</strong> Cozy 3-bedroom, 1-bathroom rambler with hardwood floors and unfinished basement. Conveniently located inside 495-Beltway.</p>
+                                    </div>
+                                    <div class="property-tags-admin">
+                                        <span class="tag">Rambler</span>
+                                        <span class="tag">Hardwood Floors</span>
+                                        <span class="tag">Basement</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="property-card-admin">
+                                    <div class="property-header">
+                                        <h3>Property 2</h3>
+                                        <div class="property-actions">
+                                            <button class="btn-edit">Edit</button>
+                                            <button class="btn-delete">Delete</button>
+                                        </div>
+                                    </div>
+                                    <div class="property-details-admin">
+                                        <div class="property-image-preview">
+                                            <img src="IMAGES/Screen Shot 2025-11-19 at 12.52.14 PM.png" alt="Property Image">
+                                        </div>
+                                        <div class="property-info-admin">
+                                            <p><strong>Location:</strong> Pennsylvania</p>
+                                            <p><strong>Type:</strong> Commercial</p>
+                                            <p><strong>Status:</strong> <span class="status-pending">Pending</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="property-card-admin">
+                                    <div class="property-header">
+                                        <h3>Property 3</h3>
+                                        <div class="property-actions">
+                                            <button class="btn-edit">Edit</button>
+                                            <button class="btn-delete">Delete</button>
+                                        </div>
+                                    </div>
+                                    <div class="property-details-admin">
+                                        <div class="property-image-preview">
+                                            <img src="IMAGES/Screen Shot 2025-11-19 at 12.52.25 PM.png" alt="Property Image">
+                                        </div>
+                                        <div class="property-info-admin">
+                                            <p><strong>Location:</strong> New Jersey</p>
+                                            <p><strong>Type:</strong> Residential</p>
+                                            <p><strong>Status:</strong> <span class="status-available">Available</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="add-property" class="admin-section">
+                            <h2>Add New Property</h2>
+                            <form class="property-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="property-address">Property Address</label>
+                                        <input type="text" id="property-address" name="property-address" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="property-price">Price ($)</label>
+                                        <input type="number" id="property-price" name="property-price" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="property-beds">Bedrooms</label>
+                                        <input type="number" id="property-beds" name="property-beds">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="property-baths">Bathrooms</label>
+                                        <input type="number" id="property-baths" name="property-baths">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="property-sqft">Square Feet</label>
+                                        <input type="number" id="property-sqft" name="property-sqft">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="property-description">Description</label>
+                                    <textarea id="property-description" name="property-description" rows="4"></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="property-tags">Tags (comma separated)</label>
+                                    <input type="text" id="property-tags" name="property-tags" placeholder="e.g. Rambler, Hardwood Floors, Basement">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="property-images">Property Images</label>
+                                    <input type="file" id="property-images" name="property-images" multiple>
+                                    <p class="form-help">Select multiple images for this property (hold Ctrl/Cmd to select multiple files)</p>
+                                    <div id="image-preview-container" class="image-preview-container"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="property-status">Status</label>
+                                    <select id="property-status" name="property-status">
+                                        <option value="available">Available</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="rented">Rented</option>
+                                    </select>
+                                </div>
+                                
+                                <button type="submit" class="btn-submit">Add Property</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer id="colophon" class="site-footer">
+            <div class="site-info">
+                <p>Contact Information:<br>
+                Phone: (609)237-5156<br>
+                Email: <a href="mailto:Briangorey@zohomail.com">Briangorey@zohomail.com</a><br>
+                B.G Affordable Housing</p>
+                <a href="index.html">B.G Affordable Housing</a>
+                <span class="sep"> | </span>
+                <a href="http://wordpress.org/" class="imprint">
+                    Proudly powered by WordPress                </a>
+            </div><!-- .site-info -->
+        </footer><!-- #colophon -->
+    </div><!-- #page -->
+    
+    <script>
+        // Simple admin authentication check
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is authenticated (in a real app, this would be server-side)
+            const isAuthenticated = sessionStorage.getItem('adminAuthenticated') === 'true';
+            
+            if (!isAuthenticated) {
+                // Show login form
+                document.body.innerHTML = `
+                    <div id="page" class="site">
+                        <header id="masthead" class="site-header">
+                            <div class="site-branding">
+                                <p class="site-title"><a href="index.html" rel="home">B.G Affordable Housing</a></p>
+                                <p class="site-description">Admin Login</p>
+                            </div>
+                        </header>
+                        
+                        <main id="main" class="site-main">
+                            <section class="admin-hero">
+                                <h1>Admin Login Required</h1>
+                                <p>Please enter your credentials to access the admin panel</p>
+                            </section>
+                            
+                            <section class="admin-content">
+                                <div class="container">
+                                    <div class="login-form">
+                                        <h2>Administrator Login</h2>
+                                        <form id="admin-login">
+                                            <div class="form-group">
+                                                <label for="username">Username</label>
+                                                <input type="text" id="username" name="username" required>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="password">Password</label>
+                                                <input type="password" id="password" name="password" required>
+                                            </div>
+                                            
+                                            <button type="submit" class="btn-submit">Login</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </section>
+                        </main>
+                    </div>
+                `;
+                
+                // Handle login form submission
+                document.getElementById('admin-login').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const username = document.getElementById('username').value;
+                    const password = document.getElementById('password').value;
+                    
+                    // Simple authentication (in a real app, this would be server-side)
+                    if (username === 'admin' && password === 'password123') {
+                        sessionStorage.setItem('adminAuthenticated', 'true');
+                        location.reload();
+                    } else {
+                        alert('Invalid credentials. Please try again.');
+                    }
+                });
+                
+                return;
+            }
+            
+            // Handle logout functionality
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    sessionStorage.removeItem('adminAuthenticated');
+                    location.reload();
+                });
+            }
+            
+            // Admin functionality (only accessible if authenticated)
+            // Load properties from localStorage
+            let properties = JSON.parse(localStorage.getItem('properties')) || [
+                {
+                    id: 1,
+                    address: '4541 Fairfield Dr, Bethesda, MD',
+                    price: '$2,000/month',
+                    beds: 3,
+                    baths: 1,
+                    sqft: 980,
+                    description: 'Cozy 3-bedroom, 1-bathroom rambler with hardwood floors and unfinished basement. Conveniently located inside 495-Beltway.',
+                    tags: ['Rambler', 'Hardwood Floors', 'Basement'],
+                    image: 'IMAGES/Screen Shot 2025-11-19 at 12.51.49 PM.png',
+                    images: ['IMAGES/Screen Shot 2025-11-19 at 12.51.49 PM.png', 'IMAGES/Screen Shot 2025-11-19 at 12.52.14 PM.png', 'IMAGES/Screen Shot 2025-11-19 at 12.52.25 PM.png'],
+                    status: 'available'
+                },
+                {
+                    id: 2,
+                    address: 'Property 2',
+                    location: 'Pennsylvania',
+                    type: 'Commercial',
+                    status: 'pending'
+                },
+                {
+                    id: 3,
+                    address: 'Property 3',
+                    location: 'New Jersey',
+                    type: 'Residential',
+                    status: 'available'
+                },
+                {
+                    id: 4,
+                    address: 'Wellons Property',
+                    price: '$1,800/month',
+                    beds: 2,
+                    baths: 2,
+                    sqft: 1200,
+                    description: 'Spacious 2-bedroom apartment with modern amenities',
+                    tags: ['downtown', 'parking', 'pet-friendly'],
+                    image: 'IMAGES/Screen Shot 2025-11-19 at 12.52.35 PM.png',
+                    images: ['IMAGES/Screen Shot 2025-11-19 at 12.52.35 PM.png', 'IMAGES/Screen Shot 2025-11-19 at 12.52.53 PM.png'],
+                    status: 'available'
+                }
+            ];
+            
+            // Function to render properties
+            function renderProperties() {
+                const container = document.querySelector('.property-list-admin');
+                container.innerHTML = '';
+                
+                properties.forEach(property => {
+                    const propertyCard = document.createElement('div');
+                    propertyCard.className = 'property-card-admin';
+                    
+                    if (property.beds) {
+                        propertyCard.innerHTML = `
+                            <div class="property-header">
+                                <h3>${property.address}</h3>
+                                <div class="property-actions">
+                                    <button class="btn-edit" data-id="${property.id}">Edit</button>
+                                    <button class="btn-delete" data-id="${property.id}">Delete</button>
+                                </div>
+                            </div>
+                            <div class="property-details-admin">
+                                <div class="property-image-preview">
+                                    <img src="${property.image}" alt="Property Image">
+                                    <div class="image-count">${property.images && property.images.length > 1 ? property.images.length + ' images' : ''}</div>
+                                </div>
+                                <div class="property-info-admin">
+                                    <p><strong>Price:</strong> ${property.price}</p>
+                                    <p><strong>Bedrooms:</strong> ${property.beds}</p>
+                                    <p><strong>Bathrooms:</strong> ${property.baths}</p>
+                                    <p><strong>Square Feet:</strong> ${property.sqft} sqft</p>
+                                    <p><strong>Status:</strong> <span class="status-${property.status}">${property.status.charAt(0).toUpperCase() + property.status.slice(1)}</span></p>
+                                </div>
+                            </div>
+                            <div class="property-description-admin">
+                                <p><strong>Description:</strong> ${property.description}</p>
+                            </div>
+                            <div class="property-tags-admin">
+                                ${property.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                            </div>
+                        `;
+                    } else {
+                        propertyCard.innerHTML = `
+                            <div class="property-header">
+                                <h3>${property.address}</h3>
+                                <div class="property-actions">
+                                    <button class="btn-edit" data-id="${property.id}">Edit</button>
+                                    <button class="btn-delete" data-id="${property.id}">Delete</button>
+                                </div>
+                            </div>
+                            <div class="property-details-admin">
+                                <div class="property-image-preview">
+                                    <img src="${property.image || 'IMAGES/Screen Shot 2025-11-19 at 12.52.14 PM.png'}" alt="Property Image">
+                                    <div class="image-count">${property.images && property.images.length > 1 ? property.images.length + ' images' : ''}</div>
+                                </div>
+                                <div class="property-info-admin">
+                                    <p><strong>Location:</strong> ${property.location}</p>
+                                    <p><strong>Type:</strong> ${property.type}</p>
+                                    <p><strong>Status:</strong> <span class="status-${property.status}">${property.status.charAt(0).toUpperCase() + property.status.slice(1)}</span></p>
+                                </div>
+                            </div>
+                        `;
+                    }
+                    
+                    container.appendChild(propertyCard);
+                });
+                
+                // Reattach event listeners
+                attachEventListeners();
+            }
+            
+            // Function to attach event listeners
+            function attachEventListeners() {
+                // Edit button functionality
+                const editButtons = document.querySelectorAll('.btn-edit');
+                editButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const propertyId = parseInt(this.getAttribute('data-id'));
+                        const property = properties.find(p => p.id === propertyId);
+                        openEditForm(property);
+                    });
+                });
+                
+                // Delete button functionality
+                const deleteButtons = document.querySelectorAll('.btn-delete');
+                deleteButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const propertyId = parseInt(this.getAttribute('data-id'));
+                        const property = properties.find(p => p.id === propertyId);
+                        if (confirm(`Are you sure you want to delete ${property.address}?`)) {
+                            properties = properties.filter(p => p.id !== propertyId);
+                            localStorage.setItem('properties', JSON.stringify(properties));
+                            renderProperties();
+                            updateMainPropertiesPage();
+                            alert(`${property.address} has been deleted.`);
+                        }
+                    });
+                });
+            }
+            
+            // Function to open edit form
+            function openEditForm(property) {
+                // Change to edit section
+                document.querySelectorAll('.admin-menu li').forEach(li => {
+                    li.classList.remove('active');
+                });
+                document.querySelector('.admin-menu a[href="#add-property"]').parentElement.classList.add('active');
+                
+                document.querySelectorAll('.admin-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById('add-property').classList.add('active');
+                
+                // Fill form with property data
+                document.getElementById('property-address').value = property.address;
+                if (property.price) {
+                    document.getElementById('property-price').value = property.price.replace('$', '').replace('/month', '');
+                }
+                document.getElementById('property-beds').value = property.beds || '';
+                document.getElementById('property-baths').value = property.baths || '';
+                document.getElementById('property-sqft').value = property.sqft || '';
+                document.getElementById('property-description').value = property.description || '';
+                document.getElementById('property-tags').value = property.tags ? property.tags.join(', ') : '';
+                document.getElementById('property-status').value = property.status;
+                
+                // Clear image preview container
+                document.getElementById('image-preview-container').innerHTML = '';
+                
+                // Change submit button to update
+                const submitButton = document.querySelector('.btn-submit');
+                submitButton.textContent = 'Update Property';
+                submitButton.onclick = function(e) {
+                    e.preventDefault();
+                    updateProperty(property.id);
+                };
+            }
+            
+            // Function to update property
+            function updateProperty(propertyId) {
+                const property = properties.find(p => p.id === propertyId);
+                if (property) {
+                    property.address = document.getElementById('property-address').value;
+                    property.price = `$${document.getElementById('property-price').value}/month`;
+                    property.beds = document.getElementById('property-beds').value;
+                    property.baths = document.getElementById('property-baths').value;
+                    property.sqft = document.getElementById('property-sqft').value;
+                    property.description = document.getElementById('property-description').value;
+                    property.tags = document.getElementById('property-tags').value.split(',').map(tag => tag.trim()).filter(tag => tag);
+                    property.status = document.getElementById('property-status').value;
+                    
+                    // Handle image updates with actual image data
+                    if (uploadedImageData && uploadedImageData.length > 0) {
+                        // For this demo, we'll convert images to data URLs
+                        // In a real app, these would be uploaded to a server
+                        property.images = [];
+                        
+                        // Process all images using the image handler
+                        for (let i = 0; i < uploadedImageData.length; i++) {
+                            // In a real implementation, you would upload to a server here
+                            // For demo purposes, we'll use the preview URLs
+                            property.images.push(uploadedImageData[i].previewUrl);
+                        }
+                        
+                        // Set the first image as the main image
+                        property.image = property.images[0] || 'IMAGES/Screen Shot 2025-11-19 at 12.52.14 PM.png';
+                    }
+                    
+                    // Save to localStorage
+                    localStorage.setItem('properties', JSON.stringify(properties));
+                    
+                    // Re-render properties
+                    renderProperties();
+                    
+                    // Update main properties page
+                    updateMainPropertiesPage();
+                    
+                    // Reset form and button
+                    document.querySelector('.property-form').reset();
+                    document.getElementById('image-preview-container').innerHTML = '';
+                    const submitButton = document.querySelector('.btn-submit');
+                    submitButton.textContent = 'Add Property';
+                    submitButton.onclick = null;
+                    
+                    alert('Property updated successfully!');
+                }
+            }
+            
+// Function to update main properties page
+            // In a real implementation, this would update the main properties page in real-time
+            function updateMainPropertiesPage() {
+                // This is a placeholder - in a real app, this would trigger a refresh
+                // of the main properties page without requiring a full page reload
+            }
+            
+            // Initial render
+            renderProperties();
+            
+            // Tab switching
+            const menuItems = document.querySelectorAll('.admin-menu a');
+            const sections = document.querySelectorAll('.admin-section');
+            
+            menuItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = this.getAttribute('href');
+                    
+                    // Update active menu item
+                    document.querySelectorAll('.admin-menu li').forEach(li => {
+                        li.classList.remove('active');
+                    });
+                    this.parentElement.classList.add('active');
+                    
+                    // Show target section
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    document.querySelector(target).classList.add('active');
+                });
+            });
+            
+            // Handle image uploads and previews with enhanced functionality
+            const imageInput = document.getElementById('property-images');
+            const imagePreviewContainer = document.getElementById('image-preview-container');
+            
+            // Store image data for actual upload
+            let uploadedImageData = [];
+            
+            if (imageInput) {
+                imageInput.addEventListener('change', async function() {
+                    imagePreviewContainer.innerHTML = '';
+                    uploadedImageData = [];
+                    
+                    if (this.files && this.files.length > 0) {
+                        try {
+                            // Use the image handler to process images
+                            uploadedImageData = await imageHandler.processImages(this.files);
+                            
+                            // Create previews for all valid images
+                            uploadedImageData.forEach(imageData => {
+                                const imgContainer = document.createElement('div');
+                                imgContainer.className = 'image-preview-item';
+                                
+                                const img = document.createElement('img');
+                                img.src = imageData.previewUrl;
+                                img.alt = `Property image preview: ${imageData.name}`;
+                                img.className = 'preview-image';
+                                
+                                const imgInfo = document.createElement('div');
+                                imgInfo.className = 'image-info';
+                                imgInfo.innerHTML = `
+                                    <span class="image-name">${imageData.name}</span>
+                                    <span class="image-size">${(imageData.size / 1024).toFixed(1)} KB</span>
+                                `;
+                                
+                                imgContainer.appendChild(img);
+                                imgContainer.appendChild(imgInfo);
+                                imagePreviewContainer.appendChild(imgContainer);
+                            });
+                            
+                        } catch (error) {
+                            console.error('Error processing images:', error);
+                            alert('Error processing images. Please try again.');
+                        }
+                    }
+                });
+            }
+            
+            // Form submission
+            const propertyForm = document.querySelector('.property-form');
+            if (propertyForm) {
+                propertyForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Check if we're in update mode
+                    const submitButton = document.querySelector('.btn-submit');
+                    if (submitButton.textContent === 'Update Property') {
+                        // Don't prevent default here as the update function handles it
+                        return;
+                    }
+                    
+                    // Get form data
+                    const formData = new FormData(this);
+                    const newProperty = {
+                        id: properties.length > 0 ? Math.max(...properties.map(p => p.id)) + 1 : 1,
+                        address: formData.get('property-address'),
+                        price: `$${formData.get('property-price')}/month`,
+                        beds: formData.get('property-beds') || null,
+                        baths: formData.get('property-baths') || null,
+                        sqft: formData.get('property-sqft') || null,
+                        description: formData.get('property-description'),
+                        tags: formData.get('property-tags').split(',').map(tag => tag.trim()).filter(tag => tag),
+                        images: [], // Will store multiple images
+                        status: formData.get('property-status')
+                    };
+                    
+                    // Handle multiple image uploads with actual image data
+                    if (uploadedImageData && uploadedImageData.length > 0) {
+                        // For this demo, we'll convert images to data URLs
+                        // In a real app, these would be uploaded to a server
+                        newProperty.images = [];
+                        
+                        // Process all images using the image handler
+                        for (let i = 0; i < uploadedImageData.length; i++) {
+                            // In a real implementation, you would upload to a server here
+                            // For demo purposes, we'll use the preview URLs
+                            newProperty.images.push(uploadedImageData[i].previewUrl);
+                        }
+                        
+                        // Set the first image as the main image
+                        newProperty.image = newProperty.images[0];
+                    } else {
+                        // Default image if none provided
+                        newProperty.image = 'IMAGES/Screen Shot 2025-11-19 at 12.52.14 PM.png';
+                        newProperty.images = [newProperty.image];
+                    }
+                    
+                    // Add to properties array
+                    properties.push(newProperty);
+                    
+                    // Save to localStorage
+                    localStorage.setItem('properties', JSON.stringify(properties));
+                    
+                    // Re-render properties
+                    renderProperties();
+                    
+                    // Update main properties page
+                    updateMainPropertiesPage();
+                    
+                    // Reset form
+                    propertyForm.reset();
+                    imagePreviewContainer.innerHTML = '';
+                    
+                    alert('Property added successfully!');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Properties - B.G Affordable Housing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body class="page-template-default page page-id-15">
+    <div id="page" class="site">
+        <header id="masthead" class="site-header">
+            <div class="site-branding">
+                <p class="site-title"><a href="index.html" rel="home">B.G Affordable Housing</a></p>
+                <p class="site-description">Just another WordPress site</p>
+            </div>
+            <nav id="site-navigation" class="main-navigation">
+                <div class="menu-main-container">
+                    <ul id="menu-main" class="menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="current-menu-item"><a href="our-properties.html">Our Properties</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <main id="main" class="site-main">
+            <section class="properties-hero">
+                <h2>Our Properties</h2>
+                <p>Privately-owned rental properties available for lease</p>
+            </section>
+            
+            <section class="properties-info">
+                <div class="container">
+                    <div class="info-box">
+                        <h3>Rental Opportunities</h3>
+                        <p>All rental properties are privately-owned and leased "AS IS" "WHERE IS" with transparent condition disclosure. We offer flexible lease terms for qualified tenants.</p>
+                    </div>
+                    
+                    <div class="property-list">
+                        <div class="property-card featured">
+                            <div class="property-image">
+                                <img src="IMAGES/Screen Shot 2025-11-19 at 12.51.49 PM.png" alt="4541 Fairfield Dr, Bethesda, MD">
+                            </div>
+                            <div class="property-details">
+                                <h3>4541 Fairfield Dr, Bethesda, MD</h3>
+                                <p class="price">$2,000/month</p>
+                                <p class="specs">3 beds • 1 bath • 980 sqft</p>
+                                <p class="description">Cozy 3-bedroom, 1-bathroom rambler with hardwood floors and unfinished basement. Conveniently located inside 495-Beltway.</p>
+                                <div class="property-tags">
+                                    <span class="tag">Rambler</span>
+                                    <span class="tag">Hardwood Floors</span>
+                                    <span class="tag">Basement</span>
+                                </div>
+                                <a href="#" class="view-details-btn">View Details</a>
+                            </div>
+                        </div>
+                        
+                        <div class="property-card">
+                            <h3>Property 2</h3>
+                            <p>Location: Pennsylvania</p>
+                            <p>Type: Commercial</p>
+                            <p>Status: Pending</p>
+                        </div>
+                        
+                        <div class="property-card">
+                            <h3>Property 3</h3>
+                            <p>Location: New Jersey</p>
+                            <p>Type: Residential</p>
+                            <p>Status: Available</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer id="colophon" class="site-footer">
+            <div class="site-info">
+                <p>Contact Information:<br>
+                Phone: (609)237-5156<br>
+                Email: <a href="mailto:Briangorey@zohomail.com">Briangorey@zohomail.com</a><br>
+                B.G Affordable Housing</p>
+                <a href="index.html">B.G Affordable Housing</a>
+                <span class="sep"> | </span>
+                <a href="http://wordpress.org/" class="imprint">
+                    Proudly powered by WordPress                </a>
+            </div><!-- .site-info -->
+        </footer><!-- #colophon -->
+    </div><!-- #page -->
+    <script>
+        // Load properties from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const properties = JSON.parse(localStorage.getItem('properties')) || [
+                {
+                    id: 1,
+                    address: '4541 Fairfield Dr, Bethesda, MD',
+                    price: '$2,000/month',
+                    beds: 3,
+                    baths: 1,
+                    sqft: 980,
+                    description: 'Cozy 3-bedroom, 1-bathroom rambler with hardwood floors and unfinished basement. Conveniently located inside 495-Beltway.',
+                    tags: ['Rambler', 'Hardwood Floors', 'Basement'],
+                    image: 'IMAGES/Screen Shot 2025-11-19 at 12.51.49 PM.png',
+                    images: ['IMAGES/Screen Shot 2025-11-19 at 12.51.49 PM.png', 'IMAGES/Screen Shot 2025-11-19 at 12.52.14 PM.png', 'IMAGES/Screen Shot 2025-11-19 at 12.52.25 PM.png'],
+                    status: 'available'
+                },
+                {
+                    id: 2,
+                    address: 'Property 2',
+                    location: 'Pennsylvania',
+                    type: 'Commercial',
+                    status: 'pending'
+                },
+                {
+                    id: 3,
+                    address: 'Property 3',
+                    location: 'New Jersey',
+                    type: 'Residential',
+                    status: 'available'
+                },
+                {
+                    id: 4,
+                    address: 'Wellons Property',
+                    price: '$1,800/month',
+                    beds: 2,
+                    baths: 2,
+                    sqft: 1200,
+                    description: 'Spacious 2-bedroom apartment with modern amenities',
+                    tags: ['downtown', 'parking', 'pet-friendly'],
+                    image: 'IMAGES/Screen Shot 2025-11-19 at 12.52.35 PM.png',
+                    images: ['IMAGES/Screen Shot 2025-11-19 at 12.52.35 PM.png', 'IMAGES/Screen Shot 2025-11-19 at 12.52.53 PM.png'],
+                    status: 'available'
+                }
+            ];
+            
+            const propertyList = document.querySelector('.property-list');
+            if (propertyList) {
+                propertyList.innerHTML = '';
+                
+                properties.forEach(property => {
+                    const propertyCard = document.createElement('div');
+                    propertyCard.className = 'property-card';
+                    
+                    if (property.beds) {
+                        // Featured property
+                        propertyCard.classList.add('featured');
+                        propertyCard.innerHTML = `
+                            <div class="property-image">
+                                <img src="${property.image}" alt="${property.address}">
+                                ${property.images && property.images.length > 1 ? `<div class="image-count">${property.images.length} images</div>` : ''}
+                            </div>
+                            <div class="property-details">
+                                <h3>${property.address}</h3>
+                                <p class="price">${property.price}</p>
+                                <p class="specs">${property.beds} beds • ${property.baths} bath • ${property.sqft} sqft</p>
+                                <p class="description">${property.description}</p>
+                                <div class="property-tags">
+                                    ${property.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                                </div>
+                                <a href="property-details.html?id=${property.id}" class="view-details-btn">View Details</a>
+                            </div>
+                        `;
+                    } else {
+                        // Regular property
+                        propertyCard.innerHTML = `
+                            <h3>${property.address}</h3>
+                            <p>Location: ${property.location}</p>
+                            <p>Type: ${property.type}</p>
+                            <p>Status: ${property.status.charAt(0).toUpperCase() + property.status.slice(1)}</p>
+                        `;
+                    }
+                    
+                    propertyList.appendChild(propertyCard);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
