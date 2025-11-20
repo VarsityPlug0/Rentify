@@ -567,8 +567,8 @@
                             }
                             
                             // Create previews for all valid images
-                            // Limit preview display to 50 images to prevent UI issues
-                            const imagesToDisplay = uploadedImageData.slice(0, 50);
+                            // Limit preview display to 100 images to prevent UI issues but still show more than before
+                            const imagesToDisplay = uploadedImageData.slice(0, 100);
                             imagesToDisplay.forEach(imageData => {
                                 const imgContainer = document.createElement('div');
                                 imgContainer.className = 'image-preview-item';
@@ -600,8 +600,8 @@
                             }
                             
                             // Add note if we're only displaying a subset of images
-                            if (uploadedImageData.length > 50) {
-                                summaryText += `<br><strong>Note:</strong> Only showing previews for the first 50 images. All ${uploadedImageData.length} images will be saved with the property.`;
+                            if (uploadedImageData.length > 100) {
+                                summaryText += `<br><strong>Note:</strong> Only showing previews for the first 100 images. All ${uploadedImageData.length} images will be saved with the property.`;
                             }
                             
                             const summary = document.createElement('div');

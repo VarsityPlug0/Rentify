@@ -5,7 +5,7 @@
 
 class ImageHandler {
     constructor() {
-        this.maxFileSize = 5 * 1024 * 1024; // 5MB
+        this.maxFileSize = 10 * 1024 * 1024; // 10MB
         this.allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
     }
 
@@ -70,7 +70,9 @@ class ImageHandler {
             
             // Yield control back to the browser periodically to prevent UI freezing
             // More frequent yields for better responsiveness with many images
-            if (i % 5 === 4) {  // Every 5 images for better responsiveness
+            // For very large numbers of images, yield more frequently
+            const yieldFrequency = files.length > 50 ? 3 : 5;
+            if (i % yieldFrequency === yieldFrequency - 1) {  // Every 5 images for better responsiveness
                 await new Promise(resolve => setTimeout(resolve, 0));
             }
         }
