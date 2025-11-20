@@ -592,10 +592,12 @@
                     
                     // Check if we're in update mode
                     const submitButton = document.querySelector('.btn-submit');
-                    if (submitButton.textContent === 'Update Property') {
+                    if (submitButton && submitButton.textContent === 'Update Property') {
                         // Don't prevent default here as the update function handles it
                         return;
                     }
+                    
+                    // If we get here, we're adding a new property
                     
                     // Get form data
                     const formData = new FormData(this);
