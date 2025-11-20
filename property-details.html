@@ -96,13 +96,10 @@
     </div><!-- #page -->
     
     <script>
-        // Get property ID from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const propertyId = parseInt(urlParams.get('id'));
-        
         // Load properties from localStorage
         document.addEventListener('DOMContentLoaded', function() {
             const properties = JSON.parse(localStorage.getItem('properties')) || [];
+            const propertyId = parseInt(new URLSearchParams(window.location.search).get('id'));
             const property = properties.find(p => p.id === propertyId);
             
             if (property) {
@@ -167,10 +164,8 @@
                     </div>
                 `;
             }
-        });
-        
-        // Add event listeners for action buttons
-        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Add event listeners for action buttons
             const applyBtn = document.querySelector('.btn-apply');
             const contactBtn = document.querySelector('.btn-contact');
             
