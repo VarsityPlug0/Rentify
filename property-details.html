@@ -176,7 +176,8 @@
             
             if (applyBtn) {
                 applyBtn.addEventListener('click', function() {
-                    alert('Application form would open here. In a real implementation, this would redirect to an application page.');
+                    // Redirect to application form with property ID
+                    window.location.href = `application.html?propertyId=${propertyId}`;
                 });
             }
             

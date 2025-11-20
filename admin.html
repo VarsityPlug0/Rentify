@@ -51,6 +51,14 @@
                     <div class="admin-main">
                         <div id="properties" class="admin-section active">
                             <h2>Manage Properties</h2>
+                            <div class="admin-settings">
+                                <h3>Application Settings</h3>
+                                <div class="form-group">
+                                    <label for="admin-email">Admin Email for Applications</label>
+                                    <input type="email" id="admin-email" name="admin-email" placeholder="Enter email for property applications">
+                                    <button id="save-email" class="btn-save">Save Email</button>
+                                </div>
+                            </div>
                             <div class="property-list-admin">
                                 <div class="property-card-admin">
                                     <div class="property-header">
@@ -513,6 +521,26 @@
             
             // Initial render
             renderProperties();
+            
+            // Load saved admin email
+            const savedEmail = localStorage.getItem('adminEmail');
+            if (savedEmail) {
+                document.getElementById('admin-email').value = savedEmail;
+            }
+            
+            // Save admin email
+            const saveEmailBtn = document.getElementById('save-email');
+            if (saveEmailBtn) {
+                saveEmailBtn.addEventListener('click', function() {
+                    const email = document.getElementById('admin-email').value.trim();
+                    if (email) {
+                        localStorage.setItem('adminEmail', email);
+                        alert('Admin email saved successfully!');
+                    } else {
+                        alert('Please enter a valid email address.');
+                    }
+                });
+            }
             
             // Tab switching
             const menuItems = document.querySelectorAll('.admin-menu a');
