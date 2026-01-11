@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: renting-site
+    name: ForRentByOwner
     env: static
     staticPublishPath: ./
     envVars:

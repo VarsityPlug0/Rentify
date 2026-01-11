@@ -1,7 +1,7 @@
 {
-  "name": "renting-site",
+  "name": "ForRentByOwner",
   "version": "1.0.0",
-  "description": "Property rental website for B.G Affordable Housing",
+  "description": "Property rental website for ForRentByOwner",
   "main": "index.html",
   "scripts": {
     "start": "serve -s .",
@@ -11,6 +11,6 @@
     "serve": "^14.2.0"
   },
   "keywords": ["property", "rental", "housing"],
-  "author": "B.G Affordable Housing",
+  "author": "ForRentByOwner",
   "license": "MIT"
 }
