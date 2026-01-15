@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Test Contact",
+    "email": "test@contact.com",
+    "phone": "",
+    "subject": "Test Subject",
+    "message": "Hello world",
+    "propertyId": null,
+    "id": 1,
+    "status": "unread",
+    "createdAt": "2026-01-14T21:07:41.257Z",
+    "updatedAt": "2026-01-14T21:07:41.257Z",
+    "repliedAt": null
+  }
+]

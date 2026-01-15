@@ -1,223 +1,475 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Property Application - ForRentByOwner</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Apply for Property - ForRentbyOwner</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Modern CSS Framework (for header/footer) -->
+    <link rel="stylesheet" href="modern-framework.css?v=2.0">
+
+    <!-- Application Page Styles -->
+    <link rel="stylesheet" href="css/application.css">
+
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+    </style>
 </head>
-<body class="page-template-default page page-id-16">
-    <div id="page" class="site">
-        <header id="masthead" class="site-header">
-            <div class="site-branding">
-                <p class="site-title"><a href="index.html" rel="home">ForRentByOwner</a></p>
-                <p class="site-description">Just another WordPress site</p>
-            </div>
-            <nav id="site-navigation" class="main-navigation">
-                <div class="menu-main-container">
-                    <ul id="menu-main" class="menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="our-properties.html">Our Properties</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        
-        <main id="main" class="site-main">
-            <section class="application-hero">
-                <h2>Property Application</h2>
-                <p>Apply for the property you're interested in</p>
-            </section>
-            
-            <section class="application-content">
-                <div class="container">
-                    <div class="property-info">
-                        <h3 id="property-address">Property Information</h3>
-                        <p id="property-details">Loading property information...</p>
+
+<body>
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-home"></i>
                     </div>
-                    
-                    <div class="application-form">
-                        <h3>Application Form</h3>
+                    <div class="logo-text">
+                        <h1>ForRentbyOwner</h1>
+                        <p>Premium Property Rentals</p>
+                    </div>
+                </div>
+
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="our-properties.html" class="nav-link">Properties</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Application Page -->
+    <div class="application-page">
+        <!-- Hero Section -->
+        <section class="application-hero">
+            <div class="application-container">
+                <h1 id="page-title">Apply for Your Next Home</h1>
+                <p>Complete your application in minutes. We'll review and get back to you within 24 hours.</p>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="application-container">
+            <div class="application-layout">
+                <!-- Main Form Column -->
+                <div class="form-column">
+                    <div class="application-form-card">
                         <form id="property-application-form">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="applicant-name">Full Name *</label>
-                                    <input type="text" id="applicant-name" name="applicant-name" required>
+                            <input type="hidden" id="propertyId" name="propertyId" value="">
+
+                            <!-- Personal Information Section -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h2>Personal Information</h2>
+                                    <p>Tell us about yourself</p>
                                 </div>
-                                <div class="form-group">
-                                    <label for="applicant-email">Email Address *</label>
-                                    <input type="email" id="applicant-email" name="applicant-email" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="applicant-phone">Phone Number *</label>
-                                    <input type="tel" id="applicant-phone" name="applicant-phone" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="applicant-income">Annual Household Income *</label>
-                                    <input type="number" id="applicant-income" name="applicant-income" min="0" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="applicant-address">Current Address *</label>
-                                <input type="text" id="applicant-address" name="applicant-address" required>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="applicant-city">City *</label>
-                                    <input type="text" id="applicant-city" name="applicant-city" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="applicant-state">State *</label>
-                                    <select id="applicant-state" name="applicant-state" required>
-                                        <option value="">Select State</option>
-                                        <option value="AL">Alabama</option>
-                                        <option value="AK">Alaska</option>
-                                        <option value="AZ">Arizona</option>
-                                        <option value="AR">Arkansas</option>
-                                        <option value="CA">California</option>
-                                        <option value="CO">Colorado</option>
-                                        <option value="CT">Connecticut</option>
-                                        <option value="DE">Delaware</option>
-                                        <option value="FL">Florida</option>
-                                        <option value="GA">Georgia</option>
-                                        <option value="HI">Hawaii</option>
-                                        <option value="ID">Idaho</option>
-                                        <option value="IL">Illinois</option>
-                                        <option value="IN">Indiana</option>
-                                        <option value="IA">Iowa</option>
-                                        <option value="KS">Kansas</option>
-                                        <option value="KY">Kentucky</option>
-                                        <option value="LA">Louisiana</option>
-                                        <option value="ME">Maine</option>
-                                        <option value="MD">Maryland</option>
-                                        <option value="MA">Massachusetts</option>
-                                        <option value="MI">Michigan</option>
-                                        <option value="MN">Minnesota</option>
-                                        <option value="MS">Mississippi</option>
-                                        <option value="MO">Missouri</option>
-                                        <option value="MT">Montana</option>
-                                        <option value="NE">Nebraska</option>
-                                        <option value="NV">Nevada</option>
-                                        <option value="NH">New Hampshire</option>
-                                        <option value="NJ">New Jersey</option>
-                                        <option value="NM">New Mexico</option>
-                                        <option value="NY">New York</option>
-                                        <option value="NC">North Carolina</option>
-                                        <option value="ND">North Dakota</option>
-                                        <option value="OH">Ohio</option>
-                                        <option value="OK">Oklahoma</option>
-                                        <option value="OR">Oregon</option>
-                                        <option value="PA">Pennsylvania</option>
-                                        <option value="RI">Rhode Island</option>
-                                        <option value="SC">South Carolina</option>
-                                        <option value="SD">South Dakota</option>
-                                        <option value="TN">Tennessee</option>
-                                        <option value="TX">Texas</option>
-                                        <option value="UT">Utah</option>
-                                        <option value="VT">Vermont</option>
-                                        <option value="VA">Virginia</option>
-                                        <option value="WA">Washington</option>
-                                        <option value="WV">West Virginia</option>
-                                        <option value="WI">Wisconsin</option>
-                                        <option value="WY">Wyoming</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="applicant-zip">ZIP Code *</label>
-                                    <input type="text" id="applicant-zip" name="applicant-zip" required>
+
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="applicant-name">
+                                            Full Name <span class="required">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="applicant-name"
+                                            name="applicant-name" placeholder="John Doe" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="applicant-email">
+                                            Email Address <span class="required">*</span>
+                                        </label>
+                                        <input type="email" class="form-control" id="applicant-email"
+                                            name="applicant-email" placeholder="john@example.com" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="applicant-phone">
+                                            Phone Number <span class="required">*</span>
+                                        </label>
+                                        <input type="tel" class="form-control" id="applicant-phone"
+                                            name="applicant-phone" placeholder="(555) 123-4567" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="applicant-income">
+                                            Annual Household Income <span class="required">*</span>
+                                        </label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">$</span>
+                                            <input type="number" class="form-control" id="applicant-income"
+                                                name="applicant-income" placeholder="75000" min="0" required>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            
-                            <div class="form-group">
-                                <label for="applicant-occupants">Number of Occupants *</label>
-                                <input type="number" id="applicant-occupants" name="applicant-occupants" min="1" required>
+
+                            <!-- Current Residence Section -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h2>Current Residence</h2>
+                                    <p>Where do you currently live?</p>
+                                </div>
+
+                                <div class="form-grid single-column">
+                                    <div class="form-group">
+                                        <label for="applicant-address">
+                                            Street Address <span class="required">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="applicant-address"
+                                            name="applicant-address" placeholder="123 Main Street" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="applicant-city">
+                                            City <span class="required">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="applicant-city"
+                                            name="applicant-city" placeholder="Philadelphia" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="applicant-state">
+                                            State <span class="required">*</span>
+                                        </label>
+                                        <select class="form-control" id="applicant-state" name="applicant-state"
+                                            required>
+                                            <option value="">Select State</option>
+                                            <option value="DE">Delaware</option>
+                                            <option value="NJ">New Jersey</option>
+                                            <option value="PA">Pennsylvania</option>
+                                            <option value="NY">New York</option>
+                                            <option value="MD">Maryland</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="applicant-zip">
+                                            ZIP Code <span class="required">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="applicant-zip" name="applicant-zip"
+                                            placeholder="19103" required>
+                                    </div>
+                                </div>
                             </div>
-                            
-                            <div class="form-group">
-                                <label for="applicant-employment">Current Employment *</label>
-                                <input type="text" id="applicant-employment" name="applicant-employment" required>
+
+                            <!-- Employment & Household Section -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h2>Employment & Household</h2>
+                                    <p>Additional information about your household</p>
+                                </div>
+
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="applicant-employment">
+                                            Current Employer <span class="required">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="applicant-employment"
+                                            name="applicant-employment" placeholder="Company Name" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="applicant-occupants">
+                                            Total Occupants <span class="required">*</span>
+                                        </label>
+                                        <input type="number" class="form-control" id="applicant-occupants"
+                                            name="applicant-occupants" placeholder="2" min="1" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-grid single-column">
+                                    <div class="form-group">
+                                        <label for="applicant-message">
+                                            Additional Notes or Special Requirements
+                                        </label>
+                                        <textarea class="form-control" id="applicant-message" name="applicant-message"
+                                            rows="4"
+                                            placeholder="Pets, preferred move-in date, or any other details..."></textarea>
+                                    </div>
+                                </div>
                             </div>
-                            
-                            <div class="form-group">
-                                <label for="applicant-message">Additional Information</label>
-                                <textarea id="applicant-message" name="applicant-message" rows="4" placeholder="Please provide any additional information you'd like us to know..."></textarea>
+
+                            <!-- Documents Section -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h2>Required Documents</h2>
+                                    <p>Upload your documents now to speed up the approval process by 24 hours.</p>
+                                </div>
+
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="doc-id">
+                                            Government ID <span class="required">*</span>
+                                            <span
+                                                style="display:block; font-size: 0.85em; color: var(--text-secondary); font-weight: normal;">(Driver's
+                                                License, Passport)</span>
+                                        </label>
+                                        <input type="file" class="form-control" id="doc-id" name="doc-id"
+                                            accept=".pdf,.jpg,.jpeg,.png" required>
+                                        <div class="file-feedback" id="feedback-id"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="doc-income">
+                                            Proof of Income <span class="required">*</span>
+                                            <span
+                                                style="display:block; font-size: 0.85em; color: var(--text-secondary); font-weight: normal;">(Pay
+                                                stubs, Bank Statement - Last 2 months)</span>
+                                        </label>
+                                        <input type="file" class="form-control" id="doc-income" name="doc-income"
+                                            accept=".pdf,.jpg,.jpeg,.png" required>
+                                        <div class="file-feedback" id="feedback-income"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="doc-other">
+                                            Other Documents (Optional)
+                                            <span
+                                                style="display:block; font-size: 0.85em; color: var(--text-secondary); font-weight: normal;">(References,
+                                                Pet Records)</span>
+                                        </label>
+                                        <input type="file" class="form-control" id="doc-other" name="doc-other"
+                                            accept=".pdf,.jpg,.jpeg,.png" multiple>
+                                        <div class="file-feedback" id="feedback-other"></div>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 10px; font-size: 0.85em; color: var(--text-muted);">
+                                    <i class="fas fa-info-circle"></i> Supported formats: PDF, JPG, PNG. Max size: 5MB
+                                    per file.
+                                </div>
                             </div>
-                            
-                            <div class="form-group">
-                                <label>
-                                    <input type="checkbox" id="applicant-terms" name="applicant-terms" required>
-                                    I agree to the terms and conditions and authorize a background check *
-                                </label>
+
+                            <!-- Agreement & Submit Section -->
+                            <div class="submit-section">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="applicant-terms"
+                                        name="applicant-terms" required>
+                                    <label class="form-check-label" for="applicant-terms">
+                                        I certify that the information provided is true and correct. I authorize the
+                                        landlord to verify this information securely. <span class="required">*</span>
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="btn-primary-large">
+                                    <i class="fas fa-lock"></i>
+                                    Securely Submit Application
+                                </button>
                             </div>
-                            
-                            <button type="submit" class="btn-submit">Submit Application</button>
                         </form>
                     </div>
                 </div>
-            </section>
-        </main>
-        
-        <footer id="colophon" class="site-footer">
-            <div class="site-info">
-                <p>Contact Information:<br>
-                Phone: (609)237-5156<br>
-                Email: <a href="mailto:Briangorey@zohomail.com">Briangorey@zohomail.com</a><br>
-                ForRentByOwner</p>
-                <a href="index.html">ForRentByOwner</a>
-                <span class="sep"> | </span>
-                <a href="http://wordpress.org/" class="imprint">
-                    Proudly powered by WordPress                </a>
-            </div><!-- .site-info -->
-        </footer><!-- #colophon -->
-    </div><!-- #page -->
-    
+
+                <!-- Sidebar Column -->
+                <aside class="sidebar-column">
+                    <div class="property-summary-card">
+                        <h3>Applying For</h3>
+                        <div id="property-info-container">
+                            <div style="text-align: center; padding: 40px 0;">
+                                <div class="spinner"></div>
+                                <p style="margin-top: 16px; color: #6B7280; font-size: 14px;">Loading property
+                                    details...</p>
+                            </div>
+                        </div>
+
+                        <div class="requirements-section">
+                            <h4>Application Requirements</h4>
+                            <ul class="requirements-list">
+                                <li><i class="fas fa-check-circle"></i> Valid Government ID</li>
+                                <li><i class="fas fa-check-circle"></i> Proof of Income (2 months)</li>
+                                <li><i class="fas fa-check-circle"></i> Rental History</li>
+                                <li><i class="fas fa-check-circle"></i> Background Check Authorization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>ForRentbyOwner</h3>
+                    </div>
+                    <p>Privately-owned property rental specialists providing personalized service across Delaware, New
+                        Jersey, and Pennsylvania since 2010.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="our-properties.html">Properties</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>(609) 237-5156</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>Briangorey@zohomail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Delaware, NJ, PA</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 ForRentbyOwner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
         // Get property ID from URL
         const urlParams = new URLSearchParams(window.location.search);
-        const propertyId = parseInt(urlParams.get('propertyId'));
-        
-        // Load properties from localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            const properties = JSON.parse(localStorage.getItem('properties')) || [];
-            const property = properties.find(p => p.id === propertyId);
-            
-            if (property) {
-                // Populate property information
-                document.getElementById('property-address').textContent = property.address;
-                document.getElementById('property-details').innerHTML = `
-                    <strong>Price:</strong> ${property.price || 'N/A'}<br>
-                    <strong>Bedrooms:</strong> ${property.beds || 'N/A'} | 
-                    <strong>Bathrooms:</strong> ${property.baths || 'N/A'} | 
-                    <strong>Square Feet:</strong> ${property.sqft || 'N/A'}
-                `;
+        const propertyId = urlParams.get('propertyId');
+
+        // Load property from API
+        document.addEventListener('DOMContentLoaded', async function () {
+            const propertyInfoContainer = document.getElementById('property-info-container');
+            const pageTitle = document.getElementById('page-title');
+
+            if (propertyId) {
+                document.getElementById('propertyId').value = propertyId;
+
+                try {
+                    const response = await fetch(`/api/properties/${propertyId}`);
+                    const result = await response.json();
+
+                    if (result.success) {
+                        const property = result.data;
+                        const mainImage = property.images && property.images.length > 0 ? property.images[0] : 'IMAGES/default-property.jpg';
+
+                        // Generate mock review data
+                        const reviewScore = (8 + Math.random() * 2).toFixed(1);
+                        const reviewCount = Math.floor(Math.random() * 5000) + 100;
+                        const reviewLabel = reviewScore >= 9 ? 'Superb' : reviewScore >= 8 ? 'Very good' : 'Good';
+
+                        // Update page title
+                        pageTitle.textContent = `Apply for ${property.title}`;
+
+                        // Populate property information card
+                        propertyInfoContainer.innerHTML = `
+                            <div class="property-image-wrapper">
+                                <img src="${mainImage}" alt="${property.title}" 
+                                     onerror="this.src='IMAGES/default-property.jpg'">
+                                <button type="button" class="property-save-btn" aria-label="Save property">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                            
+                            <h4 class="property-title">${property.title}</h4>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                ${property.location}
+                            </div>
+                            
+                            <div class="property-specs">
+                                <span><i class="fas fa-bed"></i> ${property.bedrooms} bed</span>
+                                <span><i class="fas fa-bath"></i> ${property.bathrooms} bath</span>
+                                <span><i class="fas fa-ruler-combined"></i> ${property.squareFeet} sqft</span>
+                            </div>
+                            
+                            <div class="property-rating">
+                                <div class="rating-score">${reviewScore}</div>
+                                <div class="rating-details">
+                                    <div class="rating-label">${reviewLabel}</div>
+                                    <div class="rating-count">${reviewCount.toLocaleString()} reviews</div>
+                                </div>
+                            </div>
+                            
+                            <div class="property-price-section">
+                                <div class="price-label">Monthly rent</div>
+                                <div class="price-amount">$${property.price.toLocaleString()}</div>
+                                <div class="price-note">Plus utilities and deposits</div>
+                                <a href="property-details.html?id=${property.id}" class="view-property-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Full Details
+                                </a>
+                            </div>
+                        `;
+                    } else {
+                        propertyInfoContainer.innerHTML = `
+                            <div style="padding: 24px; text-align: center; background: #FEF2F2; border-radius: 8px; color: #991B1B;">
+                                <i class="fas fa-exclamation-triangle" style="font-size: 32px; margin-bottom: 12px;"></i>
+                                <p style="margin: 0; font-size: 14px;">Property not found. You can still submit a general application.</p>
+                            </div>
+                        `;
+                    }
+                } catch (error) {
+                    console.error('Error loading property:', error);
+                    propertyInfoContainer.innerHTML = `
+                        <div style="padding: 24px; text-align: center; background: #FEF2F2; border-radius: 8px; color: #991B1B;">
+                            <i class="fas fa-exclamation-circle" style="font-size: 32px; margin-bottom: 12px;"></i>
+                            <p style="margin: 0; font-size: 14px;">Error loading property details.</p>
+                        </div>
+                    `;
+                }
             } else {
-                // Property not found
-                document.querySelector('.property-info').innerHTML = `
-                    <h3>Property Not Found</h3>
-                    <p>The property you're trying to apply for doesn't exist or is no longer available.</p>
-                    <a href="our-properties.html" class="btn-back">Back to Properties</a>
+                propertyInfoContainer.innerHTML = `
+                    <div style="padding: 24px; text-align: center; background: #EFF6FF; border-radius: 8px; color: #1E40AF;">
+                        <i class="fas fa-info-circle" style="font-size: 32px; margin-bottom: 12px;"></i>
+                        <p style="margin: 0; font-size: 14px;">No specific property selected. Submitting a general application.</p>
+                    </div>
                 `;
-                document.querySelector('.application-form').style.display = 'none';
             }
-            
+
             // Handle form submission
             const applicationForm = document.getElementById('property-application-form');
             if (applicationForm) {
-                applicationForm.addEventListener('submit', function(e) {
+                applicationForm.addEventListener('submit', async function (e) {
                     e.preventDefault();
-                    
+
                     // Get form data
                     const formData = new FormData(this);
+                    const propertyTitleElement = document.querySelector('.property-title');
+                    const fullPropertyName = propertyTitleElement ? propertyTitleElement.textContent : 'General Application';
+
                     const applicationData = {
-                        propertyId: propertyId,
-                        propertyName: property ? property.address : 'Unknown Property',
+                        propertyId: propertyId ? parseInt(propertyId) : null,
+                        propertyName: fullPropertyName,
                         applicantName: formData.get('applicant-name'),
                         applicantEmail: formData.get('applicant-email'),
                         applicantPhone: formData.get('applicant-phone'),
@@ -228,65 +480,104 @@
                         applicantZip: formData.get('applicant-zip'),
                         applicantOccupants: formData.get('applicant-occupants'),
                         applicantEmployment: formData.get('applicant-employment'),
+                        applicantEmployment: formData.get('applicant-employment'),
                         applicantMessage: formData.get('applicant-message'),
-                        timestamp: new Date().toISOString()
+                        timestamp: new Date().toISOString(),
+                        documents: []
                     };
-                    
-                    // Form validation
-                    if (!applicationData.applicantName || !applicationData.applicantEmail || 
-                        !applicationData.applicantPhone || !applicationData.applicantIncome ||
-                        !applicationData.applicantAddress || !applicationData.applicantCity ||
-                        !applicationData.applicantState || !applicationData.applicantZip ||
-                        !applicationData.applicantOccupants || !applicationData.applicantEmployment) {
-                        alert('Please fill in all required fields.');
-                        return;
-                    }
-                    
+
                     // Email validation
                     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                     if (!emailRegex.test(applicationData.applicantEmail)) {
                         alert('Please enter a valid email address.');
                         return;
                     }
-                    
-                    // Get admin email
-                    const adminEmail = localStorage.getItem('adminEmail') || 'Briangorey@zohomail.com';
-                    
-                    // In a real implementation, you would send this data to a server to email the admin
-                    // For this demo, we'll just show a success message with the email that would be sent
-                    const emailContent = `
-                        New Property Application Received:
-                        
-                        Property: ${applicationData.propertyName} (ID: ${applicationData.propertyId})
-                        
-                        Applicant Information:
-                        Name: ${applicationData.applicantName}
-                        Email: ${applicationData.applicantEmail}
-                        Phone: ${applicationData.applicantPhone}
-                        Annual Income: $${applicationData.applicantIncome}
-                        
-                        Current Address:
-                        ${applicationData.applicantAddress}
-                        ${applicationData.applicantCity}, ${applicationData.applicantState} ${applicationData.applicantZip}
-                        
-                        Household Information:
-                        Number of Occupants: ${applicationData.applicantOccupants}
-                        Current Employment: ${applicationData.applicantEmployment}
-                        
-                        Additional Information:
-                        ${applicationData.applicantMessage || 'None provided'}
-                        
-                        Application submitted on: ${applicationData.timestamp}
-                    `;
-                    
-                    // Show success message
-                    alert(`Thank you for your application! An email would be sent to ${adminEmail} with your application details.`);
-                    
-                    // Reset form
-                    applicationForm.reset();
+
+                    // --- File Validation & Mock Upload Logic ---
+                    const docId = document.getElementById('doc-id');
+                    const docIncome = document.getElementById('doc-income');
+                    const docOther = document.getElementById('doc-other');
+
+                    const validateFile = (input) => {
+                        if (input.files.length > 0) {
+                            const file = input.files[0];
+                            if (file.size > 5 * 1024 * 1024) { // 5MB
+                                alert(`File ${file.name} is too large. Max size is 5MB.`);
+                                return false;
+                            }
+                        }
+                        return true;
+                    };
+
+                    if (!validateFile(docId) || !validateFile(docIncome) || !validateFile(docOther)) {
+                        return;
+                    }
+
+                    // Simulate Uploads
+                    if (docId.files.length > 0) {
+                        applicationData.documents.push({
+                            type: 'ID',
+                            name: docId.files[0].name,
+                            url: `uploads/mock-id-${Date.now()}.pdf` // Mock URL
+                        });
+                    }
+                    if (docIncome.files.length > 0) {
+                        applicationData.documents.push({
+                            type: 'Income',
+                            name: docIncome.files[0].name,
+                            url: `uploads/mock-income-${Date.now()}.pdf` // Mock URL
+                        });
+                    }
+                    if (docOther.files.length > 0) {
+                        Array.from(docOther.files).forEach((file, index) => {
+                            applicationData.documents.push({
+                                type: 'Other',
+                                name: file.name,
+                                url: `uploads/mock-other-${index}-${Date.now()}.pdf`
+                            });
+                        });
+                    }
+                    // -------------------------------------------
+
+                    try {
+                        const submitBtn = this.querySelector('button[type="submit"]');
+                        const originalBtnContent = submitBtn.innerHTML;
+                        submitBtn.disabled = true;
+                        submitBtn.innerHTML = '<span class="spinner"></span> Submitting...';
+
+                        // Send application to backend
+                        const response = await fetch('/api/application', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(applicationData)
+                        });
+
+                        const result = await response.json();
+
+                        if (result.success) {
+                            // Redirect to success page
+                            const firstName = applicationData.applicantName.split(' ')[0];
+                            window.location.href = `application-success.html?name=${encodeURIComponent(firstName)}`;
+                        } else {
+                            alert('Error submitting application: ' + (result.message || 'Unknown error'));
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = originalBtnContent;
+                        }
+                    } catch (error) {
+                        console.error('Error submitting application:', error);
+                        alert('Error submitting application. Please try again.');
+                        const submitBtn = this.querySelector('button[type="submit"]');
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Application';
+                        }
+                    }
                 });
             }
         });
     </script>
 </body>
+
 </html>

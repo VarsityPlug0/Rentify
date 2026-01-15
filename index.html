@@ -1,67 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ForRentbyOwner - Just another WordPress site</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ForRentbyOwner - Premium Property Rentals</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Design System -->
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- Modern CSS Framework -->
+    <link rel="stylesheet" href="modern-framework.css?v=2.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- App JavaScript -->
+    <script defer src="/js/app.js"></script>
 </head>
-<body class="home page-template-default page page-id-12 wp-custom-logo">
-    <div id="page" class="site">
-        <header id="masthead" class="site-header">
-            <div class="site-branding">
-                <p class="site-title"><a href="index.html" rel="home">ForRentbyOwner</a></p>
-                <p class="site-description">Just another WordPress site</p>
+
+<body>
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>ForRentbyOwner</h1>
+                        <p>Premium Property Rentals</p>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="our-properties.html" class="nav-link">Properties</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            <nav id="site-navigation" class="main-navigation">
-                <div class="menu-main-container">
-                    <ul id="menu-main" class="menu">
-                        <li class="current-menu-item"><a href="index.html">Home</a></li>
-                        <li><a href="our-properties.html">Our Properties</a></li>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Hero Content -->
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-star"></i>
+                        <span>Trusted Property Management Since 2010</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Find Your Perfect
+                        <span class="gradient-text">Rental Home</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Privately-owned property rental specialists managing 500+ homes across Delaware, New Jersey, and
+                        Pennsylvania.
+                        Personalized service with direct owner access.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="our-properties.html" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                            Browse Properties
+                        </a>
+                        <a href="contact.html" class="btn btn-outline">
+                            <i class="fas fa-phone"></i>
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="IMAGES/Sandton_Sun_and_Towers.webp" alt="Luxury Apartment Building"
+                            class="main-image">
+
+                        <!-- Stats Overlay -->
+                        <div class="stats-badge">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Properties Managed</div>
+                        </div>
+
+                        <!-- Feature Cards -->
+                        <div class="feature-cards">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <div class="feature-value">3</div>
+                                    <div class="feature-label">States</div>
+                                </div>
+                            </div>
+
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <div class="feature-value">12+</div>
+                                    <div class="feature-label">Years</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Impact in Numbers</h2>
+                <p>Trusted by thousands of property owners and tenants across multiple states</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon primary">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-title">Managed Properties</div>
+                        <div class="stat-description">Residential units under management</div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon accent">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">3</div>
+                        <div class="stat-title">States Covered</div>
+                        <div class="stat-description">DE, NJ, PA</div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon warm">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">12+</div>
+                        <div class="stat-title">Years Experience</div>
+                        <div class="stat-description">In property management</div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon primary">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-title">Client Satisfaction</div>
+                        <div class="stat-description">Based on client feedback</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="properties-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Properties</h2>
+                <p>Discover our premium rental listings across Delaware, New Jersey, and Pennsylvania</p>
+            </div>
+
+            <div id="featured-properties-container" class="property-grid">
+                <!-- Dynamic featured properties will be loaded here -->
+            </div>
+
+            <div class="section-cta" style="text-align: center; margin-top: 48px;">
+                <a href="our-properties.html" class="btn btn-primary btn-large">
+                    <i class="fas fa-search"></i>
+                    Browse All Properties
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>ForRentbyOwner</h3>
+                    </div>
+                    <p>Privately-owned property rental specialists providing personalized service across Delaware, New
+                        Jersey, and Pennsylvania since 2010.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="our-properties.html">Properties</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-            </nav>
-        </header>
-        
-        <main id="main" class="site-main">
-            <section class="hero">
-                <h2>Welcome to ForRentbyOwner</h2>
-                <p>A privately-owned property rental company</p>
-                <p>Specializing in affordable rental housing solutions across Delaware, New Jersey, and Pennsylvania. Our experienced team manages over 500 residential rental properties, providing personalized service to property owners and tenants alike.</p>
-            </section>
-            
-            <section class="features">
-                <div class="container">
-                    <div class="feature">
-                        <h3>Rental Property Management</h3>
-                        <p>Comprehensive rental property management services including tenant screening, maintenance coordination, financial reporting, and lease management tailored to your investment goals.</p>
-                    </div>
-                    <div class="feature">
-                        <h3>Lease-to-Own Properties</h3>
-                        <p>Exclusive lease-to-own rental properties available with flexible terms. All properties are rented "AS IS" "WHERE IS" with transparent condition disclosure.</p>
-                    </div>
-                    <div class="feature">
-                        <h3>Personalized Service</h3>
-                        <p>As a privately-owned company, we provide direct access to ownership and decision-makers, ensuring responsive communication and customized solutions for tenants.</p>
-                    </div>
+
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>(609) 237-5156</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>Briangorey@zohomail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Delaware, NJ, PA</span>
+                        </li>
+                    </ul>
                 </div>
-            </section>
-        </main>
-        
-        <footer id="colophon" class="site-footer">
-            <div class="site-info">
-                <p>Contact Information:<br>
-                Phone: (609)237-5156<br>
-                Email: <a href="mailto:Briangorey@zohomail.com">Briangorey@zohomail.com</a><br>
-                ForRentbyOwner</p>
-                <a href="index.html">ForRentbyOwner</a>
-                <span class="sep"> | </span>
-                <a href="http://wordpress.org/" class="imprint">
-                    Proudly powered by WordPress                </a>
-            </div><!-- .site-info -->
-        </footer><!-- #colophon -->
-    </div><!-- #page -->
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 ForRentbyOwner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Load featured properties on page load
+        document.addEventListener('DOMContentLoaded', async function () {
+            const featuredContainer = document.getElementById('featured-properties-container');
+
+            if (!featuredContainer) return;
+
+            try {
+                // Fetch properties from API
+                const response = await fetch('/api/properties');
+                const result = await response.json();
+
+                if (result.success && result.data && result.data.length > 0) {
+                    // Filter for featured properties or take first 3
+                    let featuredProperties = result.data.filter(p => p.featured);
+
+                    // If less than 3 featured, take first 3 properties
+                    if (featuredProperties.length < 3) {
+                        featuredProperties = result.data.slice(0, 3);
+                    } else {
+                        // Take first 3 featured
+                        featuredProperties = featuredProperties.slice(0, 3);
+                    }
+
+                    // Render property cards using universal component classes
+                    featuredContainer.innerHTML = featuredProperties.map(property => {
+                        const mainImage = property.images && property.images.length > 0 ? property.images[0] : 'IMAGES/default-property.jpg';
+                        const reviewScore = (8 + Math.random() * 2).toFixed(1);
+                        const reviewCount = Math.floor(Math.random() * 5000) + 100;
+                        const reviewLabel = reviewScore >= 9 ? 'Superb' : reviewScore >= 8 ? 'Very good' : 'Good';
+
+                        return `
+                            <div class="property-card" onclick="window.location.href='property-details.html?id=${property.id}'" style="cursor: pointer;">
+                                <div class="property-card__image-container">
+                                    <img src="${mainImage}" 
+                                         alt="${property.title}" 
+                                         class="property-card__image"
+                                         onerror="this.src='IMAGES/default-property.jpg'">
+                                    ${property.featured ? '<div class="badge badge-blue" style="position: absolute; top: 12px; left: 12px;">FEATURED</div>' : ''}
+                                    <button class="property-card__save-btn" onclick="event.stopPropagation();">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                                
+                                <div class="property-card__content">
+                                    <h3 class="property-card__title">${property.title}</h3>
+                                    
+                                    <div class="property-card__location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        ${property.location}
+                                    </div>
+                                    
+                                    <div class="property-card__specs">
+                                        <span class="property-card__spec"><i class="fas fa-bed"></i> ${property.bedrooms} bed</span>
+                                        <span class="property-card__spec"><i class="fas fa-bath"></i> ${property.bathrooms} bath</span>
+                                        <span class="property-card__spec"><i class="fas fa-ruler-combined"></i> ${property.squareFeet} sqft</span>
+                                    </div>
+                                    
+                                    <div class="property-card__footer">
+                                        <div class="property-card__rating">
+                                            <div class="property-card__rating-badge">${reviewScore}</div>
+                                            <div>
+                                                <div class="property-card__rating-label">${reviewLabel}</div>
+                                                <div class="property-card__rating-count">${reviewCount.toLocaleString()} reviews</div>
+                                            </div>
+                                        </div>
+                                        <div class="property-card__price">
+                                            <span class="property-card__price-amount">$${property.price.toLocaleString()}</span>
+                                            <span class="property-card__price-period">per month</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                } else {
+                    featuredContainer.innerHTML = `
+                        <div class="col-12">
+                            <div style="text-align: center; padding: 60px 20px; background: #F5F5F5; border-radius: 12px;">
+                                <i class="fas fa-home" style="font-size: 48px; color: #9CA3AF; margin-bottom: 16px;"></i>
+                                <h3 style="color: #6B7280; margin-bottom: 8px;">No properties available</h3>
+                                <p style="color: #9CA3AF; margin: 0;">Check back soon for new listings!</p>
+                            </div>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error loading featured properties:', error);
+                featuredContainer.innerHTML = `
+                    <div class="col-12">
+                        <div style="text-align: center; padding: 60px 20px; background: #FEF2F2; border-radius: 12px;">
+                            <i class="fas fa-exclamation-circle" style="font-size: 48px; color: #DC2626; margin-bottom: 16px;"></i>
+                            <h3 style="color: #991B1B; margin-bottom: 8px;">Error loading properties</h3>
+                            <p style="color: #DC2626; margin: 0;">Please try refreshing the page.</p>
+                        </div>
+                    </div>
+                `;
+            }
+        });
+    </script>
 </body>
+
+
 </html>

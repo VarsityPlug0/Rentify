@@ -1,0 +1,540 @@
+/**
+ * Reusable Component Library
+ * Universal components that maintain consistency across all pages
+ */
+
+/* ============================================
+   UNIVERSAL PROPERTY CARD COMPONENT
+   Used on: Home page, Properties page
+   ============================================ */
+.property-card {
+    background: var(--card-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-all);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.property-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+/* Card Image Container */
+.property-card__image-container {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.property-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.property-card:hover .property-card__image {
+    transform: scale(1.05);
+}
+
+/* Save Button Overlay */
+.property-card__save-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--card-white);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-base);
+    z-index: 2;
+}
+
+.property-card__save-btn:hover {
+    background: var(--background);
+    transform: scale(1.1);
+}
+
+.property-card__save-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--text-dark);
+    fill: none;
+    stroke-width: 2;
+}
+
+.property-card__save-btn.saved svg {
+    fill: var(--error);
+    stroke: var(--error);
+}
+
+/* Card Content */
+.property-card__content {
+    padding: var(--card-padding);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    flex: 1;
+}
+
+/* Card Title */
+.property-card__title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--text-dark);
+    margin: 0;
+    line-height: var(--leading-tight);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.property-card__title a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition-base);
+}
+
+.property-card__title a:hover {
+    color: var(--primary-blue);
+}
+
+/* Location */
+.property-card__location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+}
+
+.property-card__location svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+/* Specs Row (Beds, Baths, Sqft) */
+.property-card__specs {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+}
+
+.property-card__spec {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.property-card__spec svg {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+}
+
+/* Bottom Row (Rating + Price) */
+.property-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--border-light);
+}
+
+/* Rating Badge */
+.property-card__rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.property-card__rating-badge {
+    background: var(--rating-excellent);
+    color: white;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+}
+
+.property-card__rating-label {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    font-weight: var(--font-medium);
+}
+
+.property-card__rating-count {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+}
+
+/* Price Display */
+.property-card__price {
+    text-align: right;
+}
+
+.property-card__price-amount {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--text-dark);
+    display: block;
+}
+
+.property-card__price-period {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+}
+
+/* ============================================
+   BUTTON COMPONENTS
+   ============================================ */
+
+/* Primary Button */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: var(--radius-sm);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-all);
+    font-family: var(--font-primary);
+}
+
+.btn-primary {
+    background: var(--primary-blue);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--dark-navy);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-blue);
+    color: white;
+}
+
+.btn-large {
+    padding: 16px 32px;
+    font-size: var(--text-lg);
+}
+
+/* ============================================
+   SECTION COMPONENTS
+   ============================================ */
+
+.section {
+    padding: var(--section-padding) 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.section-title {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--text-dark);
+    margin-bottom: var(--space-sm);
+}
+
+.section-subtitle {
+    font-size: var(--text-lg);
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   BADGE COMPONENTS
+   ============================================ */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+}
+
+.badge-blue {
+    background: var(--primary-blue);
+    color: white;
+}
+
+.badge-success {
+    background: var(--success);
+    color: white;
+}
+
+.badge-outline {
+    background: transparent;
+    border: 1px solid var(--border-medium);
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .property-card__image-container {
+        height: 200px;
+    }
+
+    .property-card__content {
+        padding: 16px;
+    }
+
+    .property-card__title {
+        font-size: var(--text-base);
+    }
+
+    .property-card__footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-sm);
+    }
+
+    .property-card__price {
+        text-align: left;
+    }
+}
+
+/* ============================================
+   COMPACT FILTER TOOLBAR (USER REQUESTED)
+   ============================================ */
+.compact-toolbar-wrapper {
+    background: white;
+    border-bottom: 1px solid var(--neutral-200);
+    position: sticky;
+    top: 70px;
+    /* Header is usually fixed/sticky */
+    z-index: 90;
+    padding: 8px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.compact-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Search Group */
+.compact-search-box {
+    position: relative;
+    flex: 2 1 200px;
+    /* Grow, shrink, base */
+    min-width: 200px;
+}
+
+.compact-search-box i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--neutral-400);
+    font-size: 14px;
+}
+
+.compact-input {
+    width: 100%;
+    height: 38px;
+    padding: 0 8px 0 32px;
+    /* Left padding for icon */
+    border: 1px solid var(--neutral-300);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.compact-input:focus {
+    border-color: var(--primary-blue);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+/* Sort Dropdown */
+.compact-select {
+    flex: 1 1 140px;
+    height: 38px;
+    padding: 0 28px 0 12px;
+    border: 1px solid var(--neutral-300);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    appearance: none;
+}
+
+/* Budget Min/Max */
+.compact-budget-group {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--background-alt);
+    padding: 0 8px;
+    border-radius: var(--radius-md);
+    height: 38px;
+    border: 1px solid var(--neutral-200);
+}
+
+.compact-budget-input {
+    width: 70px;
+    height: 100%;
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    text-align: center;
+}
+
+.compact-budget-input:focus {
+    outline: none;
+}
+
+/* Bedroom Pills */
+.compact-pills {
+    display: flex;
+    border: 1px solid var(--neutral-300);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    height: 38px;
+}
+
+.compact-pill-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 100%;
+    border-right: 1px solid var(--neutral-200);
+    cursor: pointer;
+    background: white;
+    font-size: 13px;
+    color: var(--text-secondary);
+    transition: all 0.1s;
+}
+
+.compact-pill-option:last-child {
+    border-right: none;
+}
+
+.compact-pill-option:hover {
+    background: var(--background-alt);
+}
+
+.compact-pill-option input:checked+span {
+    background: var(--primary-blue);
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Toggles */
+.compact-toggles {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    height: 38px;
+}
+
+.compact-toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 500;
+}
+
+.compact-toggle-label input {
+    accent-color: var(--primary-blue);
+    width: 14px;
+    height: 14px;
+}
+
+/* Search Button */
+.btn-compact-search {
+    height: 38px;
+    padding: 0 20px;
+    font-size: 14px;
+    border-radius: var(--radius-md);
+}
+
+@media (max-width: 900px) {
+    .compact-toolbar {
+        gap: 8px;
+    }
+
+    .compact-search-box {
+        flex: 100%;
+        /* Full width on mobile */
+        order: 1;
+    }
+
+    .compact-select {
+        flex: 1;
+        order: 2;
+    }
+
+    .compact-budget-group {
+        order: 3;
+    }
+
+    .compact-pills {
+        order: 4;
+    }
+
+    .compact-toggles {
+        order: 5;
+        flex: 100%;
+        justify-content: space-between;
+    }
+
+    .btn-compact-search {
+        order: 6;
+        width: 100%;
+    }
+}

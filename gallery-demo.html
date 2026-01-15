@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Gallery Demo - ForRentbyOwner</title>
+
+    <!-- Modern CSS Framework -->
+    <link rel="stylesheet" href="modern-framework.css?v=2.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>ForRentbyOwner</h1>
+                        <p>Gallery Demo</p>
+                    </div>
+                </div>
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="our-properties.html" class="nav-link">Properties</a>
+                    <a href="gallery-demo.html" class="nav-link active">Gallery Demo</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Modern <span class="gradient-text">Gallery Layout</span></h1>
+                <p class="hero-description">Clean, professional image gallery with featured image and grid layout</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: var(--space-xl) 0; background: white;">
+        <div class="container">
+            <h2 style="font-family: var(--font-heading); font-size: var(--text-3xl); margin-bottom: var(--space-lg);">
+                Luxury Downtown Apartment
+            </h2>
+
+            <!-- Modern Gallery -->
+            <div class="modern-gallery-container">
+                <div class="modern-gallery-grid">
+                    <!-- Featured Image -->
+                    <div class="gallery-featured">
+                        <img src="IMAGES/Westpoint_Sandton_Executive_Suites.webp" alt="Featured Property Image 1">
+                    </div>
+
+                    <!-- Supporting Images -->
+                    <div class="gallery-supporting">
+                        <img src="IMAGES/Marley_on_Katherine_Apartments.webp" alt="Supporting Image 1">
+                    </div>
+
+                    <div class="gallery-supporting">
+                        <img src="IMAGES/Lilian_Lofts_Hotel_Spa.webp" alt="Supporting Image 2">
+                    </div>
+
+                    <!-- View All Photos Button -->
+                    <button class="gallery-view-all">
+                        <i class="fas fa-th"></i> View all photos
+                    </button>
+                </div>
+            </div>
+
+            <!-- Property Details -->
+            <div
+                style="margin-top: var(--space-lg); padding: var(--space-lg); background: var(--neutral-50); border-radius: var(--radius-xl);">
+                <h3 style="font-family: var(--font-heading); margin-bottom: var(--space-md);">Gallery Features</h3>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-3xs);">
+                    <li><i class="fas fa-check-circle"
+                            style="color: var(--primary-600); margin-right: var(--space-4xs);"></i> Clean CSS Grid
+                        layout</li>
+                    <li><i class="fas fa-check-circle"
+                            style="color: var(--primary-600); margin-right: var(--space-4xs);"></i> Featured image with
+                        2x size</li>
+                    <li><i class="fas fa-check-circle"
+                            style="color: var(--primary-600); margin-right: var(--space-4xs);"></i> Consistent 8px gap
+                        spacing</li>
+                    <li><i class="fas fa-check-circle"
+                            style="color: var(--primary-600); margin-right: var(--space-4xs);"></i> object-fit: cover
+                        for all images</li>
+                    <li><i class="fas fa-check-circle"
+                            style="color: var(--primary-600); margin-right: var(--space-4xs);"></i> Smooth hover effects
+                    </li>
+                    <li><i class="fas fa-check-circle"
+                            style="color: var(--primary-600); margin-right: var(--space-4xs);"></i> Fully responsive
+                        (mobile/tablet/desktop)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 ForRentbyOwner. Gallery Demo.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

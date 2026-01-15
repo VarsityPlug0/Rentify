@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .controls {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        .property {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .property h3 {
+            margin: 0 0 10px 0;
+        }
+
+        .property .price {
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .property .details {
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .status {
+            padding: 10px;
+            background: #e0f2fe;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Property Sorting Test</h1>
+
+    <div class="controls">
+        <label for="sort-select">Sort by:</label>
+        <select id="sort-select">
+            <option value="newest">Newest Listed</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="bedrooms">Bedrooms (Most)</option>
+        </select>
+    </div>
+
+    <div class="status" id="status">Loading properties...</div>
+
+    <div id="properties-container"></div>
+
+    <script>
+        let properties = [];
+        let currentSort = 'newest';
+
+        // Load properties on page load
+        async function loadProperties(sortBy = 'newest') {
+            const statusEl = document.getElementById('status');
+            statusEl.textContent = `Loading properties... (sort: ${sortBy})`;
+
+            try {
+                const url = `/api/properties${sortBy ? `?sortBy=${sortBy}` : ''}`;
+                console.log('Fetching:', url);
+
+                const response = await fetch(url);
+                const data = await response.json();
+
+                console.log('Response:', data);
+
+                if (data.success) {
+                    properties = data.data;
+                    statusEl.textContent = `Loaded ${properties.length} properties (sorted by: ${sortBy})`;
+                    renderProperties();
+                } else {
+                    statusEl.textContent = `Error: ${data.message}`;
+                    statusEl.style.background = '#fee2e2';
+                }
+            } catch (error) {
+                console.error('Error loading properties:', error);
+                statusEl.textContent = `Error: ${error.message}`;
+                statusEl.style.background = '#fee2e2';
+            }
+        }
+
+        function renderProperties() {
+            const container = document.getElementById('properties-container');
+
+            if (properties.length === 0) {
+                container.innerHTML = '<p>No properties found</p>';
+                return;
+            }
+
+            container.innerHTML = properties.map(prop => `
+                <div class="property">
+                    <div class="price">$${prop.price}/month</div>
+                    <h3>${prop.title}</h3>
+                    <div class="details">
+                        📍 ${prop.location} | 
+                        🛏️ ${prop.bedrooms} bed | 
+                        🛁 ${prop.bathrooms} bath | 
+                        📏 ${prop.squareFeet} sqft
+                    </div>
+                </div>
+            `).join('');
+
+            console.log('Rendered order:', properties.map(p => `${p.title} (${p.bedrooms} bed, $${p.price})`));
+        }
+
+        // Handle sort change
+        document.getElementById('sort-select').addEventListener('change', (e) => {
+            currentSort = e.target.value;
+            console.log('Sort changed to:', currentSort);
+            loadProperties(currentSort);
+        });
+
+        // Initial load
+        loadProperties('newest');
+    </script>
+</body>
+
+</html>

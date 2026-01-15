@@ -1,0 +1,171 @@
+[
+  {
+    "id": 1,
+    "title": "bevan houses",
+    "description": "Modern 2-bedroom apartment with premium amenities in prime location",
+    "price": 1200,
+    "location": "Sandton, South Africa",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "squareFeet": 1200,
+    "images": [
+      "IMAGES/Westpoint_Sandton_Executive_Suites.webp",
+      "IMAGES/Marley_on_Katherine_Apartments.webp",
+      "IMAGES/uploads/image-1768416081688-820828818.jpg",
+      "IMAGES/uploads/image-1768416081726-47826603.jpg",
+      "IMAGES/uploads/image-1768416081768-771021021.jpg",
+      "IMAGES/uploads/image-1768416081830-625862409.jpg",
+      "IMAGES/uploads/image-1768416081871-624904988.jpg",
+      "IMAGES/uploads/image-1768517892998-123595277.jpg",
+      "IMAGES/uploads/image-1768517893021-833223306.jpg",
+      "IMAGES/uploads/image-1768517893040-256702726.jpg",
+      "IMAGES/uploads/image-1768517893064-404087418.jpg",
+      "IMAGES/uploads/image-1768517893087-827440495.jpg",
+      "IMAGES/uploads/image-1768517893104-355329982.jpg",
+      "IMAGES/uploads/image-1768517893123-96746155.jpg",
+      "IMAGES/uploads/image-1768517893147-62907138.jpg",
+      "IMAGES/uploads/image-1768517893165-890193453.jpg"
+    ],
+    "available": true,
+    "featured": true,
+    "amenities": [
+      "WiFi",
+      "Gym",
+      "Pool",
+      "Parking"
+    ],
+    "address": {},
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-15T22:58:14.701Z"
+  },
+  {
+    "id": 2,
+    "title": "Modern Loft Apartment",
+    "description": "Stylish loft with spa access and contemporary design features",
+    "price": 950,
+    "location": "Bedfordview, South Africa",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFeet": 850,
+    "images": [
+      "IMAGES/Lilian_Lofts_Hotel_Spa.webp"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Spa",
+      "Kitchen",
+      "Laundry"
+    ],
+    "address": {},
+    "createdAt": "2024-01-02T00:00:00.000Z",
+    "updatedAt": "2026-01-14T18:03:39.936Z"
+  },
+  {
+    "id": 3,
+    "title": "Convention Center Apartment",
+    "description": "Luxury accommodation near airport with business facilities",
+    "price": 1500,
+    "location": "O.R. Tambo, South Africa",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "squareFeet": 1500,
+    "images": [
+      "IMAGES/Radisson_Hotel_and_Convention_Centre_OR_Tambo_Airp.webp"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Business Center",
+      "Airport Shuttle",
+      "Restaurant"
+    ],
+    "address": {},
+    "createdAt": "2024-01-03T00:00:00.000Z",
+    "updatedAt": "2026-01-14T18:03:39.936Z"
+  },
+  {
+    "id": 4,
+    "title": "Test Persist Property",
+    "description": "Testing persistence",
+    "price": 2000,
+    "location": "Test City",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "squareFeet": 1500,
+    "images": [
+      "IMAGES/test_property.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [],
+    "address": {},
+    "createdAt": "2026-01-14T18:04:37.106Z",
+    "updatedAt": "2026-01-14T18:04:37.106Z"
+  },
+  {
+    "id": 5,
+    "title": "Test Persist Property",
+    "description": "Testing persistence",
+    "price": 2000,
+    "location": "Test City",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "squareFeet": 1500,
+    "images": [
+      "IMAGES/test_property.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [],
+    "address": {},
+    "createdAt": "2026-01-14T18:05:35.078Z",
+    "updatedAt": "2026-01-14T18:05:35.078Z"
+  },
+  {
+    "id": 6,
+    "title": "Test Fix",
+    "description": "Test",
+    "price": 1000,
+    "location": "Test Loc",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFeet": 500,
+    "images": [],
+    "available": false,
+    "featured": false,
+    "amenities": [],
+    "address": {},
+    "createdAt": "2026-01-14T18:37:37.133Z",
+    "updatedAt": "2026-01-14T18:37:37.133Z"
+  },
+  {
+    "id": 7,
+    "title": "Nenjelele",
+    "description": "wurbjnor",
+    "price": 4000,
+    "location": "joburg",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "squareFeet": 32435,
+    "images": [
+      "IMAGES/uploads/image-1768421441176-360184716.jpg",
+      "IMAGES/uploads/image-1768421441291-34896468.jpg",
+      "IMAGES/uploads/image-1768421441325-144623809.jpg",
+      "IMAGES/uploads/image-1768421441369-733028482.jpg",
+      "IMAGES/uploads/image-1768421441422-282453995.jpg",
+      "IMAGES/uploads/image-1768421441450-98070016.jpg",
+      "IMAGES/uploads/image-1768421441474-639053339.jpg",
+      "IMAGES/uploads/image-1768421441536-4331199.jpg",
+      "IMAGES/uploads/image-1768421441596-223002625.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [],
+    "address": {},
+    "createdAt": "2026-01-14T20:10:17.550Z",
+    "updatedAt": "2026-01-14T20:10:46.256Z"
+  }
+]

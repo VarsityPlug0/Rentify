@@ -1,187 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Property Details - ForRentByOwner</title>
-    <link rel="stylesheet" href="style.css">
+    <title id="property-title">Property Details - ForRentbyOwner</title>
+
+    <!-- Design System -->
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- Modern CSS Framework -->
+    <link rel="stylesheet" href="modern-framework.css?v=2.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+        /* Gallery Grid Layout */
+        .gallery-featured {
+            grid-row: 1 /span 2;
+            grid-column: 1;
+            height: 100%;
+        }
+
+        .gallery-supporting {
+            height: 100%;
+        }
+
+        .gallery-featured img,
+        .gallery-supporting img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-featured:hover img,
+        .gallery-supporting:hover img {
+            transform: scale(1.02);
+        }
+
+        .gallery-view-all {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 8px 16px;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            border: 1px solid var(--neutral-300);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        /* Mobile adjustment */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr !important;
+            }
+
+            .modern-gallery-grid {
+                height: auto !important;
+                grid-template-rows: 250px !important;
+            }
+
+            .gallery-featured {
+                grid-row: span 1;
+            }
+        }
+    </style>
 </head>
-<body class="page-template-default page page-id-15">
-    <div id="page" class="site">
-        <header id="masthead" class="site-header">
-            <div class="site-branding">
-                <p class="site-title"><a href="index.html" rel="home">ForRentByOwner</a></p>
-                <p class="site-description">Just another WordPress site</p>
+
+<body>
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>ForRentbyOwner</h1>
+                        <p>Premium Property Rentals</p>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="our-properties.html" class="nav-link">Properties</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            <nav id="site-navigation" class="main-navigation">
-                <div class="menu-main-container">
-                    <ul id="menu-main" class="menu">
+        </div>
+    </header>
+
+    <!-- Property Detail Section -->
+    <section class="property-detail-section"
+        style="padding: var(--space-lg) 0; background-color: var(--background-alt); min-height: 100vh;">
+        <!-- 1. Center and Widen Container -->
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md);">
+
+            <!-- 2. Two-Column Grid -->
+            <!-- Using 66% / 33% split for better readability, with gap for breathing room -->
+            <div style="display: grid; grid-template-columns: 2fr 380px; gap: 40px; align-items: start;">
+
+                <!-- Left Column: Story & Details -->
+                <div class="property-main-content">
+
+                    <!-- Header Grouping: Title + Location + Stats -->
+                    <!-- Reduced spacing between these elements to create a single 'identity' block -->
+                    <div class="property-header-group" style="margin-bottom: 24px;">
+                        <h1 id="detail-title"
+                            style="font-family: var(--font-display); font-size: 32px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; line-height: 1.2;">
+                            Property Title
+                        </h1>
+
+                        <div
+                            style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+                            <p class="property-location"
+                                style="font-size: 16px; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; margin: 0;">
+                                <i class="fas fa-map-marker-alt" style="color: var(--primary-600);"></i>
+                                <span id="detail-location">Location</span>
+                            </p>
+
+                            <!-- Stats Inline with Header for tighter feel -->
+                            <div class="property-meta" style="display: flex; gap: 24px;">
+                                <div class="meta-item" style="display: flex; align-items: center; gap: 8px;">
+                                    <i class="fas fa-bed" style="color: var(--text-secondary);"></i>
+                                    <span style="font-weight: 600; color: var(--text-dark);"><span
+                                            id="detail-bedrooms">0</span> Bed</span>
+                                </div>
+                                <div class="meta-item" style="display: flex; align-items: center; gap: 8px;">
+                                    <i class="fas fa-bath" style="color: var(--text-secondary);"></i>
+                                    <span style="font-weight: 600; color: var(--text-dark);"><span
+                                            id="detail-bathrooms">0</span> Bath</span>
+                                </div>
+                                <div class="meta-item" style="display: flex; align-items: center; gap: 8px;">
+                                    <i class="fas fa-ruler-combined" style="color: var(--text-secondary);"></i>
+                                    <span style="font-weight: 600; color: var(--text-dark);"><span
+                                            id="detail-square-feet">0</span> sqft</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Visual Gallery Unit -->
+                    <!-- "View All" button is now visually integrated (absolute positioned in JS/CSS if needed, or overlay) -->
+                    <div class="modern-gallery-container"
+                        style="position: relative; margin-bottom: 40px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                        <div class="modern-gallery-grid" id="property-gallery"
+                            style="display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 220px 220px; gap: 8px; height: 448px;">
+                            <!-- Gallery populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- 4. Description Card -->
+                    <div class="property-description" style="margin-bottom: 40px;">
+                        <h3 style="font-size: 20px; font-weight: 700; color: var(--text-dark); margin-bottom: 16px;">
+                            About this Property
+                        </h3>
+                        <div id="detail-description"
+                            style="font-size: 16px; line-height: 1.6; color: var(--text-secondary);">
+                            Property description...
+                        </div>
+                    </div>
+
+                    <!-- 5. Amenities Grid -->
+                    <div class="property-features" style="margin-bottom: 40px;">
+                        <h3 style="font-size: 20px; font-weight: 700; color: var(--text-dark); margin-bottom: 16px;">
+                            Features & Amenities
+                        </h3>
+                        <ul id="feature-list"
+                            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; list-style: none; padding: 0; margin: 0;">
+                            <!-- Features populated by JS -->
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Sticky Decision Sidebar -->
+                <div class="property-sidebar" style="height: 100%;">
+                    <div
+                        style="position: sticky; top: 100px; background: white; border: 1px solid var(--neutral-200); border-radius: 16px; padding: 32px; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+
+                        <!-- Price (Primary Hierarchy) -->
+                        <div
+                            style="margin-bottom: 24px; border-bottom: 1px solid var(--neutral-100); padding-bottom: 24px;">
+                            <div style="display: flex; align-items: baseline; gap: 4px;">
+                                <div style="font-size: 36px; font-weight: 800; color: var(--text-dark);"
+                                    id="booking-price">$0</div>
+                                <div style="font-size: 16px; color: var(--text-muted); font-weight: 500;">/ month</div>
+                            </div>
+                            <div style="font-size: 14px; color: var(--success); font-weight: 500; margin-top: 4px;">
+                                <i class="fas fa-check"></i> Available Now
+                            </div>
+                        </div>
+
+                        <!-- CTA Button (Action) -->
+                        <a id="apply-now-btn" href="#" class="btn btn-primary"
+                            style="display: flex; align-items: center; justify-content: center; gap: 12px; padding: 16px; font-weight: 700; font-size: 18px; width: 100%; border-radius: 12px; margin-bottom: 24px; transition: transform 0.2s;">
+                            <span>Start Application</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                        <!-- Trust Signals (Reassurance) -->
+                        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
+                            <div
+                                style="display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--text-secondary);">
+                                <i class="fas fa-shield-alt"
+                                    style="color: var(--primary-600); width: 20px; text-align: center;"></i>
+                                <span>Verified Owner</span>
+                            </div>
+                            <div
+                                style="display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--text-secondary);">
+                                <i class="fas fa-bolt"
+                                    style="color: var(--warning); width: 20px; text-align: center;"></i>
+                                <span>Fast Approval Process</span>
+                            </div>
+                        </div>
+
+                        <!-- Review / Social Proof -->
+                        <div id="booking-review"
+                            style="background: var(--background-light); padding: 16px; border-radius: 12px; display: flex; align-items: center; gap: 12px;">
+                            <div style="font-weight: 700; font-size: 14px; color: var(--text-dark);">
+                                <div style="color: var(--primary-600); margin-bottom: 2px;">Excellent Value</div>
+                                <div style="font-weight: 400; font-size: 12px; color: var(--text-muted);">Based on
+                                    location & size</div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 24px; text-align: center; font-size: 12px; color: var(--text-muted);">
+                            Free application review • No hidden fees
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+    <!-- Image Gallery Lightbox Modal -->
+    <div id="gallery-lightbox"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 9999; overflow: auto;">
+        <div style="position: relative; max-width: 1400px; margin: 0 auto; padding: 60px 20px;">
+            <!-- Close Button -->
+            <button onclick="closeGalleryLightbox()"
+                style="position: fixed; top: 20px; right: 20px; background: white; border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 24px; z-index: 10000; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Gallery Grid -->
+            <div id="lightbox-gallery-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px;">
+                <!-- Images will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>ForRentbyOwner</h3>
+                    </div>
+                    <p>Privately-owned property rental specialists providing personalized service across Delaware, New
+                        Jersey, and Pennsylvania since 2010.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="our-properties.html">Our Properties</a></li>
+                        <li><a href="our-properties.html">Properties</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-            </nav>
-        </header>
-        
-        <main id="main" class="site-main">
-            <section class="property-detail-hero">
-                <h2>Property Details</h2>
-            </section>
-            
-            <section class="property-detail-content">
-                <div class="container">
-                    <div class="property-detail-gallery">
-                        <div class="main-image">
-                            <img id="main-property-image" src="" alt="Property Image">
-                        </div>
-                        <div class="thumbnail-images" id="thumbnail-container">
-                            <!-- Thumbnails will be populated by JavaScript -->
-                        </div>
-                    </div>
-                    
-                    <div class="property-detail-info">
-                        <h2 id="property-address">Property Address</h2>
-                        <p class="price" id="property-price">$0/month</p>
-                        
-                        <div class="property-specs">
-                            <div class="spec">
-                                <span class="spec-label">Bedrooms:</span>
-                                <span class="spec-value" id="property-beds">0</span>
-                            </div>
-                            <div class="spec">
-                                <span class="spec-label">Bathrooms:</span>
-                                <span class="spec-value" id="property-baths">0</span>
-                            </div>
-                            <div class="spec">
-                                <span class="spec-label">Square Feet:</span>
-                                <span class="spec-value" id="property-sqft">0 sqft</span>
-                            </div>
-                        </div>
-                        
-                        <div class="property-description">
-                            <h3>Description</h3>
-                            <p id="property-description">Property description will appear here.</p>
-                        </div>
-                        
-                        <div class="property-tags">
-                            <h3>Features</h3>
-                            <div id="property-tags-container">
-                                <!-- Tags will be populated by JavaScript -->
-                            </div>
-                        </div>
-                        
-                        <div class="property-actions">
-                            <button class="btn-apply">Apply Now</button>
-                            <button class="btn-contact">Contact Manager</button>
-                        </div>
-                    </div>
+
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>(609) 237-5156</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>Briangorey@zohomail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Delaware, NJ, PA</span>
+                        </li>
+                    </ul>
                 </div>
-            </section>
-        </main>
-        
-        <footer id="colophon" class="site-footer">
-            <div class="site-info">
-                <p>Contact Information:<br>
-                Phone: (609)237-5156<br>
-                Email: <a href="mailto:Briangorey@zohomail.com">Briangorey@zohomail.com</a><br>
-                ForRentByOwner</p>
-                <a href="index.html">ForRentByOwner</a>
-                <span class="sep"> | </span>
-                <a href="http://wordpress.org/" class="imprint">
-                    Proudly powered by WordPress                </a>
-            </div><!-- .site-info -->
-        </footer><!-- #colophon -->
-    </div><!-- #page -->
-    
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 ForRentbyOwner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- App JavaScript -->
+    <script defer src="/js/app.js"></script>
     <script>
-        // Load properties from localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            const properties = JSON.parse(localStorage.getItem('properties')) || [];
-            const propertyId = parseInt(new URLSearchParams(window.location.search).get('id'));
-            const property = properties.find(p => p.id === propertyId);
-            
-            if (property) {
-                // Populate property details
-                document.getElementById('property-address').textContent = property.address;
-                document.getElementById('property-price').textContent = property.price || '$0/month';
-                document.getElementById('property-beds').textContent = property.beds || 'N/A';
-                document.getElementById('property-baths').textContent = property.baths || 'N/A';
-                document.getElementById('property-sqft').textContent = property.sqft ? `${property.sqft} sqft` : 'N/A';
-                document.getElementById('property-description').textContent = property.description || 'No description available.';
-                
-                // Set main image
-                const mainImage = document.getElementById('main-property-image');
-                mainImage.src = property.image || 'IMAGES/Screen Shot 2025-11-19 at 12.52.14 PM.png';
-                mainImage.alt = property.address;
-                
-                // Populate thumbnails if multiple images exist
-                const thumbnailContainer = document.getElementById('thumbnail-container');
-                if (property.images && property.images.length > 1) {
-                    property.images.forEach((image, index) => {
-                        const img = document.createElement('img');
-                        img.src = image;
-                        img.alt = `Property image ${index + 1}`;
-                        img.className = 'thumbnail';
-                        
-                        // Add active class to first thumbnail
-                        if (index === 0) {
-                            img.classList.add('active');
-                        }
-                        
-                        img.addEventListener('click', function() {
-                            mainImage.src = this.src;
-                            
-                            // Remove active class from all thumbnails
-                            const thumbnails = thumbnailContainer.querySelectorAll('.thumbnail');
-                            thumbnails.forEach(thumb => thumb.classList.remove('active'));
-                            
-                            // Add active class to clicked thumbnail
-                            this.classList.add('active');
-                        });
-                        thumbnailContainer.appendChild(img);
-                    });
-                }
-                
-                // Populate tags
-                const tagsContainer = document.getElementById('property-tags-container');
-                if (property.tags && property.tags.length > 0) {
-                    property.tags.forEach(tag => {
-                        const span = document.createElement('span');
-                        span.className = 'tag';
-                        span.textContent = tag;
-                        tagsContainer.appendChild(span);
-                    });
-                }
+        // Property Detail Page Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const propertyId = urlParams.get('id');
+
+            if (propertyId && window.rentalApp) {
+                window.rentalApp.loadPropertyDetail(propertyId);
             } else {
-                // Property not found
-                document.querySelector('.property-detail-content').innerHTML = `
-                    <div class="container">
-                        <h2>Property Not Found</h2>
-                        <p>The property you're looking for doesn't exist or is no longer available.</p>
-                        <a href="our-properties.html" class="btn-back">Back to Properties</a>
-                    </div>
-                `;
-            }
-            
-            // Add event listeners for action buttons
-            const applyBtn = document.querySelector('.btn-apply');
-            const contactBtn = document.querySelector('.btn-contact');
-            
-            if (applyBtn) {
-                applyBtn.addEventListener('click', function() {
-                    // Redirect to application form with property ID
-                    window.location.href = `application.html?propertyId=${propertyId}`;
-                });
-            }
-            
-            if (contactBtn) {
-                contactBtn.addEventListener('click', function() {
-                    window.location.href = 'contact.html';
-                });
+                console.error('No property ID provided');
             }
         });
+
+        // Expose functions for inline onclick handlers
+        function closeGalleryLightbox() {
+            if (window.rentalApp) window.rentalApp.closeGalleryLightbox();
+        }
     </script>
 </body>
+
 </html>
