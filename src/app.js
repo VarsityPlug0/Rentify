@@ -24,6 +24,9 @@ const propertyRoutes = require('./routes/propertyRoutes');
 // Initialize Express app
 const app = express();
 
+// Trust proxy (Required for Render/Heroku SSL)
+app.set('trust proxy', 1);
+
 // Security middleware
 app.use(helmet({
   contentSecurityPolicy: {
@@ -45,17 +48,42 @@ app.use(cors({
   credentials: true
 }));
 
-// Session configuration
-app.use(session({
+// Session Store Configuration
+const pg = require('pg');
+const pgSession = require('connect-pg-simple')(session);
+
+const sessionConfig = {
+  store: new pgSession({
+    pool: new pg.Pool({
+      host: env.database.host,
+      port: env.database.port,
+      user: env.database.username,
+      password: env.database.password,
+      database: env.database.name,
+      // Handle SSL for production (Render)
+      ssl: env.isProduction ? { rejectUnauthorized: false } : false
+    }),
+    createTableIfMissing: true
+  }),
   secret: env.session.secret,
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: env.isProduction, // HTTPS only in production
+    secure: env.isProduction, // true on Render
     httpOnly: true,
+    sameSite: env.isProduction ? 'lax' : 'lax', // 'lax' is generally safe for nav, 'none' needs secure:true
     maxAge: env.session.cookieMaxAge
   }
-}));
+};
+
+// Fallback to MemoryStore if no DB credentials (for local dev without DB)
+if (!env.database.password && !env.isProduction) {
+  console.warn('⚠️ No DB password found, using MemoryStore for sessions (Not for production)');
+  delete sessionConfig.store;
+}
+
+// Session middleware
+app.use(session(sessionConfig));
 
 // Body parsing middleware
 app.use(express.json({ limit: '10mb' }));
