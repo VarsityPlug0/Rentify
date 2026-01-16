@@ -65,14 +65,32 @@
             z-index: 10;
         }
 
-        /* Mobile adjustment */
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr !important;
+        /* Responsive adjustments */
+        .property-layout-grid {
+            display: grid;
+            grid-template-columns: 2fr 380px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .property-layout-grid {
+                grid-template-columns: 1fr;
             }
 
+            .property-sidebar {
+                margin-top: 40px;
+            }
+        }
+
+        /* Mobile adjustment */
+        @media (max-width: 768px) {
+
+            /* Fix container issue */
             .modern-gallery-grid {
                 height: auto !important;
+                grid-template-columns: 1fr !important;
+                /* Stack gallery images */
                 grid-template-rows: 250px !important;
             }
 
@@ -118,11 +136,13 @@
     <section class="property-detail-section"
         style="padding: var(--space-lg) 0; background-color: var(--background-alt); min-height: 100vh;">
         <!-- 1. Center and Widen Container -->
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md);">
+        <div class="container">
 
             <!-- 2. Two-Column Grid -->
             <!-- Using 66% / 33% split for better readability, with gap for breathing room -->
-            <div style="display: grid; grid-template-columns: 2fr 380px; gap: 40px; align-items: start;">
+            <!-- 2. Two-Column Grid -->
+            <!-- Using 66% / 33% split for better readability, with gap for breathing room -->
+            <div class="property-layout-grid">
 
                 <!-- Left Column: Story & Details -->
                 <div class="property-main-content">

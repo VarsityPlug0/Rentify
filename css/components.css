@@ -341,7 +341,8 @@
     background: white;
     border-bottom: 1px solid var(--neutral-200);
     position: sticky;
-    top: 70px;
+    top: 80px;
+    /* Matches header height */
     /* Header is usually fixed/sticky */
     z-index: 90;
     padding: 8px 0;
