@@ -150,6 +150,8 @@ class PropertyService {
     const newProperty = new Property({
       ...sanitizedData,
       id: newId,
+      available: sanitizedData.available !== undefined ? sanitizedData.available : true, // Default to true
+      featured: sanitizedData.featured !== undefined ? sanitizedData.featured : false, // Default to false
       createdAt: new Date(),
       updatedAt: new Date()
     });

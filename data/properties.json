@@ -220,5 +220,22 @@
     "address": {},
     "createdAt": "2026-01-16T16:14:35.491Z",
     "updatedAt": "2026-01-16T16:14:35.491Z"
+  },
+  {
+    "id": 10,
+    "title": "Test Visibility Property 1768601418823",
+    "description": "A test property to verify default visibility.",
+    "price": 1500,
+    "location": "Test City",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "squareFeet": 800,
+    "images": [],
+    "available": true,
+    "featured": false,
+    "amenities": [],
+    "address": {},
+    "createdAt": "2026-01-16T22:10:18.856Z",
+    "updatedAt": "2026-01-16T22:10:18.856Z"
   }
 ]
