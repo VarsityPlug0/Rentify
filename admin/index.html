@@ -363,15 +363,15 @@
             const tbody = document.getElementById('properties-table-body');
             tbody.innerHTML = properties.map(property => `
                 <tr>
-                    <td>${property.title}</td>
-                    <td>${property.location}</td>
-                    <td>$${property.price}/mo</td>
-                    <td>
+                    <td data-label="Title">${property.title}</td>
+                    <td data-label="Location">${property.location}</td>
+                    <td data-label="Price">$${property.price}/mo</td>
+                    <td data-label="Status">
                         <span class="status-badge ${property.available ? 'available' : 'unavailable'}">
                             ${property.available ? 'Available' : 'Occupied'}
                         </span>
                     </td>
-                    <td>
+                    <td data-label="Actions">
                         <button class="btn btn-small btn-outline" onclick="editProperty(${property.id})">
                             <i class="fas fa-edit"></i> Edit
                         </button>
@@ -1103,6 +1103,74 @@
             }
         }
     </script>
+    <style>
+        .demo-credentials {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Responsive Table for Mobile */
+        @media screen and (max-width: 768px) {
+            .properties-table table {
+                border: 0;
+            }
+
+            .properties-table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            .properties-table tr {
+                background-color: #fff;
+                border: 1px solid #e5e7eb;
+                border-radius: 8px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+                display: block;
+                margin-bottom: 1rem;
+                padding: 1rem;
+            }
+
+            .properties-table td {
+                border-bottom: 1px solid #f3f4f6;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.75rem 0;
+                text-align: right;
+            }
+
+            .properties-table td:last-child {
+                border-bottom: 0;
+                justify-content: flex-end;
+                gap: 0.5rem;
+            }
+
+            .properties-table td::before {
+                content: attr(data-label);
+                float: left;
+                font-weight: 600;
+                color: #4b5563;
+                text-transform: uppercase;
+                font-size: 0.75rem;
+                margin-right: 1rem;
+            }
+
+            /* Specific cell styling for better mobile look */
+            .properties-table td:first-child {
+                font-weight: 700;
+                color: var(--primary-600);
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 </body>
 
 </html>

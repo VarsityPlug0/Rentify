@@ -1992,6 +1992,57 @@ body {
   max-width: 600px;
   box-shadow: var(--shadow-2xl);
   animation: modalSlideIn 0.3s ease-out;
+  /* Responsive Fixes */
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ... (keyframes omitted) ... */
+
+/* Ensure header stays at top (optional but nice) */
+.modal-header {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+}
+
+/* Ensure actions stay at bottom (optional but nice) */
+.modal-actions {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  margin-top: auto;
+  /* Push to bottom if content is short */
+  padding-bottom: var(--space-md);
+  /* Add padding for sticky view */
+  border-top: 1px solid var(--neutral-200);
+  z-index: 10;
+}
+
+/* ... existing code ... */
+
+/* Responsive Admin - Mobile Optimization */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 2vh auto;
+    /* Reduce top margin on mobile */
+    max-height: 96vh;
+    /* Maximize height on mobile */
+    border-radius: var(--radius-xl);
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 
 @keyframes modalSlideIn {
