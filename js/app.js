@@ -6,7 +6,7 @@ class RentalApp {
     this.properties = [];
     this.filteredProperties = [];
     this.currentFilters = {};
-    this.apiBaseUrl = window.location.port === '3000' ? '' : 'http://localhost:3000';
+    this.apiBaseUrl = ''; // Use relative path for production compatibility
     this.init();
   }
 
