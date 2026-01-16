@@ -36,7 +36,7 @@ if (USE_CLOUDINARY) {
     console.log('📂 Using Local Disk Storage (Ephemeral on Render)');
 
     // Ensure upload directory exists
-    const uploadDir = path.join(process.cwd(), 'IMAGES', 'uploads');
+    const uploadDir = path.join(process.cwd(), 'public', 'uploads');
     if (!fs.existsSync(uploadDir)) {
         fs.mkdirSync(uploadDir, { recursive: true });
     }

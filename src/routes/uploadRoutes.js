@@ -18,8 +18,8 @@ router.post('/', AuthMiddleware.requireAdmin, upload.single('image'), (req, res)
             // Cloudinary or other cloud storage
             fileUrl = req.file.path;
         } else {
-            // Local storage
-            fileUrl = `IMAGES/uploads/${req.file.filename}`;
+            // Local storage (served via /uploads)
+            fileUrl = `/uploads/${req.file.filename}`;
         }
 
         res.json({

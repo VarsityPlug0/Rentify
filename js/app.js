@@ -430,11 +430,11 @@ class RentalApp {
         "images": [
           "IMAGES/Westpoint_Sandton_Executive_Suites.webp",
           "IMAGES/Marley_on_Katherine_Apartments.webp",
-          "IMAGES/uploads/image-1768416081688-820828818.jpg",
-          "IMAGES/uploads/image-1768416081726-47826603.jpg",
-          "IMAGES/uploads/image-1768416081768-771021021.jpg",
-          "IMAGES/uploads/image-1768416081830-625862409.jpg",
-          "IMAGES/uploads/image-1768416081871-624904988.jpg"
+          "/uploads/image-1768416081688-820828818.jpg",
+          "/uploads/image-1768416081726-47826603.jpg",
+          "/uploads/image-1768416081768-771021021.jpg",
+          "/uploads/image-1768416081830-625862409.jpg",
+          "/uploads/image-1768416081871-624904988.jpg"
         ],
         "available": true,
         "featured": true,
@@ -478,9 +478,9 @@ class RentalApp {
         "bathrooms": 2,
         "squareFeet": 32435,
         "images": [
-          "IMAGES/uploads/image-1768421441176-360184716.jpg",
-          "IMAGES/uploads/image-1768421441291-34896468.jpg",
-          "IMAGES/uploads/image-1768421441325-144623809.jpg"
+          "/uploads/image-1768421441176-360184716.jpg",
+          "/uploads/image-1768421441291-34896468.jpg",
+          "/uploads/image-1768421441325-144623809.jpg"
         ],
         "available": true,
         "featured": false,
