@@ -12,14 +12,20 @@ router.post('/', AuthMiddleware.requireAdmin, upload.single('image'), (req, res)
             });
         }
 
-        // Return the relative path that can be used in the frontend
-        // Assuming 'IMAGES' is served statically
-        const relativePath = `IMAGES/uploads/${req.file.filename}`;
+        // Determine URL based on storage type
+        let fileUrl;
+        if (req.file.path && req.file.path.startsWith('http')) {
+            // Cloudinary or other cloud storage
+            fileUrl = req.file.path;
+        } else {
+            // Local storage
+            fileUrl = `IMAGES/uploads/${req.file.filename}`;
+        }
 
         res.json({
             success: true,
             message: 'File uploaded successfully',
-            url: relativePath
+            url: fileUrl
         });
     } catch (error) {
         console.error('Error uploading file:', error);
