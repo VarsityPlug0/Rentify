@@ -1,0 +1,11 @@
+{
+    "verbose": true,
+    "ignore": [
+        "data/*",
+        "public/*",
+        "dist/*",
+        "*.test.js",
+        "*.json"
+    ],
+    "ext": "js,json"
+}

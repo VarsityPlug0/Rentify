@@ -462,38 +462,38 @@
                 applicationForm.addEventListener('submit', async function (e) {
                     e.preventDefault();
 
-                    // Get form data
-                    const formData = new FormData(this);
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    if (submitBtn.disabled) return;
+
+                    const originalBtnContent = submitBtn.innerHTML;
+
+                    // Get form data directly from inputs to handle mapping
+                    const rawFormData = new FormData(this);
+
+                    // Create formatted data for backend (camelCase)
+                    const submissionData = new FormData();
+
                     const propertyTitleElement = document.querySelector('.property-title');
                     const fullPropertyName = propertyTitleElement ? propertyTitleElement.textContent : 'General Application';
 
-                    const applicationData = {
-                        propertyId: propertyId ? parseInt(propertyId) : null,
-                        propertyName: fullPropertyName,
-                        applicantName: formData.get('applicant-name'),
-                        applicantEmail: formData.get('applicant-email'),
-                        applicantPhone: formData.get('applicant-phone'),
-                        applicantIncome: formData.get('applicant-income'),
-                        applicantAddress: formData.get('applicant-address'),
-                        applicantCity: formData.get('applicant-city'),
-                        applicantState: formData.get('applicant-state'),
-                        applicantZip: formData.get('applicant-zip'),
-                        applicantOccupants: formData.get('applicant-occupants'),
-                        applicantEmployment: formData.get('applicant-employment'),
-                        applicantEmployment: formData.get('applicant-employment'),
-                        applicantMessage: formData.get('applicant-message'),
-                        timestamp: new Date().toISOString(),
-                        documents: []
-                    };
+                    if (propertyId) submissionData.append('propertyId', propertyId);
+                    submissionData.append('propertyName', fullPropertyName);
+                    submissionData.append('timestamp', new Date().toISOString());
 
-                    // Email validation
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(applicationData.applicantEmail)) {
-                        alert('Please enter a valid email address.');
-                        return;
-                    }
+                    // Map fields: Form (kebab-case) -> Backend (camelCase)
+                    submissionData.append('applicantName', rawFormData.get('applicant-name'));
+                    submissionData.append('applicantEmail', rawFormData.get('applicant-email'));
+                    submissionData.append('applicantPhone', rawFormData.get('applicant-phone'));
+                    submissionData.append('applicantIncome', rawFormData.get('applicant-income'));
+                    submissionData.append('applicantAddress', rawFormData.get('applicant-address'));
+                    submissionData.append('applicantCity', rawFormData.get('applicant-city'));
+                    submissionData.append('applicantState', rawFormData.get('applicant-state'));
+                    submissionData.append('applicantZip', rawFormData.get('applicant-zip'));
+                    submissionData.append('applicantOccupants', rawFormData.get('applicant-occupants'));
+                    submissionData.append('applicantEmployment', rawFormData.get('applicant-employment'));
+                    submissionData.append('applicantMessage', rawFormData.get('applicant-message') || '');
 
-                    // --- File Validation & Mock Upload Logic ---
+                    // File Validation
                     const docId = document.getElementById('doc-id');
                     const docIncome = document.getElementById('doc-income');
                     const docOther = document.getElementById('doc-other');
@@ -509,56 +509,40 @@
                         return true;
                     };
 
-                    if (!validateFile(docId) || !validateFile(docIncome) || !validateFile(docOther)) {
+                    if (!validateFile(docId) || !validateFile(docIncome)) {
                         return;
                     }
 
-                    // Simulate Uploads
-                    if (docId.files.length > 0) {
-                        applicationData.documents.push({
-                            type: 'ID',
-                            name: docId.files[0].name,
-                            url: `uploads/mock-id-${Date.now()}.pdf` // Mock URL
-                        });
-                    }
-                    if (docIncome.files.length > 0) {
-                        applicationData.documents.push({
-                            type: 'Income',
-                            name: docIncome.files[0].name,
-                            url: `uploads/mock-income-${Date.now()}.pdf` // Mock URL
-                        });
-                    }
+                    // Append files to submissionData
+                    if (docId.files.length > 0) submissionData.append('doc-id', docId.files[0]);
+                    if (docIncome.files.length > 0) submissionData.append('doc-income', docIncome.files[0]);
+
                     if (docOther.files.length > 0) {
-                        Array.from(docOther.files).forEach((file, index) => {
-                            applicationData.documents.push({
-                                type: 'Other',
-                                name: file.name,
-                                url: `uploads/mock-other-${index}-${Date.now()}.pdf`
-                            });
-                        });
+                        for (let i = 0; i < docOther.files.length; i++) {
+                            const file = docOther.files[i];
+                            if (file.size > 5 * 1024 * 1024) {
+                                alert(`File ${file.name} is too large. Max size is 5MB.`);
+                                return;
+                            }
+                            submissionData.append('doc-other', file);
+                        }
                     }
-                    // -------------------------------------------
 
                     try {
-                        const submitBtn = this.querySelector('button[type="submit"]');
-                        const originalBtnContent = submitBtn.innerHTML;
                         submitBtn.disabled = true;
                         submitBtn.innerHTML = '<span class="spinner"></span> Submitting...';
 
                         // Send application to backend
                         const response = await fetch('/api/application', {
                             method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify(applicationData)
+                            body: submissionData
                         });
 
                         const result = await response.json();
 
                         if (result.success) {
                             // Redirect to success page
-                            const firstName = applicationData.applicantName.split(' ')[0];
+                            const firstName = rawFormData.get('applicant-name').split(' ')[0];
                             window.location.href = `application-success.html?name=${encodeURIComponent(firstName)}`;
                         } else {
                             alert('Error submitting application: ' + (result.message || 'Unknown error'));

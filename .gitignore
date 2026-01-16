@@ -17,3 +17,8 @@ Thumbs.db
 .vscode/
 .idea/
 *.log
+uploads/
+IMAGES/uploads/
+data/applications.json
+data/properties.json
+data/messages.json

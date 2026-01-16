@@ -10,12 +10,26 @@ const AuthMiddleware = require('../middleware/AuthMiddleware');
 
 const applicationService = new ApplicationService();
 
+const documentUpload = require('../config/documentUpload');
+
 // Submit a new application
-router.post('/', async (req, res) => {
+router.post('/', documentUpload.fields([
+  { name: 'doc-id', maxCount: 1 },
+  { name: 'doc-income', maxCount: 1 },
+  { name: 'doc-other', maxCount: 5 }
+]), async (req, res) => {
   try {
     const { propertyId, applicantName, applicantEmail, applicantPhone,
       applicantIncome, applicantAddress, applicantCity, applicantState,
       applicantZip, applicantOccupants, applicantEmployment, applicantMessage, timestamp } = req.body;
+
+    // Debug Logging
+    console.log('--- New Application Submission ---');
+    console.log('Headers Content-Type:', req.headers['content-type']);
+    console.log('Parsed Body Keys:', Object.keys(req.body));
+    if (req.files) console.log('Files Keys:', Object.keys(req.files));
+    console.log('Payload:', { propertyId, applicantName, applicantEmail }); // Log partial data for privacy/safety
+    // ----------------------------------------
 
     // Validate required fields
     if (!propertyId || !applicantName || !applicantEmail || !applicantPhone ||
@@ -38,6 +52,34 @@ router.post('/', async (req, res) => {
       });
     }
 
+    // Process uploaded documents
+    const documents = [];
+    if (req.files) {
+      if (req.files['doc-id']) {
+        documents.push({
+          type: 'ID',
+          name: req.files['doc-id'][0].originalname,
+          url: `uploads/documents/${req.files['doc-id'][0].filename}`
+        });
+      }
+      if (req.files['doc-income']) {
+        documents.push({
+          type: 'Income',
+          name: req.files['doc-income'][0].originalname,
+          url: `uploads/documents/${req.files['doc-income'][0].filename}`
+        });
+      }
+      if (req.files['doc-other']) {
+        req.files['doc-other'].forEach(file => {
+          documents.push({
+            type: 'Other',
+            name: file.originalname,
+            url: `uploads/documents/${file.filename}`
+          });
+        });
+      }
+    }
+
     const newApplication = await applicationService.create({
       propertyId: parseInt(propertyId),
       applicantName,
@@ -51,7 +93,7 @@ router.post('/', async (req, res) => {
       applicantOccupants: parseInt(applicantOccupants),
       applicantEmployment,
       applicantMessage: applicantMessage || '',
-      documents: req.body.documents || []
+      documents: documents
     });
 
     res.status(201).json({
@@ -73,7 +115,12 @@ router.post('/', async (req, res) => {
 // Get all applications (admin only)
 router.get('/', AuthMiddleware.requireAdmin, async (req, res) => {
   try {
-    const applications = await applicationService.getAll();
+    const filters = {};
+    if (req.query.status) {
+      filters.status = req.query.status;
+    }
+
+    const applications = await applicationService.getAll(filters);
     res.json({
       success: true,
       message: `Retrieved ${applications.length} applications`,
@@ -123,6 +170,7 @@ router.patch('/:id/status', AuthMiddleware.requireAdmin, async (req, res) => {
   try {
     const applicationId = parseInt(req.params.id);
     const { status, adminNotes } = req.body;
+    const adminId = req.session.userId; // Get admin ID from session
 
     const validStatuses = ['pending', 'approved', 'rejected', 'withdrawn'];
     if (!validStatuses.includes(status)) {
@@ -134,7 +182,7 @@ router.patch('/:id/status', AuthMiddleware.requireAdmin, async (req, res) => {
     }
 
     try {
-      const updatedApp = await applicationService.updateStatus(applicationId, status, adminNotes);
+      const updatedApp = await applicationService.updateStatus(applicationId, status, adminNotes, adminId);
       res.json({
         success: true,
         message: 'Application status updated successfully',

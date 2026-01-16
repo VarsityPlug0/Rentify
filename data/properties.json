@@ -167,5 +167,58 @@
     "address": {},
     "createdAt": "2026-01-14T20:10:17.550Z",
     "updatedAt": "2026-01-14T20:10:46.256Z"
+  },
+  {
+    "id": 8,
+    "title": "Mkhabeleenterprices",
+    "description": "fuly furnisehd and kitchen available  on demand",
+    "price": 6000,
+    "location": "gauteng johannesburg",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "squareFeet": 1600,
+    "images": [
+      "IMAGES/uploads/image-1768579169504-264865470.jpg",
+      "IMAGES/uploads/image-1768579169547-135129543.jpg",
+      "IMAGES/uploads/image-1768579169626-489349736.jpg",
+      "IMAGES/uploads/image-1768579169665-753932669.jpg",
+      "IMAGES/uploads/image-1768579169697-935650626.jpg",
+      "IMAGES/uploads/image-1768579169732-724504780.jpg",
+      "IMAGES/uploads/image-1768579169764-432853367.jpg",
+      "IMAGES/uploads/image-1768579169796-420665829.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [],
+    "address": {},
+    "createdAt": "2026-01-16T15:50:58.796Z",
+    "updatedAt": "2026-01-16T15:59:32.549Z"
+  },
+  {
+    "id": 9,
+    "title": "Dummy Property",
+    "description": "This is a dummy property description for testing purposes.",
+    "price": 1000,
+    "location": "Dummy City, Dummy Country",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "squareFeet": 800,
+    "images": [
+      "IMAGES/uploads/image-1768580067966-336820897.jpg",
+      "IMAGES/uploads/image-1768580068002-160673357.jpg",
+      "IMAGES/uploads/image-1768580068049-627082094.jpg",
+      "IMAGES/uploads/image-1768580068085-754888926.jpg",
+      "IMAGES/uploads/image-1768580068116-185999788.jpg",
+      "IMAGES/uploads/image-1768580068146-186117739.jpg",
+      "IMAGES/uploads/image-1768580068169-877547607.jpg",
+      "IMAGES/uploads/image-1768580068191-234428400.jpg",
+      "IMAGES/uploads/image-1768580068228-172510378.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [],
+    "address": {},
+    "createdAt": "2026-01-16T16:14:35.491Z",
+    "updatedAt": "2026-01-16T16:14:35.491Z"
   }
 ]

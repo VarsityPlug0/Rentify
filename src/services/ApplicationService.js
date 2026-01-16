@@ -11,18 +11,27 @@ class ApplicationService {
         this.store = new JsonStore('applications.json', []);
     }
 
-    async getAll() {
-        const data = await this.store.read();
-        return data;
+    async getAll(filters = {}) {
+        const applications = await this.store.read();
+
+        let filteredApps = applications;
+
+        // Apply filters
+        if (filters.status) {
+            filteredApps = filteredApps.filter(app => app.status === filters.status);
+        }
+
+        // Sort by newest first
+        return filteredApps.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     }
 
     async getById(id) {
-        const applications = await this.getAll();
+        const applications = await this.store.read();
         return applications.find(a => a.id === id);
     }
 
     async create(appData) {
-        const applications = await this.getAll();
+        const applications = await this.store.read();
 
         // Auto-increment ID
         const newId = applications.length > 0 ? Math.max(...applications.map(a => a.id)) + 1 : 1;
@@ -40,8 +49,8 @@ class ApplicationService {
         return newApplication;
     }
 
-    async updateStatus(id, status, adminNotes) {
-        const applications = await this.getAll();
+    async updateStatus(id, status, adminNotes, adminId) {
+        const applications = await this.store.read();
         const index = applications.findIndex(a => a.id === id);
 
         if (index === -1) {
@@ -50,6 +59,10 @@ class ApplicationService {
 
         applications[index].status = status;
         applications[index].updatedAt = new Date().toISOString();
+
+        if (adminId) {
+            applications[index].processedBy = adminId;
+        }
 
         if (adminNotes !== undefined) {
             applications[index].adminNotes = adminNotes;

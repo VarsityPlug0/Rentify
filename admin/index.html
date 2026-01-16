@@ -248,9 +248,51 @@
             document.getElementById('logout-btn').addEventListener('click', logout);
         });
 
+        // Centralized API Client
+        async function apiCall(endpoint, options = {}) {
+            const defaultHeaders = {
+                'Content-Type': 'application/json'
+            };
+
+            // If body is FormData, delete Content-Type to let browser set boundary
+            if (options.body instanceof FormData) {
+                delete defaultHeaders['Content-Type'];
+            }
+
+            const config = {
+                ...options,
+                headers: {
+                    ...defaultHeaders,
+                    ...options.headers
+                },
+                credentials: 'include' // Always send cookies
+            };
+
+            try {
+                const response = await fetch(endpoint, config);
+
+                if (response.status === 401) {
+                    console.warn('Session expired or unauthorized. Redirecting to login.');
+                    window.location.href = 'login.html';
+                    return null;
+                }
+
+                if (response.status === 403) {
+                    throw new Error('Access denied. You do not have permission to perform this action.');
+                }
+
+                return response;
+            } catch (error) {
+                console.error(`API Error (${endpoint}):`, error);
+                throw error;
+            }
+        }
+
         async function checkAdminAuth() {
             try {
-                const response = await fetch('/api/auth/status');
+                const response = await apiCall('/api/auth/status');
+                if (!response) return; // Redirected
+
                 const data = await response.json();
 
                 if (!data.isAuthenticated || data.user.role !== 'admin') {
@@ -264,7 +306,8 @@
 
         async function loadDashboardData() {
             try {
-                const response = await fetch('/api/properties');
+                const response = await apiCall('/api/properties');
+                if (!response) return;
                 const data = await response.json();
 
                 if (data.success) {
@@ -272,10 +315,12 @@
 
                     // Load actual counts for applications and messages
                     try {
-                        const applicationsResponse = await fetch('/api/application');
-                        const applicationsData = await applicationsResponse.json();
-                        if (applicationsData.success) {
-                            document.getElementById('pending-applications').textContent = applicationsData.data.filter(app => app.status === 'pending').length;
+                        const applicationsResponse = await apiCall('/api/application');
+                        if (applicationsResponse) {
+                            const applicationsData = await applicationsResponse.json();
+                            if (applicationsData.success) {
+                                document.getElementById('pending-applications').textContent = applicationsData.data.filter(app => app.status === 'pending').length;
+                            }
                         }
                     } catch (appError) {
                         console.error('Failed to load applications count:', appError);
@@ -283,10 +328,12 @@
                     }
 
                     try {
-                        const messagesResponse = await fetch('/api/message');
-                        const messagesData = await messagesResponse.json();
-                        if (messagesData.success) {
-                            document.getElementById('unread-messages').textContent = messagesData.data.filter(msg => msg.status === 'unread').length;
+                        const messagesResponse = await apiCall('/api/message');
+                        if (messagesResponse) {
+                            const messagesData = await messagesResponse.json();
+                            if (messagesData.success) {
+                                document.getElementById('unread-messages').textContent = messagesData.data.filter(msg => msg.status === 'unread').length;
+                            }
                         }
                     } catch (msgError) {
                         console.error('Failed to load messages count:', msgError);
@@ -300,7 +347,8 @@
 
         async function loadProperties() {
             try {
-                const response = await fetch('/api/properties');
+                const response = await apiCall('/api/properties');
+                if (!response) return;
                 const data = await response.json();
 
                 if (data.success) {
@@ -347,10 +395,14 @@
                 formData.append('image', files[i]);
 
                 try {
-                    const response = await fetch('/api/upload', {
+                    // apiCall handles headers, detecting FormData automatically
+                    const response = await apiCall('/api/upload', {
                         method: 'POST',
                         body: formData
                     });
+
+                    if (!response) continue;
+
                     const result = await response.json();
                     if (result.success) {
                         uploadedUrls.push(result.url);
@@ -431,13 +483,12 @@
 
                     const method = hasId ? 'PUT' : 'POST';
 
-                    const response = await fetch(endpoint, {
+                    const response = await apiCall(endpoint, {
                         method: method,
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
                         body: JSON.stringify(propertyData)
                     });
+
+                    if (!response) return;
 
                     const result = await response.json();
 
@@ -466,7 +517,8 @@
 
         async function editProperty(propertyId) {
             try {
-                const response = await fetch(`/api/properties/${propertyId}`);
+                const response = await apiCall(`/api/properties/${propertyId}`);
+                if (!response) return;
                 const data = await response.json();
 
                 if (data.success) {
@@ -504,9 +556,11 @@
             }
 
             try {
-                const response = await fetch(`/api/properties/${propertyId}`, {
+                const response = await apiCall(`/api/properties/${propertyId}`, {
                     method: 'DELETE'
                 });
+
+                if (!response) return;
 
                 const result = await response.json();
 
@@ -527,88 +581,376 @@
             document.getElementById('property-modal').style.display = 'none';
         }
 
-        async function loadApplications() {
+        // Application Management
+        let currentAppFilter = 'pending';
+
+        async function openApplicationsModal() {
+            // Create modal structure
+            const modalId = 'applications-modal';
+            let modal = document.getElementById(modalId);
+
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = modalId;
+                modal.className = 'modal';
+                modal.style.display = 'block';
+                modal.style.position = 'fixed';
+                modal.style.zIndex = '1000';
+                modal.style.left = '0';
+                modal.style.top = '0';
+                modal.style.width = '100%';
+                modal.style.height = '100%';
+                modal.style.backgroundColor = 'rgba(0,0,0,0.5)';
+                document.body.appendChild(modal);
+            }
+
+            modal.innerHTML = `
+                <div style="background:white; margin:2% auto; padding:20px; width:90%; max-width:1100px; border-radius:8px; max-height:90vh; display:flex; flex-direction:column;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                        <h2 style="margin:0;">Rental Applications</h2>
+                        <button onclick="document.getElementById('${modalId}').remove()" style="background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+                    </div>
+
+                    <!-- Tabs -->
+                    <div style="display:flex; gap:10px; margin-bottom:20px; border-bottom:1px solid #dee2e6;">
+                        <button onclick="switchAppTab('pending')" id="tab-pending" class="tab-btn active" style="padding:10px 20px; border:none; background:none; cursor:pointer; font-weight:600; border-bottom:2px solid #667eea;">Pending</button>
+                        <button onclick="switchAppTab('approved')" id="tab-approved" class="tab-btn" style="padding:10px 20px; border:none; background:none; cursor:pointer; color:#6c757d;">Approved</button>
+                        <button onclick="switchAppTab('rejected')" id="tab-rejected" class="tab-btn" style="padding:10px 20px; border:none; background:none; cursor:pointer; color:#6c757d;">Declined</button>
+                        <button onclick="switchAppTab('all')" id="tab-all" class="tab-btn" style="padding:10px 20px; border:none; background:none; cursor:pointer; color:#6c757d;">All History</button>
+                    </div>
+
+                    <div id="applications-list-container" style="overflow-y:auto; flex-grow:1;">
+                        <div style="text-align:center; padding:40px;">
+                            <i class="fas fa-spinner fa-spin fa-2x" style="color:#667eea;"></i>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Load default tab
+            switchAppTab('pending');
+        }
+
+        async function switchAppTab(status) {
+            currentAppFilter = status;
+
+            // Update tab UI
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.style.borderBottom = 'none';
+                btn.style.color = '#6c757d';
+                btn.classList.remove('active');
+            });
+            const activeBtn = document.getElementById(`tab-${status === 'all' ? 'all' : status}`);
+            if (activeBtn) {
+                activeBtn.style.borderBottom = '2px solid #667eea';
+                activeBtn.style.color = '#2d3748';
+                activeBtn.classList.add('active');
+            }
+
+            await loadApplicationsList(status);
+        }
+
+        async function loadApplicationsList(status) {
+            const container = document.getElementById('applications-list-container');
+            container.innerHTML = '<div style="text-align:center; padding:40px;"><i class="fas fa-spinner fa-spin fa-2x" style="color:#667eea;"></i></div>';
+
             try {
-                const response = await fetch('/api/application');
+                let url = '/api/application';
+                if (status !== 'all') {
+                    url += `?status=${status}`;
+                }
+
+                const response = await apiCall(url);
+                if (!response) return; // Authentication failure handled by apiCall
+
                 const data = await response.json();
 
                 if (data.success) {
-                    // Update dashboard count
-                    document.getElementById('pending-applications').textContent = data.data.filter(app => app.status === 'pending').length;
+                    if (data.data.length === 0) {
+                        container.innerHTML = `
+                            <div style="text-align:center; padding:40px; color:#6c757d;">
+                                <i class="fas fa-inbox fa-3x" style="margin-bottom:15px; opacity:0.5;"></i>
+                                <p>No ${status === 'all' ? '' : status} applications found.</p>
+                            </div>
+                        `;
+                        return;
+                    }
 
-                    // Create a temporary modal to show applications
-                    const modal = document.createElement('div');
-                    modal.className = 'modal';
-                    modal.style.display = 'block';
-                    modal.style.position = 'fixed';
-                    modal.style.zIndex = '1000';
-                    modal.style.left = '0';
-                    modal.style.top = '0';
-                    modal.style.width = '100%';
-                    modal.style.height = '100%';
-                    modal.style.backgroundColor = 'rgba(0,0,0,0.5)';
+                    let tableContent = `
+                        <table style="width:100%; border-collapse:collapse;">
+                            <thead>
+                                <tr style="background:#f8f9fa; text-align:left;">
+                                    <th style="padding:12px; border-bottom:2px solid #dee2e6;">Date</th>
+                                    <th style="padding:12px; border-bottom:2px solid #dee2e6;">Applicant</th>
+                                    <th style="padding:12px; border-bottom:2px solid #dee2e6;">Property</th>
+                                    <th style="padding:12px; border-bottom:2px solid #dee2e6;">Contact</th>
+                                    <th style="padding:12px; border-bottom:2px solid #dee2e6;">Income</th>
+                                    ${status === 'all' ? '<th style="padding:12px; border-bottom:2px solid #dee2e6;">Status</th>' : ''}
+                                    <th style="padding:12px; border-bottom:2px solid #dee2e6; text-align:right;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    `;
 
-                    // Build table content with proper escaping
-                    let tableRows = '';
                     data.data.forEach(app => {
-                        tableRows += `
-                            <tr style="border-bottom:1px solid #dee2e6;">
-                                <td style="padding:10px; border:1px solid #dee2e6;">${app.id}</td>
-                                <td style="padding:10px; border:1px solid #dee2e6;">${app.propertyId}</td>
-                                <td style="padding:10px; border:1px solid #dee2e6;">${app.applicantName}</td>
-                                <td style="padding:10px; border:1px solid #dee2e6;">${app.applicantEmail}</td>
-                                <td style="padding:10px; border:1px solid #dee2e6;">
-                                    <span class="status-badge ${app.status === 'pending' ? 'pending' : app.status === 'approved' ? 'approved' : 'rejected'}">
-                                        ${app.status.charAt(0).toUpperCase() + app.status.slice(1)}
-                                    </span>
+                        const date = new Date(app.createdAt).toLocaleDateString();
+                        const statusBadge = `<span class="status-badge ${app.status}">${app.status}</span>`;
+
+                        let actions = '';
+                        if (app.status === 'pending') {
+                            actions = `
+                                <button onclick="viewApplicationDetails(${app.id})" class="btn btn-small btn-outline" style="margin-right:5px;">
+                                    View Details
+                                </button>
+                                <button onclick="optimisticUpdate(${app.id}, 'approved')" class="btn btn-small btn-primary" style="margin-right:5px;">
+                                    <i class="fas fa-check"></i> Approve
+                                </button>
+                                <button onclick="declineApplication(${app.id})" class="btn btn-small btn-danger">
+                                    <i class="fas fa-times"></i> Decline
+                                </button>
+                            `;
+                        } else {
+                            actions = `<button onclick="viewApplicationDetails(${app.id})" class="btn btn-small btn-outline">View Details</button>`;
+                        }
+
+                        tableContent += `
+                            <tr id="app-row-${app.id}" style="border-bottom:1px solid #dee2e6;">
+                                <td style="padding:12px;">${date}</td>
+                                <td style="padding:12px;">
+                                    <strong>${app.applicantName}</strong><br>
+                                    <small class="text-muted">${app.applicantOccupants} Occupants</small>
                                 </td>
-                                <td style="padding:10px; border:1px solid #dee2e6;">${new Date(app.createdAt).toLocaleDateString()}</td>
-                                <td style="padding:10px; border:1px solid #dee2e6;">
-                                    <button class="btn btn-small btn-outline" onclick="updateApplicationStatus(${app.id}, 'approved')">Approve</button>
-                                    <button class="btn btn-small btn-danger" onclick="updateApplicationStatus(${app.id}, 'rejected')">Reject</button>
+                                <td style="padding:12px;">ID: ${app.propertyId}</td>
+                                <td style="padding:12px;">
+                                    ${app.applicantEmail}<br>
+                                    ${app.applicantPhone}
+                                </td>
+                                <td style="padding:12px;">$${app.applicantIncome}/yr</td>
+                                ${status === 'all' ? `<td style="padding:12px;">${statusBadge}</td>` : ''}
+                                <td style="padding:12px; text-align:right;">
+                                    ${actions}
                                 </td>
                             </tr>
                         `;
                     });
 
-                    modal.innerHTML = `
-                        <div style="background:white; margin:5% auto; padding:20px; width:80%; max-width:900px; border-radius:8px; max-height:80vh; overflow-y:auto;">
-                            <h2>Rental Applications</h2>
-                            <div style="margin-top:15px;">
-                                <button onclick="this.parentElement.parentElement.parentElement.remove()" style="float:right; background:#dc3545; color:white; border:none; padding:8px 15px; border-radius:4px; cursor:pointer;">Close</button>
-                                <table style="width:100%; border-collapse:collapse; margin-top:20px;">
-                                    <thead>
-                                        <tr style="background:#f8f9fa;">
-                                            <th style="padding:10px; text-align:left; border:1px solid #dee2e6;">ID</th>
-                                            <th style="padding:10px; text-align:left; border:1px solid #dee2e6;">Property</th>
-                                            <th style="padding:10px; text-align:left; border:1px solid #dee2e6;">Applicant</th>
-                                            <th style="padding:10px; text-align:left; border:1px solid #dee2e6;">Email</th>
-                                            <th style="padding:10px; text-align:left; border:1px solid #dee2e6;">Status</th>
-                                            <th style="padding:10px; text-align:left; border:1px solid #dee2e6;">Date</th>
-                                            <th style="padding:10px; text-align:left; border:1px solid #dee2e6;">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        ${tableRows}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    `;
-
-                    document.body.appendChild(modal);
-                } else {
-                    alert('Error loading applications: ' + (data.message || 'Unknown error'));
+                    tableContent += '</tbody></table>';
+                    container.innerHTML = tableContent;
                 }
             } catch (error) {
-                console.error('Failed to load applications:', error);
-                alert('Failed to load applications. Please try again.');
+                console.error('Error loading applications:', error);
+
+                // Show user friendly error in list
+                if (error.message.includes('Access denied') || error.message.includes('Authentication required')) {
+                    container.innerHTML = '<div style="color:red; text-align:center; padding:20px;">Session expired. Please <a href="login.html">log in again</a>.</div>';
+                } else {
+                    container.innerHTML = '<div style="color:red; text-align:center;">Failed to load applications.</div>';
+                }
             }
+        }
+
+        function declineApplication(id) {
+            // Simple prompt for now, could be a modal
+            // const reason = prompt("Enter reason for declining (optional):");
+            // if (reason !== null) {
+            optimisticUpdate(id, 'rejected'); // API uses 'rejected', UI uses 'Declined'
+            // }
+        }
+
+        async function optimisticUpdate(id, newStatus) {
+            const row = document.getElementById(`app-row-${id}`);
+
+            // 1. Optimistic UI Update
+            if (row) {
+                row.style.transition = 'all 0.3s ease';
+                row.style.opacity = '0';
+                row.style.transform = 'translateX(20px)';
+                // Don't remove immediately, hide it first. Remove only if success or after longer timeout
+                // Actually, for better UX, we hide it now, and if error, show it again.
+                row.style.display = 'none';
+            }
+
+            // 2. API Call
+            try {
+                const response = await apiCall(`/api/application/${id}/status`, {
+                    method: 'PATCH',
+                    body: JSON.stringify({
+                        status: newStatus
+                    })
+                });
+
+                if (!response) throw new Error('Authentication required');
+
+                const result = await response.json();
+
+                if (!result.success) {
+                    throw new Error(result.message);
+                }
+
+                // Success - completely remove
+                if (row) row.remove();
+
+                // Update dashboard counters in background
+                loadDashboardData();
+
+            } catch (error) {
+                console.error('Update failed:', error);
+                alert(`Failed to update application status: ${error.message}`);
+
+                // Rollback: Re-show the item
+                if (row) {
+                    row.style.display = ''; // Restore display
+                    row.style.opacity = '1';
+                    row.style.transform = 'none';
+                }
+
+                // If it was auth error, list reload will handle showing login link
+                if (error.message.includes('Authentication')) {
+                    loadApplicationsList(currentAppFilter);
+                }
+            }
+        }
+
+        async function viewApplicationDetails(id) {
+            try {
+                // If we already have the data in the list, we could use that, but fetching ensures freshness
+                // Since our list API might not return full details (like message), it's safer to fetch by ID if we had a detail endpoint
+                // For now, our list endpoint returns everything, but let's see if we can find it in the current data or re-fetch
+
+                // Since we don't have a specific single-application API endpoint exposed in our client code yet (Service has getById),
+                // we'll filter from the list if we can, or just re-fetch the list.
+                // Actually, the service I saw earlier has getById, and the routes usually expose it.
+                // Let's try /api/application/:id first.
+
+                const response = await apiCall(`/api/application/${id}`); // Assuming this endpoint works based on standard REST patterns
+                if (!response) return;
+
+                // If specific endpoint fails (404), fallback to finding in list might be tricky if we don't have the list data accessible globally.
+                // But let's assume standard API design.
+
+                const data = await response.json();
+
+                if (data.success) {
+                    openApplicationDetailsModal(data.data);
+                } else {
+                    // Fallback to finding it in the DOM if API fails or isn't implemented?
+                    // No, let's error handling.
+                    alert('Failed to load application details: ' + data.message);
+                }
+            } catch (error) {
+                console.error('Error loading application details:', error);
+
+                // Fallback: Check if we have the data in a global variable or simpler way?
+                // For now just alert.
+                alert('Error loading details. Please try again.');
+            }
+        }
+
+        function openApplicationDetailsModal(app) {
+            const modalId = 'application-details-modal';
+            let modal = document.getElementById(modalId);
+
+            if (modal) {
+                modal.remove();
+            }
+
+            modal = document.createElement('div');
+            modal.id = modalId;
+            modal.className = 'modal';
+            modal.style.display = 'block';
+            modal.style.position = 'fixed';
+            modal.style.zIndex = '1100'; // Higher than list modal
+            modal.style.left = '0';
+            modal.style.top = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0,0,0,0.5)';
+
+            const date = new Date(app.createdAt).toLocaleString();
+            const updateDate = new Date(app.updatedAt).toLocaleString();
+
+            modal.innerHTML = `
+                <div style="background:white; margin:5% auto; padding:30px; width:90%; max-width:800px; border-radius:8px; max-height:90vh; overflow-y:auto; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; border-bottom:1px solid #eee; padding-bottom:15px;">
+                        <div>
+                            <h2 style="margin:0; color:#2d3748;">Application Details</h2>
+                            <span class="status-badge ${app.status}" style="font-size:0.9rem; margin-top:5px; display:inline-block;">${app.status.toUpperCase()}</span>
+                        </div>
+                        <button onclick="document.getElementById('${modalId}').remove()" style="background:none; border:none; font-size:2rem; cursor:pointer; color:#a0aec0;">&times;</button>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; margin-bottom:20px;">
+                        <div style="background:#f8f9fa; padding:15px; border-radius:6px;">
+                            <h3 style="margin-top:0; font-size:1.1rem; color:#4a5568; border-bottom:1px solid #e2e8f0; padding-bottom:10px; margin-bottom:10px;">Applicant Information</h3>
+                            <p style="margin:5px 0;"><strong>Name:</strong> ${app.applicantName}</p>
+                            <p style="margin:5px 0;"><strong>Email:</strong> <a href="mailto:${app.applicantEmail}">${app.applicantEmail}</a></p>
+                            <p style="margin:5px 0;"><strong>Phone:</strong> ${app.applicantPhone}</p>
+                            <p style="margin:5px 0;"><strong>Annual Income:</strong> $${app.applicantIncome.toLocaleString()}</p>
+                            <p style="margin:5px 0;"><strong>Occupants:</strong> ${app.applicantOccupants}</p>
+                        </div>
+
+                        <div style="background:#f8f9fa; padding:15px; border-radius:6px;">
+                            <h3 style="margin-top:0; font-size:1.1rem; color:#4a5568; border-bottom:1px solid #e2e8f0; padding-bottom:10px; margin-bottom:10px;">Application Status</h3>
+                            <p style="margin:5px 0;"><strong>Property ID:</strong> ${app.propertyId}</p>
+                            <p style="margin:5px 0;"><strong>Submitted:</strong> ${date}</p>
+                            <p style="margin:5px 0;"><strong>Last Updated:</strong> ${updateDate}</p>
+                            <p style="margin:5px 0;"><strong>Application ID:</strong> #${app.id}</p>
+                        </div>
+                    </div>
+
+                    <div style="background:#fff; border:1px solid #e2e8f0; padding:20px; border-radius:6px; margin-bottom:20px;">
+                        <h3 style="margin-top:0; font-size:1.1rem; color:#4a5568; margin-bottom:10px;">Applicant Message</h3>
+                        <p style="margin:0; line-height:1.6; color:#4a5568; white-space: pre-wrap;">${app.message || 'No message provided.'}</p>
+                    </div>
+
+                    ${app.documents && app.documents.length > 0 ? `
+                    <div style="background:#fff; border:1px solid #e2e8f0; padding:20px; border-radius:6px; margin-bottom:20px;">
+                         <h3 style="margin-top:0; font-size:1.1rem; color:#4a5568; border-bottom:1px solid #e2e8f0; padding-bottom:10px; margin-bottom:15px;">Submitted Documents</h3>
+                         <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap:15px;">
+                            ${app.documents.map(doc => `
+                                <a href="/${doc.url}" target="_blank" style="display:flex; align-items:center; padding:12px; border:1px solid #e2e8f0; border-radius:6px; text-decoration:none; color:#4a5568; transition:all 0.2s;" onmouseover="this.style.borderColor='#667eea';this.style.background='#f7fafc'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='white'">
+                                    <div style="background:#edf2f7; width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-right:12px;">
+                                        <i class="fas ${doc.name.endsWith('.pdf') ? 'fa-file-pdf' : 'fa-file-image'}" style="color:${doc.name.endsWith('.pdf') ? '#e53e3e' : '#3182ce'}"></i>
+                                    </div>
+                                    <div style="overflow:hidden;">
+                                        <div style="font-weight:600; font-size:0.9rem;">${doc.type}</div>
+                                        <div style="font-size:0.8rem; color:#718096; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${doc.name}</div>
+                                    </div>
+                                </a>
+                            `).join('')}
+                         </div>
+                    </div>
+                    ` : ''}
+
+                    ${app.adminNotes ? `
+                    <div style="background:#ebf8ff; border:1px solid #bee3f8; padding:20px; border-radius:6px; margin-bottom:20px;">
+                        <h3 style="margin-top:0; font-size:1.1rem; color:#2c5282; margin-bottom:10px;">Admin Notes</h3>
+                        <p style="margin:0; line-height:1.6; color:#2c5282;">${app.adminNotes}</p>
+                    </div>
+                    ` : ''}
+
+                    <div style="display:flex; justify-content:flex-end; gap:10px; border-top:1px solid #eee; padding-top:20px;">
+                        ${app.status === 'pending' ? `
+                            <button onclick="optimisticUpdate(${app.id}, 'approved'); document.getElementById('${modalId}').remove()" class="btn btn-primary">Approve Application</button>
+                            <button onclick="declineApplication(${app.id}); document.getElementById('${modalId}').remove()" class="btn btn-danger">Decline Application</button>
+                        ` : ''}
+                        <button onclick="document.getElementById('${modalId}').remove()" class="btn btn-outline">Close</button>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+        }
+
+        // Renamed function mapping for existing button
+        function loadApplications() {
+            openApplicationsModal();
         }
 
         async function loadMessages() {
             try {
-                const response = await fetch('/api/message');
+                const response = await apiCall('/api/message');
+                if (!response) return;
                 const data = await response.json();
 
                 if (data.success) {

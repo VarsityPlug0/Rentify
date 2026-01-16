@@ -13,9 +13,9 @@
     "applicantEmployment": "Employed",
     "applicantMessage": "I want this",
     "id": 1,
-    "status": "pending",
+    "status": "approved",
     "createdAt": "2026-01-14T18:05:35.140Z",
-    "updatedAt": "2026-01-14T18:05:35.140Z"
+    "updatedAt": "2026-01-16T13:38:29.518Z"
   },
   {
     "propertyId": 1,
@@ -31,9 +31,10 @@
     "applicantEmployment": "Engineer",
     "applicantMessage": "Hello",
     "id": 2,
-    "status": "pending",
+    "status": "approved",
     "createdAt": "2026-01-14T18:51:35.502Z",
-    "updatedAt": "2026-01-14T18:51:35.502Z"
+    "updatedAt": "2026-01-16T15:17:52.258Z",
+    "processedBy": 1
   },
   {
     "propertyId": 1,
@@ -49,9 +50,10 @@
     "applicantEmployment": "Engineer",
     "applicantMessage": "Hello",
     "id": 3,
-    "status": "pending",
+    "status": "approved",
     "createdAt": "2026-01-14T18:53:11.190Z",
-    "updatedAt": "2026-01-14T18:53:11.190Z"
+    "updatedAt": "2026-01-16T15:15:45.975Z",
+    "processedBy": 1
   },
   {
     "propertyId": 1,
@@ -67,9 +69,10 @@
     "applicantEmployment": "Engineer",
     "applicantMessage": "Hello",
     "id": 4,
-    "status": "pending",
+    "status": "approved",
     "createdAt": "2026-01-14T18:56:07.682Z",
-    "updatedAt": "2026-01-14T18:56:07.682Z"
+    "updatedAt": "2026-01-16T15:15:22.767Z",
+    "processedBy": 1
   },
   {
     "propertyId": 1,
@@ -85,9 +88,10 @@
     "applicantEmployment": "Test",
     "applicantMessage": "",
     "id": 5,
-    "status": "pending",
+    "status": "approved",
     "createdAt": "2026-01-14T18:56:50.071Z",
-    "updatedAt": "2026-01-14T18:56:50.071Z"
+    "updatedAt": "2026-01-16T15:15:09.904Z",
+    "processedBy": 1
   },
   {
     "propertyId": 1,
@@ -103,9 +107,10 @@
     "applicantEmployment": "Test",
     "applicantMessage": "",
     "id": 6,
-    "status": "pending",
+    "status": "approved",
     "createdAt": "2026-01-14T18:58:20.395Z",
-    "updatedAt": "2026-01-14T18:58:20.395Z"
+    "updatedAt": "2026-01-16T14:50:37.215Z",
+    "processedBy": 1
   },
   {
     "propertyId": 1,
@@ -123,9 +128,10 @@
     "applicantEmployment": "Test",
     "applicantMessage": "",
     "id": 7,
-    "status": "pending",
+    "status": "approved",
     "createdAt": "2026-01-14T18:58:38.375Z",
-    "updatedAt": "2026-01-14T18:58:38.375Z"
+    "updatedAt": "2026-01-16T14:42:28.082Z",
+    "processedBy": 1
   },
   {
     "propertyId": 1,
@@ -141,9 +147,10 @@
     "applicantEmployment": "Test",
     "applicantMessage": "",
     "id": 8,
-    "status": "pending",
+    "status": "approved",
     "createdAt": "2026-01-14T18:59:27.974Z",
-    "updatedAt": "2026-01-14T18:59:27.974Z"
+    "updatedAt": "2026-01-16T14:36:25.174Z",
+    "processedBy": 1
   },
   {
     "propertyId": 1,
@@ -159,9 +166,10 @@
     "applicantEmployment": "Tester",
     "applicantMessage": "",
     "id": 9,
-    "status": "pending",
+    "status": "rejected",
     "createdAt": "2026-01-14T20:04:46.397Z",
-    "updatedAt": "2026-01-14T20:04:46.397Z"
+    "updatedAt": "2026-01-16T14:14:10.340Z",
+    "processedBy": 1
   },
   {
     "propertyId": 1,
@@ -177,9 +185,10 @@
     "applicantEmployment": "Tester",
     "applicantMessage": "",
     "id": 10,
-    "status": "pending",
+    "status": "rejected",
     "createdAt": "2026-01-14T20:05:53.501Z",
-    "updatedAt": "2026-01-14T20:05:53.501Z"
+    "updatedAt": "2026-01-16T14:13:26.908Z",
+    "processedBy": 1
   },
   {
     "propertyId": 1,
@@ -213,9 +222,10 @@
     "applicantEmployment": "ACME Corp",
     "applicantMessage": "",
     "id": 12,
-    "status": "pending",
+    "status": "rejected",
     "createdAt": "2026-01-14T20:26:09.810Z",
-    "updatedAt": "2026-01-14T20:26:09.810Z"
+    "updatedAt": "2026-01-16T14:12:56.303Z",
+    "processedBy": 1
   },
   {
     "propertyId": 1,
@@ -261,8 +271,280 @@
       }
     ],
     "id": 14,
-    "status": "pending",
+    "status": "approved",
     "createdAt": "2026-01-15T22:47:32.753Z",
-    "updatedAt": "2026-01-15T22:47:32.753Z"
+    "updatedAt": "2026-01-16T14:12:08.204Z",
+    "processedBy": 1
+  },
+  {
+    "propertyId": 999,
+    "applicantName": "Test Candidate",
+    "applicantEmail": "test@example.com",
+    "applicantPhone": "555-0199",
+    "applicantIncome": 80000,
+    "applicantAddress": "123 Test Ln",
+    "applicantCity": "Testville",
+    "applicantState": "TE",
+    "applicantZip": "12345",
+    "applicantOccupants": 1,
+    "applicantEmployment": "Tester",
+    "applicantMessage": "Testing the flow",
+    "documents": [],
+    "id": 15,
+    "status": "approved",
+    "createdAt": "2026-01-16T14:01:51.813Z",
+    "updatedAt": "2026-01-16T14:04:02.131Z",
+    "processedBy": 1
+  },
+  {
+    "propertyId": 999,
+    "applicantName": "Test Candidate",
+    "applicantEmail": "test@example.com",
+    "applicantPhone": "555-0199",
+    "applicantIncome": 80000,
+    "applicantAddress": "123 Test Ln",
+    "applicantCity": "Testville",
+    "applicantState": "TE",
+    "applicantZip": "12345",
+    "applicantOccupants": 1,
+    "applicantEmployment": "Tester",
+    "applicantMessage": "Testing the flow",
+    "documents": [],
+    "id": 16,
+    "status": "approved",
+    "createdAt": "2026-01-16T14:21:27.177Z",
+    "updatedAt": "2026-01-16T14:24:50.209Z",
+    "processedBy": 1
+  },
+  {
+    "applicantName": "Session Test Candidate",
+    "applicantEmail": "session@test.com",
+    "applicantPhone": "555-0199",
+    "applicantIncome": 75000,
+    "applicantOccupants": 1,
+    "propertyId": 101,
+    "message": "Testing session persistence",
+    "id": 17,
+    "status": "approved",
+    "createdAt": "2026-01-16T14:54:41.153Z",
+    "updatedAt": "2026-01-16T14:56:33.147Z",
+    "processedBy": 1
+  },
+  {
+    "propertyId": 1,
+    "applicantName": "BN MKHABELE",
+    "applicantEmail": "MONEYBMAN0@GMAIL.COM",
+    "applicantPhone": "0724816274",
+    "applicantIncome": 60000,
+    "applicantAddress": "46D",
+    "applicantCity": "TZANEEN",
+    "applicantState": "other",
+    "applicantZip": "0850",
+    "applicantOccupants": 34,
+    "applicantEmployment": "awary ",
+    "applicantMessage": "",
+    "documents": [
+      {
+        "type": "ID",
+        "name": "fsociety.jpg",
+        "url": "uploads/mock-id-1768577084414.pdf"
+      },
+      {
+        "type": "Income",
+        "name": "499933101_122107198262878234_4740078775021436004_n.jpg",
+        "url": "uploads/mock-income-1768577084414.pdf"
+      }
+    ],
+    "id": 18,
+    "status": "approved",
+    "createdAt": "2026-01-16T15:24:44.475Z",
+    "updatedAt": "2026-01-16T15:25:09.802Z",
+    "processedBy": 1
+  },
+  {
+    "propertyId": 1,
+    "applicantName": "Money Man",
+    "applicantEmail": "mkhabeleenterprise@gmail.com",
+    "applicantPhone": "0724816274",
+    "applicantIncome": 4567,
+    "applicantAddress": "25 14th Street",
+    "applicantCity": "Letaba",
+    "applicantState": "NJ",
+    "applicantZip": "0850",
+    "applicantOccupants": 4,
+    "applicantEmployment": "awary ",
+    "applicantMessage": "",
+    "documents": [
+      {
+        "type": "ID",
+        "name": "499933101_122107198262878234_4740078775021436004_n.jpg",
+        "url": "uploads/mock-id-1768577606083.pdf"
+      },
+      {
+        "type": "Income",
+        "name": "499933101_122107198262878234_4740078775021436004_n.jpg",
+        "url": "uploads/mock-income-1768577606083.pdf"
+      }
+    ],
+    "id": 19,
+    "status": "approved",
+    "createdAt": "2026-01-16T15:33:26.099Z",
+    "updatedAt": "2026-01-16T15:34:57.497Z",
+    "processedBy": 1
+  },
+  {
+    "propertyId": 2,
+    "applicantName": "Money Man",
+    "applicantEmail": "mkhabeleenterprise@gmail.com",
+    "applicantPhone": "0724816274",
+    "applicantIncome": 5678,
+    "applicantAddress": "25 14th Street",
+    "applicantCity": "Johannesburg",
+    "applicantState": "MD",
+    "applicantZip": "2092",
+    "applicantOccupants": 3,
+    "applicantEmployment": "awary ",
+    "applicantMessage": "",
+    "documents": [
+      {
+        "type": "ID",
+        "name": "499933101_122107198262878234_4740078775021436004_n.jpg",
+        "url": "uploads/mock-id-1768577813414.pdf"
+      },
+      {
+        "type": "Income",
+        "name": "499933101_122107198262878234_4740078775021436004_n.jpg",
+        "url": "uploads/mock-income-1768577813414.pdf"
+      }
+    ],
+    "id": 20,
+    "status": "approved",
+    "createdAt": "2026-01-16T15:36:53.468Z",
+    "updatedAt": "2026-01-16T15:40:33.417Z",
+    "processedBy": 1
+  },
+  {
+    "propertyId": 1,
+    "applicantName": "BN MKHABELE",
+    "applicantEmail": "MONEYBMAN0@GMAIL.COM",
+    "applicantPhone": "0724816274",
+    "applicantIncome": 3456,
+    "applicantAddress": "46D",
+    "applicantCity": "TZANEEN",
+    "applicantState": "NY",
+    "applicantZip": "0850",
+    "applicantOccupants": 2,
+    "applicantEmployment": "awary ",
+    "applicantMessage": "",
+    "documents": [
+      {
+        "type": "ID",
+        "name": "499933101_122107198262878234_4740078775021436004_n.jpg",
+        "url": "uploads/documents/doc-id-1768578455943-779158023-499933101_122107198262878234_4740078775021436004_n.jpg"
+      },
+      {
+        "type": "Income",
+        "name": "499933101_122107198262878234_4740078775021436004_n.jpg",
+        "url": "uploads/documents/doc-income-1768578455951-225235212-499933101_122107198262878234_4740078775021436004_n.jpg"
+      }
+    ],
+    "id": 21,
+    "status": "approved",
+    "createdAt": "2026-01-16T15:47:35.974Z",
+    "updatedAt": "2026-01-16T15:48:14.353Z",
+    "processedBy": 1
+  },
+  {
+    "propertyId": 8,
+    "applicantName": "BN MKHABELE",
+    "applicantEmail": "MONEYBMAN0@GMAIL.COM",
+    "applicantPhone": "0816299491",
+    "applicantIncome": 678,
+    "applicantAddress": "25 14th Street",
+    "applicantCity": "Letaba",
+    "applicantState": "NJ",
+    "applicantZip": "0850",
+    "applicantOccupants": 2,
+    "applicantEmployment": "warra",
+    "applicantMessage": "pets allowed",
+    "documents": [
+      {
+        "type": "ID",
+        "name": "a_bedroom_with_a_bed_and_a_desk_and_a_window_at_Ra (2).jpg",
+        "url": "uploads/documents/doc-id-1768579268261-415925487-a_bedroom_with_a_bed_and_a_desk_and_a_window_at_Ra__2_.jpg"
+      },
+      {
+        "type": "Income",
+        "name": "a_building_with_a_tree_in_front_of_it_at_Radisson_.jpg",
+        "url": "uploads/documents/doc-income-1768579268261-850124464-a_building_with_a_tree_in_front_of_it_at_Radisson_.jpg"
+      }
+    ],
+    "id": 22,
+    "status": "approved",
+    "createdAt": "2026-01-16T16:01:08.296Z",
+    "updatedAt": "2026-01-16T16:01:38.172Z",
+    "processedBy": 1
+  },
+  {
+    "propertyId": 2,
+    "applicantName": "Money Man",
+    "applicantEmail": "mkhabeleenterprise@gmail.com",
+    "applicantPhone": "0724816274",
+    "applicantIncome": 8765,
+    "applicantAddress": "25 14th Street",
+    "applicantCity": "Letaba",
+    "applicantState": "NY",
+    "applicantZip": "0850",
+    "applicantOccupants": 3,
+    "applicantEmployment": "benz",
+    "applicantMessage": "",
+    "documents": [
+      {
+        "type": "ID",
+        "name": "ID-compressed.pdf",
+        "url": "uploads/documents/doc-id-1768579444721-344858405-ID-compressed.pdf"
+      },
+      {
+        "type": "Income",
+        "name": "ID-compressed.pdf",
+        "url": "uploads/documents/doc-income-1768579444731-790452334-ID-compressed.pdf"
+      }
+    ],
+    "id": 23,
+    "status": "approved",
+    "createdAt": "2026-01-16T16:04:04.752Z",
+    "updatedAt": "2026-01-16T16:04:35.447Z",
+    "processedBy": 1
+  },
+  {
+    "propertyId": 1,
+    "applicantName": "BN MKHABELE",
+    "applicantEmail": "MONEYBMAN0@GMAIL.COM",
+    "applicantPhone": "0724816274",
+    "applicantIncome": 578,
+    "applicantAddress": "46D",
+    "applicantCity": "TZANEEN",
+    "applicantState": "PA",
+    "applicantZip": "0850",
+    "applicantOccupants": 7,
+    "applicantEmployment": "benz",
+    "applicantMessage": "",
+    "documents": [
+      {
+        "type": "ID",
+        "name": "ID-compressed.pdf",
+        "url": "uploads/documents/doc-id-1768579770345-736986071-ID-compressed.pdf"
+      },
+      {
+        "type": "Income",
+        "name": "ChatGPT Image Oct 20, 2025, 11_22_55 PM.png",
+        "url": "uploads/documents/doc-income-1768579770362-706069175-ChatGPT_Image_Oct_20__2025__11_22_55_PM.png"
+      }
+    ],
+    "id": 24,
+    "status": "approved",
+    "createdAt": "2026-01-16T16:09:30.430Z",
+    "updatedAt": "2026-01-16T16:10:02.090Z",
+    "processedBy": 1
   }
 ]
