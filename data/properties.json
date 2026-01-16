@@ -237,5 +237,205 @@
     "address": {},
     "createdAt": "2026-01-16T22:10:18.856Z",
     "updatedAt": "2026-01-16T22:10:18.856Z"
+  },
+  {
+    "id": 11,
+    "title": "Test Studio 1 - 1768602455045",
+    "description": "A beautiful studio in the heart of Rosebank. Created for visibility testing.",
+    "price": 1100,
+    "location": "Rosebank",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "squareFeet": 600,
+    "images": [],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking"
+    ],
+    "address": {},
+    "createdAt": "2026-01-16T22:27:35.085Z",
+    "updatedAt": "2026-01-16T22:27:35.085Z"
+  },
+  {
+    "id": 12,
+    "title": "Test Studio 2 - 1768602455103",
+    "description": "A beautiful studio in the heart of Pretoria. Created for visibility testing.",
+    "price": 1200,
+    "location": "Pretoria",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "squareFeet": 700,
+    "images": [],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking"
+    ],
+    "address": {},
+    "createdAt": "2026-01-16T22:27:35.128Z",
+    "updatedAt": "2026-01-16T22:27:35.128Z"
+  },
+  {
+    "id": 13,
+    "title": "Test Loft 3 - 1768602455134",
+    "description": "A beautiful loft in the heart of Pretoria. Created for visibility testing.",
+    "price": 1300,
+    "location": "Pretoria",
+    "bedrooms": 4,
+    "bathrooms": 1,
+    "squareFeet": 800,
+    "images": [],
+    "available": true,
+    "featured": true,
+    "amenities": [
+      "WiFi",
+      "Parking"
+    ],
+    "address": {},
+    "createdAt": "2026-01-16T22:27:35.149Z",
+    "updatedAt": "2026-01-16T22:27:35.149Z"
+  },
+  {
+    "id": 14,
+    "title": "Test Studio 4 - 1768602455159",
+    "description": "A beautiful studio in the heart of Rosebank. Created for visibility testing.",
+    "price": 1400,
+    "location": "Rosebank",
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "squareFeet": 900,
+    "images": [],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking"
+    ],
+    "address": {},
+    "createdAt": "2026-01-16T22:27:35.183Z",
+    "updatedAt": "2026-01-16T22:27:35.183Z"
+  },
+  {
+    "id": 15,
+    "title": "Test House 5 - 1768602455197",
+    "description": "A beautiful house in the heart of Sandton. Created for visibility testing.",
+    "price": 1500,
+    "location": "Sandton",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "squareFeet": 1000,
+    "images": [],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking"
+    ],
+    "address": {},
+    "createdAt": "2026-01-16T22:27:35.220Z",
+    "updatedAt": "2026-01-16T22:27:35.220Z"
+  },
+  {
+    "id": 16,
+    "title": "Test Apartment 6 - 1768602455283",
+    "description": "A beautiful apartment in the heart of Sandton. Created for visibility testing.",
+    "price": 1600,
+    "location": "Sandton",
+    "bedrooms": 3,
+    "bathrooms": 1,
+    "squareFeet": 1100,
+    "images": [],
+    "available": true,
+    "featured": true,
+    "amenities": [
+      "WiFi",
+      "Parking"
+    ],
+    "address": {},
+    "createdAt": "2026-01-16T22:27:35.362Z",
+    "updatedAt": "2026-01-16T22:27:35.362Z"
+  },
+  {
+    "id": 17,
+    "title": "Test Loft 7 - 1768602455387",
+    "description": "A beautiful loft in the heart of Midrand. Created for visibility testing.",
+    "price": 1700,
+    "location": "Midrand",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "squareFeet": 1200,
+    "images": [],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking"
+    ],
+    "address": {},
+    "createdAt": "2026-01-16T22:27:35.397Z",
+    "updatedAt": "2026-01-16T22:27:35.397Z"
+  },
+  {
+    "id": 18,
+    "title": "Test Villa 8 - 1768602455411",
+    "description": "A beautiful villa in the heart of Pretoria. Created for visibility testing.",
+    "price": 1800,
+    "location": "Pretoria",
+    "bedrooms": 1,
+    "bathrooms": 3,
+    "squareFeet": 1300,
+    "images": [],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking"
+    ],
+    "address": {},
+    "createdAt": "2026-01-16T22:27:35.430Z",
+    "updatedAt": "2026-01-16T22:27:35.430Z"
+  },
+  {
+    "id": 19,
+    "title": "Test Villa 9 - 1768602455436",
+    "description": "A beautiful villa in the heart of Sandton. Created for visibility testing.",
+    "price": 1900,
+    "location": "Sandton",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "squareFeet": 1400,
+    "images": [],
+    "available": true,
+    "featured": true,
+    "amenities": [
+      "WiFi",
+      "Parking"
+    ],
+    "address": {},
+    "createdAt": "2026-01-16T22:27:35.449Z",
+    "updatedAt": "2026-01-16T22:27:35.449Z"
+  },
+  {
+    "id": 20,
+    "title": "Test House 10 - 1768602455455",
+    "description": "A beautiful house in the heart of Midrand. Created for visibility testing.",
+    "price": 2000,
+    "location": "Midrand",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "squareFeet": 1500,
+    "images": [],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking"
+    ],
+    "address": {},
+    "createdAt": "2026-01-16T22:27:35.465Z",
+    "updatedAt": "2026-01-16T22:27:35.465Z"
   }
 ]
