@@ -530,7 +530,7 @@ class RentalApp {
     };
 
     setText('detail-title', property.title);
-    setText('property-title', `${property.title} - ForRentbyOwner`); // Update page title
+    setText('property-title', `${property.title} - Rentify`); // Update page title
     setText('detail-location', property.location);
     setText('detail-bedrooms', property.bedrooms);
     setText('detail-bathrooms', property.bathrooms);
