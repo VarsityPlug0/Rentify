@@ -504,38 +504,109 @@
     border-radius: var(--radius-md);
 }
 
+/* Mobile Filter Button (Hidden on Desktop) */
+.mobile-filter-header {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+}
+
+.filter-results-label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--neutral-600);
+}
+
+.btn-filter-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: white;
+    border: 1px solid var(--neutral-300);
+    border-radius: var(--radius-full);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-filter-toggle:hover {
+    background: var(--background-alt);
+    border-color: var(--primary-blue);
+}
+
 @media (max-width: 900px) {
+
+    /* Show Toggle Header */
+    .mobile-filter-header {
+        display: flex;
+        padding-bottom: 8px;
+    }
+
+    /* Hide Content by Default */
     .compact-toolbar {
-        gap: 8px;
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px 0;
+        border-top: 1px solid var(--neutral-200);
+        margin-top: 8px;
+        animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .compact-search-box {
+    .compact-toolbar.show {
+        display: flex;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Full Width Elements for Clean Mobile Layout */
+    .compact-search-box,
+    .compact-select,
+    .compact-budget-group,
+    .compact-pills,
+    .compact-toggles,
+    .btn-compact-search {
         flex: 100%;
-        /* Full width on mobile */
-        order: 1;
-    }
-
-    .compact-select {
-        flex: 1;
-        order: 2;
+        width: 100%;
+        min-width: 100%;
+        margin: 0;
     }
 
     .compact-budget-group {
-        order: 3;
-    }
-
-    .compact-pills {
-        order: 4;
-    }
-
-    .compact-toggles {
-        order: 5;
-        flex: 100%;
         justify-content: space-between;
     }
 
-    .btn-compact-search {
-        order: 6;
+    .compact-budget-input {
         width: 100%;
+    }
+
+    .compact-pills {
+        justify-content: space-between;
+    }
+
+    .compact-pill-option {
+        flex: 1;
+    }
+
+    .compact-toggles {
+        justify-content: space-between;
+        background: var(--background-alt);
+        padding: 0 12px;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--neutral-200);
     }
 }

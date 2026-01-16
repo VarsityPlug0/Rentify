@@ -419,7 +419,16 @@
     <!-- Compact Filter Toolbar Section -->
     <section class="compact-toolbar-wrapper">
         <div class="container">
-            <div class="compact-toolbar">
+            <!-- Mobile Toggle Header -->
+            <div class="mobile-filter-header">
+                <span class="filter-results-label">Refine your search</span>
+                <button id="mobile-filter-toggle" class="btn-filter-toggle">
+                    <i class="fas fa-sliders-h"></i> Filters
+                </button>
+            </div>
+
+            <!-- Filter Content -->
+            <div class="compact-toolbar" id="filter-toolbar-content">
 
                 <!-- 1. Search (Grow) -->
                 <div class="compact-search-box">
@@ -484,6 +493,32 @@
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById('mobile-filter-toggle');
+            const toolbar = document.getElementById('filter-toolbar-content');
+
+            if (toggleBtn && toolbar) {
+                toggleBtn.addEventListener('click', () => {
+                    toolbar.classList.toggle('show');
+                    toggleBtn.classList.toggle('active');
+
+                    // Update button text/icon state
+                    const icon = toggleBtn.querySelector('i');
+                    if (toolbar.classList.contains('show')) {
+                        toggleBtn.innerHTML = '<i class="fas fa-times"></i> Close';
+                        toggleBtn.style.background = 'var(--neutral-100)';
+                        toggleBtn.style.color = 'var(--neutral-900)';
+                    } else {
+                        toggleBtn.innerHTML = '<i class="fas fa-sliders-h"></i> Filters';
+                        toggleBtn.style.background = '';
+                        toggleBtn.style.color = '';
+                    }
+                });
+            }
+        });
+    </script>
 
     <style>
         /* Bedroom Pill Styles */
