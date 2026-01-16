@@ -52,19 +52,14 @@ app.use(cors({
 const pg = require('pg');
 const pgSession = require('connect-pg-simple')(session);
 
+// Production/Render Database Check
+if (env.isProduction && !env.database.url) {
+  console.error('❌ CRITICAL ERROR: DATABASE_URL is missing in production environment.');
+  console.error('   Please add DATABASE_URL to your Render environment variables.');
+  process.exit(1);
+}
+
 const sessionConfig = {
-  store: new pgSession({
-    pool: new pg.Pool({
-      host: env.database.host,
-      port: env.database.port,
-      user: env.database.username,
-      password: env.database.password,
-      database: env.database.name,
-      // Handle SSL for production (Render)
-      ssl: env.isProduction ? { rejectUnauthorized: false } : false
-    }),
-    createTableIfMissing: true
-  }),
   secret: env.session.secret,
   resave: false,
   saveUninitialized: false,
@@ -76,10 +71,20 @@ const sessionConfig = {
   }
 };
 
-// Fallback to MemoryStore if no DB credentials (for local dev without DB)
-if (!env.database.password && !env.isProduction) {
-  console.warn('⚠️ No DB password found, using MemoryStore for sessions (Not for production)');
-  delete sessionConfig.store;
+// Configure Session Store only if DATABASE_URL is present
+if (env.database.url) {
+  console.log('🔌 Configuring persistent session store with PostgreSQL...');
+  sessionConfig.store = new pgSession({
+    pool: new pg.Pool({
+      connectionString: env.database.url,
+      // Handle SSL for production (Render)
+      ssl: env.isProduction ? { rejectUnauthorized: false } : false
+    }),
+    createTableIfMissing: true
+  });
+} else {
+  console.warn('⚠️ No DATABASE_URL found. Using MemoryStore (Development Only). Sessions will not persist across restarts.');
+  // No store defined means it defaults to MemoryStore
 }
 
 // Session middleware
