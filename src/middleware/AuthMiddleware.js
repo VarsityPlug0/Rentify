@@ -80,11 +80,16 @@ class AuthMiddleware {
       const { username, password } = req.body;
       const ip = req.ip;
 
+      console.log(`[Auth] Login attempt for user: ${username} from IP: ${ip}`);
+
       // Rate Limiting Check
       const now = Date.now();
       const attempts = AuthMiddleware.loginAttempts.get(ip) || { count: 0, firstAttempt: now };
 
+      console.log(`[Auth] Rate limit count: ${attempts.count}`);
+
       if (attempts.count >= 5 && (now - attempts.firstAttempt) < 15 * 60 * 1000) {
+        console.warn(`[Auth] Rate limit exceeded for IP: ${ip}`);
         return res.status(429).json({
           success: false,
           message: 'Too many login attempts. Please try again in 15 minutes.'
@@ -111,6 +116,8 @@ class AuthMiddleware {
 
       const bcrypt = require('bcryptjs');
       const isMatch = await bcrypt.compare(password, ADMIN_HASH);
+
+      console.log(`[Auth] Password check for ${username}: ${isMatch ? 'MATCH' : 'FAIL'}`);
 
       if (username === env.admin.username && isMatch) {
         // Success - Clear rate limit

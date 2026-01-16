@@ -9,7 +9,7 @@ const config = {
   // Server Configuration
   port: process.env.PORT || 3000,
   nodeEnv: process.env.NODE_ENV || 'development',
-  
+
   // Database Configuration (prepared for future integration)
   database: {
     host: process.env.DB_HOST || 'localhost',
@@ -19,25 +19,25 @@ const config = {
     password: process.env.DB_PASSWORD || '',
     dialect: process.env.DB_DIALECT || 'postgres'
   },
-  
+
   // Session Configuration
   session: {
     secret: process.env.SESSION_SECRET || 'your-secret-key-here-change-in-production',
     cookieMaxAge: 24 * 60 * 60 * 1000 // 24 hours
   },
-  
+
   // Admin Credentials
   admin: {
     username: process.env.ADMIN_USERNAME || 'admin',
     password: process.env.ADMIN_PASSWORD || 'password123'
   },
-  
+
   // Security Settings
   security: {
     jwtSecret: process.env.JWT_SECRET || 'jwt-secret-key-change-in-production',
     saltRounds: parseInt(process.env.SALT_ROUNDS) || 12
   },
-  
+
   // API Settings
   api: {
     basePath: '/api',
@@ -53,7 +53,7 @@ const environments = {
   },
   production: {
     debug: false,
-    logging: false
+    logging: true
   },
   test: {
     debug: true,
