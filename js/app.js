@@ -247,7 +247,7 @@ class RentalApp {
           <div class="p-4 d-flex flex-column h-100">
             <!-- 1. Price (Most Prominent) -->
             <div class="mb-2">
-              <span class="fs-4 fw-bold text-primary">$${window.formatCurrency(property.price).replace('$', '')}</span>
+              <span class="fs-4 fw-bold text-primary">${window.formatCurrency(property.price)}</span>
               <span class="text-muted small">/month</span>
             </div>
             
@@ -655,10 +655,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Utility functions
 window.formatCurrency = (amount) => {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat('en-ZA', {
     style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 0
+    currency: 'ZAR',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
   }).format(amount);
 };
 

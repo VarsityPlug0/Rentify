@@ -427,9 +427,13 @@
             const container = document.getElementById('image-preview-container');
             const div = document.createElement('div');
             div.style.position = 'relative';
+            div.style.display = 'inline-block'; // Ensure proper spacing
             div.innerHTML = `
-                <img src="${url}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 4px;">
-                <button type="button" onclick="removeImage(this, '${url}')" style="position: absolute; top: -5px; right: -5px; background: red; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; line-height: 20px; text-align: center; cursor: pointer;">&times;</button>
+                <img src="${url}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px; border: 1px solid #dee2e6;">
+                <button type="button" onclick="removeImage(this, '${url}')" 
+                    style="position: absolute; top: -8px; right: -8px; background: #dc3545; color: white; border: 2px solid white; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: transform 0.2s;">
+                    <i class="fas fa-trash" style="font-size: 12px;"></i>
+                </button>
             `;
             container.appendChild(div);
         }
