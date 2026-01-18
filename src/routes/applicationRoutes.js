@@ -6,9 +6,12 @@
 const express = require('express');
 const router = express.Router();
 const ApplicationService = require('../services/ApplicationService');
+const EmailService = require('../services/EmailService');
+const PropertyService = require('../services/PropertyService');
 const AuthMiddleware = require('../middleware/AuthMiddleware');
 
 const applicationService = new ApplicationService();
+const propertyService = new PropertyService();
 
 const documentUpload = require('../config/documentUpload');
 
@@ -95,6 +98,37 @@ router.post('/', documentUpload.fields([
       applicantMessage: applicantMessage || '',
       documents: documents
     });
+
+    // Send email notifications
+    // We don't await these to prevent blocking the response speed (fire and forget)
+    // or we can await if we want to ensure sending. For now, we'll log errors.
+    console.log('📧 Fetching property details for notifications...');
+    propertyService.getById(parseInt(propertyId)).then(property => {
+      if (!property) {
+        console.warn('⚠️ Property not found for email notification. Sending with minimal data.');
+        property = { id: propertyId, title: 'Unknown Property', location: 'Unknown Location' }; // Fallback
+      }
+
+      console.log('📧 Sending notifications...');
+
+      // 1. Notify Owner
+      EmailService.sendOwnerNotification({
+        propertyId: parseInt(propertyId),
+        applicantName,
+        applicantEmail,
+        applicantPhone,
+        applicantIncome: parseFloat(applicantIncome),
+        documents: documents
+      }, property).catch(err => console.error('Error sending owner notification:', err));
+
+      // 2. Notify Applicant
+      EmailService.sendApplicantConfirmation({
+        id: newApplication.id, // Pass application ID for reference
+        propertyId: parseInt(propertyId),
+        applicantName,
+        applicantEmail
+      }, property).catch(err => console.error('Error sending applicant confirmation:', err));
+    }).catch(err => console.error('Error fetching property for notifications:', err));
 
     res.status(201).json({
       success: true,
@@ -183,6 +217,17 @@ router.patch('/:id/status', AuthMiddleware.requireAdmin, async (req, res) => {
 
     try {
       const updatedApp = await applicationService.updateStatus(applicationId, status, adminNotes, adminId);
+
+      // Send status update email to applicant
+      console.log(`📧 Sending status update (${status}) to applicant...`);
+      // We need to fetch property details for the status update too
+      propertyService.getById(parseInt(updatedApp.propertyId)).then(property => {
+        if (!property) property = { title: `Property #${updatedApp.propertyId}`, location: 'Unknown' };
+
+        EmailService.sendStatusUpdate(updatedApp, status, adminNotes, property)
+          .catch(err => console.error('Error sending status update email:', err));
+      }).catch(err => console.error('Error fetching property for status update:', err));
+
       res.json({
         success: true,
         message: 'Application status updated successfully',

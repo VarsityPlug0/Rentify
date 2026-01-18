@@ -546,5 +546,71 @@
     "createdAt": "2026-01-16T16:09:30.430Z",
     "updatedAt": "2026-01-16T16:10:02.090Z",
     "processedBy": 1
+  },
+  {
+    "propertyId": 1,
+    "applicantName": "BN MKHABELE",
+    "applicantEmail": "mkhabeleenterprise@gmail.com",
+    "applicantPhone": "0724816274",
+    "applicantIncome": 23000,
+    "applicantAddress": "46D",
+    "applicantCity": "TZANEEN",
+    "applicantState": "NY",
+    "applicantZip": "0850",
+    "applicantOccupants": 3,
+    "applicantEmployment": "makaveli",
+    "applicantMessage": "no pets ",
+    "documents": [
+      {
+        "type": "ID",
+        "name": "a_bedroom_with_a_bed_and_a_desk_and_a_window_at_Ra (2).jpg",
+        "url": "uploads/documents/doc-id-1768747146855-204136147-a_bedroom_with_a_bed_and_a_desk_and_a_window_at_Ra__2_.jpg"
+      },
+      {
+        "type": "Income",
+        "name": "a_building_with_a_sign_on_the_side_of_it_at_Radiss (1).jpg",
+        "url": "uploads/documents/doc-income-1768747146860-964113414-a_building_with_a_sign_on_the_side_of_it_at_Radiss__1_.jpg"
+      },
+      {
+        "type": "Other",
+        "name": "a_building_with_a_sign_on_the_side_of_it_at_sunset.jpg",
+        "url": "uploads/documents/doc-other-1768747146861-483100024-a_building_with_a_sign_on_the_side_of_it_at_sunset.jpg"
+      }
+    ],
+    "id": 25,
+    "status": "pending",
+    "createdAt": "2026-01-18T14:39:06.927Z",
+    "updatedAt": "2026-01-18T14:39:06.927Z"
+  },
+  {
+    "propertyId": 1,
+    "applicantName": "BR MKHABELE",
+    "applicantEmail": "mkhabeleenterprise@GMAIL.COM",
+    "applicantPhone": "0766424105",
+    "applicantIncome": 50000,
+    "applicantAddress": "46D",
+    "applicantCity": "TZANEEN",
+    "applicantState": "DE",
+    "applicantZip": "1449",
+    "applicantOccupants": 1,
+    "applicantEmployment": "makaveli",
+    "applicantMessage": "id love to move in asap",
+    "documents": [
+      {
+        "type": "ID",
+        "name": "a_bedroom_with_a_bed_and_a_desk_and_a_window_at_Ra (2).jpg",
+        "url": "uploads/documents/doc-id-1768747632919-284376125-a_bedroom_with_a_bed_and_a_desk_and_a_window_at_Ra__2_.jpg"
+      },
+      {
+        "type": "Income",
+        "name": "a_building_with_a_sign_on_the_side_of_it_at_Radiss (1).jpg",
+        "url": "uploads/documents/doc-income-1768747632927-823239056-a_building_with_a_sign_on_the_side_of_it_at_Radiss__1_.jpg"
+      }
+    ],
+    "id": 26,
+    "status": "approved",
+    "createdAt": "2026-01-18T14:47:12.988Z",
+    "updatedAt": "2026-01-18T14:48:18.081Z",
+    "processedBy": 1
   }
 ]
