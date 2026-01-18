@@ -1,10 +1,10 @@
 /**
  * EmailService.js
- * Handles sending transactional emails using Nodemailer and Gmail SMTP
+ * Handles sending transactional emails using Nodemailer and SMTP
  */
 
 const nodemailer = require('nodemailer');
-require('dotenv').config();
+const env = require('../config/environment');
 
 class EmailService {
   constructor() {
@@ -12,7 +12,8 @@ class EmailService {
     this.isConfigured = false;
     this.brandColor = '#0071c2'; // Matches --primary-blue
     this.brandName = 'Rentify';
-    this.contactEmail = process.env.EMAIL_USER || 'support@rentify.com';
+    this.contactEmail = env.email.user || 'support@rentify.com';
+    this.appUrl = env.app.url;
 
     this.init();
   }
@@ -21,18 +22,20 @@ class EmailService {
    * Initialize the Nodemailer transporter
    */
   init() {
-    if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+    if (env.email.user && env.email.pass) {
       this.transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: env.email.host,
+        port: env.email.port,
+        secure: env.email.port === 465, // true for 465, false for other ports
         auth: {
-          user: process.env.EMAIL_USER,
-          pass: process.env.EMAIL_PASS
+          user: env.email.user,
+          pass: env.email.pass
         }
       });
       this.isConfigured = true;
-      console.log('📧 EmailService: SMTP Transporter initialized');
+      console.log(`📧 EmailService: SMTP Transporter initialized (${env.email.host}:${env.email.port})`);
     } else {
-      console.warn('⚠️ EmailService: EMAIL_USER or EMAIL_PASS missing in .env. Emails will not be sent.');
+      console.warn('⚠️ EmailService: EMAIL_USER or EMAIL_PASS missing in configuration. Emails will not be sent.');
     }
   }
 
@@ -48,7 +51,7 @@ class EmailService {
 
     try {
       const info = await this.transporter.sendMail({
-        from: `"${this.brandName}" <${process.env.EMAIL_USER}>`,
+        from: `"${this.brandName}" <${env.email.user}>`,
         ...options
       });
       console.log('✅ Email sent:', info.messageId);
@@ -159,12 +162,12 @@ class EmailService {
       <p><strong>Documents Attached:</strong> ${application.documents ? application.documents.length : 0} files</p>
       
       <p style="text-align: center;">
-        <a href="${process.env.APP_URL || 'http://localhost:3000'}/admin" class="button">Log in to Review Application</a>
+        <a href="${this.appUrl}/admin" class="button">Log in to Review Application</a>
       </p>
     `;
 
     return this.sendMail({
-      to: process.env.EMAIL_USER,
+      to: env.email.user,
       subject,
       html: this.getLayout(content, subject)
     });
