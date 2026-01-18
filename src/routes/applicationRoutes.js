@@ -6,6 +6,9 @@
 const express = require('express');
 const router = express.Router();
 const ApplicationService = require('../services/ApplicationService');
+const PropertyService = require('../services/PropertyService');
+const AuthMiddleware = require('../middleware/AuthMiddleware');
+
 const applicationService = new ApplicationService();
 const propertyService = new PropertyService();
 
