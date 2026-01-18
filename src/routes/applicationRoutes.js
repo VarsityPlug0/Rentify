@@ -6,10 +6,6 @@
 const express = require('express');
 const router = express.Router();
 const ApplicationService = require('../services/ApplicationService');
-const EmailService = require('../services/EmailService');
-const PropertyService = require('../services/PropertyService');
-const AuthMiddleware = require('../middleware/AuthMiddleware');
-
 const applicationService = new ApplicationService();
 const propertyService = new PropertyService();
 
@@ -219,6 +215,8 @@ router.patch('/:id/status', AuthMiddleware.requireAdmin, async (req, res) => {
       const updatedApp = await applicationService.updateStatus(applicationId, status, adminNotes, adminId);
 
       // Send status update email to applicant
+      console.log('📧 Status update notifications disabled (EmailService removed).');
+      /*
       console.log(`📧 Sending status update (${status}) to applicant...`);
       // We need to fetch property details for the status update too
       propertyService.getById(parseInt(updatedApp.propertyId)).then(property => {
@@ -227,6 +225,7 @@ router.patch('/:id/status', AuthMiddleware.requireAdmin, async (req, res) => {
         EmailService.sendStatusUpdate(updatedApp, status, adminNotes, property)
           .catch(err => console.error('Error sending status update email:', err));
       }).catch(err => console.error('Error fetching property for status update:', err));
+      */
 
       res.json({
         success: true,

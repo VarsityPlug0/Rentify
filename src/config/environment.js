@@ -38,19 +38,6 @@ const config = {
   api: {
     basePath: '/api',
     version: 'v1'
-  },
-
-  // Email Configuration
-  email: {
-    host: process.env.EMAIL_HOST || 'smtp.gmail.com',
-    port: parseInt(process.env.EMAIL_PORT) || 587,
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  },
-
-  // Application Settings
-  app: {
-    url: process.env.APP_URL || 'http://localhost:3000'
   }
 };
 
