@@ -99,8 +99,8 @@ router.post('/', documentUpload.fields([
     });
 
     // Send email notifications
-    // We don't await these to prevent blocking the response speed (fire and forget)
-    // or we can await if we want to ensure sending. For now, we'll log errors.
+    console.log('📧 Notifications disabled (EmailService removed).');
+    /*
     console.log('📧 Fetching property details for notifications...');
     propertyService.getById(parseInt(propertyId)).then(property => {
       if (!property) {
@@ -109,7 +109,7 @@ router.post('/', documentUpload.fields([
       }
 
       console.log('📧 Sending notifications...');
-
+      
       // 1. Notify Owner
       EmailService.sendOwnerNotification({
         propertyId: parseInt(propertyId),
@@ -128,6 +128,7 @@ router.post('/', documentUpload.fields([
         applicantEmail
       }, property).catch(err => console.error('Error sending applicant confirmation:', err));
     }).catch(err => console.error('Error fetching property for notifications:', err));
+    */
 
     res.status(201).json({
       success: true,
