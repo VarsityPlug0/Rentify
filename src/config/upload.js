@@ -13,13 +13,8 @@ const hasCloudinaryKeys = process.env.CLOUDINARY_CLOUD_NAME &&
     process.env.CLOUDINARY_API_KEY &&
     process.env.CLOUDINARY_API_SECRET;
 
-// Enforce Cloudinary in Production
-if (isProduction && !hasCloudinaryKeys) {
-    console.error('❌ CRITICAL ERROR: Cloudinary credentials missing in production!');
-    console.error('   Render (and other PaaS) require external storage for persistence.');
-    console.error('   Please set CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, and CLOUDINARY_API_SECRET.');
-    process.exit(1); // Fail fast in production
-}
+// Cloudinary is optional. If keys are missing, we fall back to local disk storage.
+// WARNING: Local storage on Render is ephemeral (files are lost on restart).
 
 const USE_CLOUDINARY = hasCloudinaryKeys;
 
