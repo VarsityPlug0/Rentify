@@ -125,6 +125,9 @@ app.get('/health', (req, res) => {
 // Serve uploaded images
 app.use('/uploads', express.static(path.join(__dirname, '../public/uploads')));
 
+// Serve IMAGES directory
+app.use('/IMAGES', express.static(path.join(__dirname, '../IMAGES')));
+
 // Serve static files from parent directory
 app.use(express.static(path.join(__dirname, '..')));
 
