@@ -1,0 +1,1822 @@
+[
+  {
+    "id": 1,
+    "title": "Stunning 2-Bed Home in Sandton, South Africa",
+    "description": "A masterpiece of modern design, this spacious apartment in Sandton, South Africa offers 2 bedrooms, state-of-the-art amenities, and breathtaking views. Perfect for the discerning professional.",
+    "price": 22900,
+    "location": "Sandton, South Africa",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "squareFeet": 959,
+    "images": [
+      "IMAGES/Westpoint_Sandton_Executive_Suites.webp",
+      "IMAGES/Marley_on_Katherine_Apartments.webp",
+      "IMAGES/uploads/image-1768416081688-820828818.jpg",
+      "IMAGES/uploads/image-1768416081726-47826603.jpg"
+    ],
+    "available": true,
+    "featured": true,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Private Elevator",
+      "Backup Power",
+      "Smart Home System",
+      "Sky Bar",
+      "Ocean View"
+    ],
+    "address": {},
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2026-01-17T20:15:26.165Z"
+  },
+  {
+    "id": 2,
+    "title": "Modern 1-Bed Loft in Bedfordview, South Africa",
+    "description": "Beautifully appointed 1-bedroom home in Bedfordview, South Africa. Offers a perfect balance of comfort and convenience with modern amenities and secure living.",
+    "price": 9400,
+    "location": "Bedfordview, South Africa",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFeet": 380,
+    "images": [
+      "IMAGES/Lilian_Lofts_Hotel_Spa.webp"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Study Nook",
+      "Fiber Ready",
+      "Garden",
+      "Pet Friendly",
+      "Balcony"
+    ],
+    "address": {},
+    "createdAt": "2024-01-02T00:00:00.000Z",
+    "updatedAt": "2026-01-14T18:03:39.936Z"
+  },
+  {
+    "id": 3,
+    "title": "Value 3-Bed Apartment in O.R. Tambo, South Africa",
+    "description": "Neat and well-maintained 3-bedroom apartment in O.R. Tambo, South Africa. Offers secure living and value for money in a central location.",
+    "price": 8800,
+    "location": "O.R. Tambo, South Africa",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "squareFeet": 1275,
+    "images": [
+      "IMAGES/Radisson_Hotel_and_Convention_Centre_OR_Tambo_Airp.webp"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Close to Transport",
+      "Prepaid Electricity",
+      "Security Gate"
+    ],
+    "address": {},
+    "createdAt": "2024-01-03T00:00:00.000Z",
+    "updatedAt": "2026-01-14T18:03:39.936Z"
+  },
+  {
+    "id": 21,
+    "title": "Contemporary 2-Bed Apartment in Bryanston",
+    "description": "Modern and stylish 2-bedroom apartment located in the sought-after Bryanston area. Features contemporary finishes, great natural light, and convenient access to local shopping and dining.",
+    "price": 14200,
+    "location": "Bryanston",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "squareFeet": 974,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Bryanston_-_JBL1714109/Apartment_to_rent_in_Bryanston_-_JBL1714109 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Bryanston_-_JBL1714109/Apartment_to_rent_in_Bryanston_-_JBL1714109 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Bryanston_-_JBL1714109/Apartment_to_rent_in_Bryanston_-_JBL1714109 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Bryanston_-_JBL1714109/Apartment_to_rent_in_Bryanston_-_JBL1714109.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Study Nook",
+      "Clubhouse",
+      "Fiber Ready",
+      "Pet Friendly"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.776Z",
+    "updatedAt": "2026-01-17T19:42:33.791Z"
+  },
+  {
+    "id": 22,
+    "title": "Stylish 4-Bed Apartment in Essenwood",
+    "description": "Spacious 4-bedroom unit in a secure complex in Essenwood. Ideal for young professionals or small families looking for a vibrant community atmosphere.",
+    "price": 16400,
+    "location": "Essenwood",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "squareFeet": 1764,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Essenwood_-_1DA1708427/Apartment_to_rent_in_Essenwood_-_1DA1708427 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Essenwood_-_1DA1708427/Apartment_to_rent_in_Essenwood_-_1DA1708427 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Essenwood_-_1DA1708427/Apartment_to_rent_in_Essenwood_-_1DA1708427 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Essenwood_-_1DA1708427/Apartment_to_rent_in_Essenwood_-_1DA1708427.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Fiber Ready",
+      "Secure Parking",
+      "Clubhouse",
+      "Pet Friendly",
+      "Study Nook"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.796Z",
+    "updatedAt": "2026-01-17T19:42:33.796Z"
+  },
+  {
+    "id": 23,
+    "title": "Contemporary 2-Bed Apartment in Essenwood",
+    "description": "Beautifully appointed 2-bedroom home in Essenwood. Offers a perfect balance of comfort and convenience with modern amenities and secure living.",
+    "price": 14300,
+    "location": "Essenwood",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "squareFeet": 777,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Essenwood_-_1DA1712745/Apartment_to_rent_in_Essenwood_-_1DA1712745 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Essenwood_-_1DA1712745/Apartment_to_rent_in_Essenwood_-_1DA1712745 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Essenwood_-_1DA1712745/Apartment_to_rent_in_Essenwood_-_1DA1712745 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Essenwood_-_1DA1712745/Apartment_to_rent_in_Essenwood_-_1DA1712745.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Secure Parking",
+      "Balcony",
+      "Pet Friendly",
+      "Fiber Ready"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.806Z",
+    "updatedAt": "2026-01-17T19:42:33.806Z"
+  },
+  {
+    "id": 24,
+    "title": "Value 3-Bed Apartment in Glenadrienne",
+    "description": "Cozy and convenient 3-bedroom unit in Glenadrienne. Close to all major transport routes and local amenities. Perfect lock-up-and-go lifestyle.",
+    "price": 8200,
+    "location": "Glenadrienne",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "squareFeet": 1164,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Glenadrienne_-_JBL1720975/Apartment_to_rent_in_Glenadrienne_-_JBL1720975 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Glenadrienne_-_JBL1720975/Apartment_to_rent_in_Glenadrienne_-_JBL1720975 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Glenadrienne_-_JBL1720975/Apartment_to_rent_in_Glenadrienne_-_JBL1720975 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Glenadrienne_-_JBL1720975/Apartment_to_rent_in_Glenadrienne_-_JBL1720975.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Security Gate",
+      "Prepaid Electricity",
+      "Close to Transport",
+      "Built-in Cupboards"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.811Z",
+    "updatedAt": "2026-01-17T19:42:33.811Z"
+  },
+  {
+    "id": 25,
+    "title": "Modern 1-Bed Apartment in Green Point Cape Town",
+    "description": "Spacious 1-bedroom unit in a secure complex in Green Point Cape Town. Ideal for young professionals or small families looking for a vibrant community atmosphere.",
+    "price": 10100,
+    "location": "Green Point Cape Town",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFeet": 428,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Green_Point_Cape_Town_-_ASL17/Apartment_to_rent_in_Green_Point_Cape_Town_-_ASL17 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Green_Point_Cape_Town_-_ASL17/Apartment_to_rent_in_Green_Point_Cape_Town_-_ASL17 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Green_Point_Cape_Town_-_ASL17/Apartment_to_rent_in_Green_Point_Cape_Town_-_ASL17 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Green_Point_Cape_Town_-_ASL17/Apartment_to_rent_in_Green_Point_Cape_Town_-_ASL17.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Pet Friendly",
+      "Balcony",
+      "Air Conditioning",
+      "Fiber Ready"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.815Z",
+    "updatedAt": "2026-01-17T19:42:33.815Z"
+  },
+  {
+    "id": 26,
+    "title": "Modern 2-Bed Apartment in La Lucia",
+    "description": "Spacious 2-bedroom unit in a secure complex in La Lucia. Ideal for young professionals or small families looking for a vibrant community atmosphere.",
+    "price": 12200,
+    "location": "La Lucia",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "squareFeet": 949,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_La_Lucia_-_1ND1705772/Apartment_to_rent_in_La_Lucia_-_1ND1705772 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_La_Lucia_-_1ND1705772/Apartment_to_rent_in_La_Lucia_-_1ND1705772 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_La_Lucia_-_1ND1705772/Apartment_to_rent_in_La_Lucia_-_1ND1705772 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_La_Lucia_-_1ND1705772/Apartment_to_rent_in_La_Lucia_-_1ND1705772.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Garden",
+      "Study Nook",
+      "Pet Friendly",
+      "Secure Parking",
+      "Balcony"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.820Z",
+    "updatedAt": "2026-01-17T19:42:33.820Z"
+  },
+  {
+    "id": 27,
+    "title": "Stylish 4-Bed Apartment in La Lucia",
+    "description": "Beautifully appointed 4-bedroom home in La Lucia. Offers a perfect balance of comfort and convenience with modern amenities and secure living.",
+    "price": 20500,
+    "location": "La Lucia",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "squareFeet": 1644,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_La_Lucia_-_1ND1712844/Apartment_to_rent_in_La_Lucia_-_1ND1712844 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_La_Lucia_-_1ND1712844/Apartment_to_rent_in_La_Lucia_-_1ND1712844 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_La_Lucia_-_1ND1712844/Apartment_to_rent_in_La_Lucia_-_1ND1712844 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_La_Lucia_-_1ND1712844/Apartment_to_rent_in_La_Lucia_-_1ND1712844.jpg"
+    ],
+    "available": true,
+    "featured": true,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Air Conditioning",
+      "Study Nook",
+      "Secure Parking"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.823Z",
+    "updatedAt": "2026-01-17T19:42:33.823Z"
+  },
+  {
+    "id": 28,
+    "title": "Executive 2-Bed Apartment in Melrose Arch",
+    "description": "A masterpiece of modern design, this spacious apartment in Melrose Arch offers 2 bedrooms, state-of-the-art amenities, and breathtaking views. Perfect for the discerning professional.",
+    "price": 20400,
+    "location": "Melrose Arch",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "squareFeet": 851,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Melrose_Arch_-_JBL1686954/Apartment_to_rent_in_Melrose_Arch_-_JBL1686954 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Melrose_Arch_-_JBL1686954/Apartment_to_rent_in_Melrose_Arch_-_JBL1686954 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Melrose_Arch_-_JBL1686954/Apartment_to_rent_in_Melrose_Arch_-_JBL1686954 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Melrose_Arch_-_JBL1686954/Apartment_to_rent_in_Melrose_Arch_-_JBL1686954.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Spa",
+      "Smart Home System",
+      "Gym",
+      "Backup Power",
+      "Concierge",
+      "Private Elevator"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.826Z",
+    "updatedAt": "2026-01-17T19:42:33.826Z"
+  },
+  {
+    "id": 29,
+    "title": "Executive 1-Bed Apartment in Melrose Arch",
+    "description": "Sophisticated urban living at its finest. This 1-bedroom apartment in the heart of Melrose Arch boasts premium fixtures, expansive living areas, and access to exclusive building facilities.",
+    "price": 15600,
+    "location": "Melrose Arch",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFeet": 509,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Melrose_Arch_-_MAL1722176/Apartment_to_rent_in_Melrose_Arch_-_MAL1722176 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Melrose_Arch_-_MAL1722176/Apartment_to_rent_in_Melrose_Arch_-_MAL1722176 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Melrose_Arch_-_MAL1722176/Apartment_to_rent_in_Melrose_Arch_-_MAL1722176 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Melrose_Arch_-_MAL1722176/Apartment_to_rent_in_Melrose_Arch_-_MAL1722176.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Backup Power",
+      "Ocean View",
+      "Sky Bar",
+      "Spa",
+      "Smart Home System"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.849Z",
+    "updatedAt": "2026-01-17T19:42:33.849Z"
+  },
+  {
+    "id": 30,
+    "title": "Stylish 3-Bed Apartment in Menlyn",
+    "description": "Beautifully appointed 3-bedroom home in Menlyn. Offers a perfect balance of comfort and convenience with modern amenities and secure living.",
+    "price": 17800,
+    "location": "Menlyn",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "squareFeet": 1254,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Menlyn_-_PTL1694041/Apartment_to_rent_in_Menlyn_-_PTL1694041 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Menlyn_-_PTL1694041/Apartment_to_rent_in_Menlyn_-_PTL1694041 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Menlyn_-_PTL1694041/Apartment_to_rent_in_Menlyn_-_PTL1694041 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Menlyn_-_PTL1694041/Apartment_to_rent_in_Menlyn_-_PTL1694041.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Pet Friendly",
+      "Balcony",
+      "Fiber Ready"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.852Z",
+    "updatedAt": "2026-01-17T19:42:33.852Z"
+  },
+  {
+    "id": 31,
+    "title": "Luxury 3-Bed Apartment in Ridgeside",
+    "description": "Sophisticated urban living at its finest. This 3-bedroom apartment in the heart of Ridgeside boasts premium fixtures, expansive living areas, and access to exclusive building facilities.",
+    "price": 25700,
+    "location": "Ridgeside",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "squareFeet": 1347,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1624091/Apartment_to_rent_in_Ridgeside_-_1ND1624091 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1624091/Apartment_to_rent_in_Ridgeside_-_1ND1624091 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1624091/Apartment_to_rent_in_Ridgeside_-_1ND1624091 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1624091/Apartment_to_rent_in_Ridgeside_-_1ND1624091.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Pool",
+      "Smart Home System",
+      "Spa",
+      "Backup Power",
+      "Ocean View",
+      "Sky Bar"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.857Z",
+    "updatedAt": "2026-01-17T19:42:33.857Z"
+  },
+  {
+    "id": 32,
+    "title": "Premium 4-Bed Apartment in Ridgeside",
+    "description": "Experience the pinnacle of luxury living in this exclusive 4-bedroom residence. Featuring panoramic views and world-class finishes, this home offers an unmatched lifestyle in Ridgeside.",
+    "price": 33100,
+    "location": "Ridgeside",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "squareFeet": 1783,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1626733/Apartment_to_rent_in_Ridgeside_-_1ND1626733 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1626733/Apartment_to_rent_in_Ridgeside_-_1ND1626733 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1626733/Apartment_to_rent_in_Ridgeside_-_1ND1626733 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1626733/Apartment_to_rent_in_Ridgeside_-_1ND1626733.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Spa",
+      "Concierge",
+      "Sky Bar",
+      "Private Elevator",
+      "Sauna"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.864Z",
+    "updatedAt": "2026-01-17T19:42:33.864Z"
+  },
+  {
+    "id": 33,
+    "title": "Exclusive 2-Bed Apartment in Ridgeside",
+    "description": "A masterpiece of modern design, this spacious apartment in Ridgeside offers 2 bedrooms, state-of-the-art amenities, and breathtaking views. Perfect for the discerning professional.",
+    "price": 22800,
+    "location": "Ridgeside",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "squareFeet": 783,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659960/Apartment_to_rent_in_Ridgeside_-_1ND1659960 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659960/Apartment_to_rent_in_Ridgeside_-_1ND1659960 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659960/Apartment_to_rent_in_Ridgeside_-_1ND1659960 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659960/Apartment_to_rent_in_Ridgeside_-_1ND1659960.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Sky Bar",
+      "Smart Home System",
+      "24/7 Security",
+      "Concierge"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.874Z",
+    "updatedAt": "2026-01-17T19:42:33.874Z"
+  },
+  {
+    "id": 34,
+    "title": "Stunning 2-Bed Apartment in Ridgeside",
+    "description": "Sophisticated urban living at its finest. This 2-bedroom apartment in the heart of Ridgeside boasts premium fixtures, expansive living areas, and access to exclusive building facilities.",
+    "price": 22700,
+    "location": "Ridgeside",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "squareFeet": 997,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659964/Apartment_to_rent_in_Ridgeside_-_1ND1659964 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659964/Apartment_to_rent_in_Ridgeside_-_1ND1659964 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659964/Apartment_to_rent_in_Ridgeside_-_1ND1659964 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659964/Apartment_to_rent_in_Ridgeside_-_1ND1659964.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Sky Bar",
+      "Concierge",
+      "Private Elevator",
+      "Spa",
+      "Smart Home System"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.883Z",
+    "updatedAt": "2026-01-17T19:42:33.883Z"
+  },
+  {
+    "id": 35,
+    "title": "Executive 4-Bed Apartment in Ridgeside",
+    "description": "Experience the pinnacle of luxury living in this exclusive 4-bedroom residence. Featuring panoramic views and world-class finishes, this home offers an unmatched lifestyle in Ridgeside.",
+    "price": 33900,
+    "location": "Ridgeside",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "squareFeet": 1747,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659966/Apartment_to_rent_in_Ridgeside_-_1ND1659966 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659966/Apartment_to_rent_in_Ridgeside_-_1ND1659966 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659966/Apartment_to_rent_in_Ridgeside_-_1ND1659966 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659966/Apartment_to_rent_in_Ridgeside_-_1ND1659966.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Gym",
+      "Sauna",
+      "Ocean View",
+      "24/7 Security",
+      "Sky Bar"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.888Z",
+    "updatedAt": "2026-01-17T19:42:33.888Z"
+  },
+  {
+    "id": 36,
+    "title": "Luxury 3-Bed Apartment in Ridgeside",
+    "description": "Sophisticated urban living at its finest. This 3-bedroom apartment in the heart of Ridgeside boasts premium fixtures, expansive living areas, and access to exclusive building facilities.",
+    "price": 25700,
+    "location": "Ridgeside",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "squareFeet": 1232,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659970/Apartment_to_rent_in_Ridgeside_-_1ND1659970 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659970/Apartment_to_rent_in_Ridgeside_-_1ND1659970 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659970/Apartment_to_rent_in_Ridgeside_-_1ND1659970 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659970/Apartment_to_rent_in_Ridgeside_-_1ND1659970.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Smart Home System",
+      "Spa",
+      "Pool",
+      "Private Elevator",
+      "Gym"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.891Z",
+    "updatedAt": "2026-01-17T19:42:33.891Z"
+  },
+  {
+    "id": 37,
+    "title": "Exclusive 3-Bed Apartment in Ridgeside",
+    "description": "Sophisticated urban living at its finest. This 3-bedroom apartment in the heart of Ridgeside boasts premium fixtures, expansive living areas, and access to exclusive building facilities.",
+    "price": 27500,
+    "location": "Ridgeside",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "squareFeet": 1186,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659973/Apartment_to_rent_in_Ridgeside_-_1ND1659973 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659973/Apartment_to_rent_in_Ridgeside_-_1ND1659973 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659973/Apartment_to_rent_in_Ridgeside_-_1ND1659973 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659973/Apartment_to_rent_in_Ridgeside_-_1ND1659973.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Sky Bar",
+      "Concierge",
+      "Smart Home System",
+      "Private Elevator",
+      "24/7 Security"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.896Z",
+    "updatedAt": "2026-01-17T19:42:33.896Z"
+  },
+  {
+    "id": 38,
+    "title": "Exclusive 1-Bed Apartment in Ridgeside",
+    "description": "Experience the pinnacle of luxury living in this exclusive 1-bedroom residence. Featuring panoramic views and world-class finishes, this home offers an unmatched lifestyle in Ridgeside.",
+    "price": 16100,
+    "location": "Ridgeside",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFeet": 427,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659980/Apartment_to_rent_in_Ridgeside_-_1ND1659980 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659980/Apartment_to_rent_in_Ridgeside_-_1ND1659980 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659980/Apartment_to_rent_in_Ridgeside_-_1ND1659980 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659980/Apartment_to_rent_in_Ridgeside_-_1ND1659980.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Concierge",
+      "Gym",
+      "Sauna",
+      "Pool",
+      "24/7 Security",
+      "Backup Power"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.903Z",
+    "updatedAt": "2026-01-17T19:42:33.903Z"
+  },
+  {
+    "id": 39,
+    "title": "Premium 2-Bed Apartment in Ridgeside",
+    "description": "Sophisticated urban living at its finest. This 2-bedroom apartment in the heart of Ridgeside boasts premium fixtures, expansive living areas, and access to exclusive building facilities.",
+    "price": 19600,
+    "location": "Ridgeside",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "squareFeet": 998,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659988/Apartment_to_rent_in_Ridgeside_-_1ND1659988 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659988/Apartment_to_rent_in_Ridgeside_-_1ND1659988 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659988/Apartment_to_rent_in_Ridgeside_-_1ND1659988 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659988/Apartment_to_rent_in_Ridgeside_-_1ND1659988.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Sky Bar",
+      "Pool",
+      "Backup Power",
+      "24/7 Security",
+      "Spa",
+      "Smart Home System"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.907Z",
+    "updatedAt": "2026-01-17T19:42:33.908Z"
+  },
+  {
+    "id": 40,
+    "title": "Exclusive 2-Bed Apartment in Ridgeside",
+    "description": "A masterpiece of modern design, this spacious apartment in Ridgeside offers 2 bedrooms, state-of-the-art amenities, and breathtaking views. Perfect for the discerning professional.",
+    "price": 23200,
+    "location": "Ridgeside",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "squareFeet": 821,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659999/Apartment_to_rent_in_Ridgeside_-_1ND1659999 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659999/Apartment_to_rent_in_Ridgeside_-_1ND1659999 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659999/Apartment_to_rent_in_Ridgeside_-_1ND1659999 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1659999/Apartment_to_rent_in_Ridgeside_-_1ND1659999.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Gym",
+      "Private Elevator",
+      "Sky Bar",
+      "24/7 Security",
+      "Concierge",
+      "Smart Home System"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.912Z",
+    "updatedAt": "2026-01-17T19:42:33.912Z"
+  },
+  {
+    "id": 41,
+    "title": "Luxury 3-Bed Apartment in Ridgeside",
+    "description": "A masterpiece of modern design, this spacious apartment in Ridgeside offers 3 bedrooms, state-of-the-art amenities, and breathtaking views. Perfect for the discerning professional.",
+    "price": 29000,
+    "location": "Ridgeside",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "squareFeet": 1237,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1660003/Apartment_to_rent_in_Ridgeside_-_1ND1660003 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1660003/Apartment_to_rent_in_Ridgeside_-_1ND1660003 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1660003/Apartment_to_rent_in_Ridgeside_-_1ND1660003 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1660003/Apartment_to_rent_in_Ridgeside_-_1ND1660003.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Concierge",
+      "Spa",
+      "24/7 Security",
+      "Private Elevator",
+      "Ocean View",
+      "Sky Bar"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.917Z",
+    "updatedAt": "2026-01-17T19:42:33.917Z"
+  },
+  {
+    "id": 42,
+    "title": "Stunning 3-Bed Apartment in Ridgeside",
+    "description": "A masterpiece of modern design, this spacious apartment in Ridgeside offers 3 bedrooms, state-of-the-art amenities, and breathtaking views. Perfect for the discerning professional.",
+    "price": 24900,
+    "location": "Ridgeside",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "squareFeet": 1339,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1725930/Apartment_to_rent_in_Ridgeside_-_1ND1725930 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1725930/Apartment_to_rent_in_Ridgeside_-_1ND1725930 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1725930/Apartment_to_rent_in_Ridgeside_-_1ND1725930 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1725930/Apartment_to_rent_in_Ridgeside_-_1ND1725930.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Ocean View",
+      "Sauna",
+      "Smart Home System"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.921Z",
+    "updatedAt": "2026-01-17T19:42:33.921Z"
+  },
+  {
+    "id": 43,
+    "title": "Luxury 2-Bed Apartment in Ridgeside",
+    "description": "Experience the pinnacle of luxury living in this exclusive 2-bedroom residence. Featuring panoramic views and world-class finishes, this home offers an unmatched lifestyle in Ridgeside.",
+    "price": 23200,
+    "location": "Ridgeside",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "squareFeet": 975,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1725940/Apartment_to_rent_in_Ridgeside_-_1ND1725940 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1725940/Apartment_to_rent_in_Ridgeside_-_1ND1725940 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1725940/Apartment_to_rent_in_Ridgeside_-_1ND1725940 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Ridgeside_-_1ND1725940/Apartment_to_rent_in_Ridgeside_-_1ND1725940.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Sauna",
+      "Backup Power",
+      "24/7 Security",
+      "Spa",
+      "Ocean View",
+      "Sky Bar"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.925Z",
+    "updatedAt": "2026-01-17T19:42:33.925Z"
+  },
+  {
+    "id": 44,
+    "title": "Luxury 4-Bed Apartment in Sibaya",
+    "description": "A masterpiece of modern design, this spacious apartment in Sibaya offers 4 bedrooms, state-of-the-art amenities, and breathtaking views. Perfect for the discerning professional.",
+    "price": 34600,
+    "location": "Sibaya",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "squareFeet": 1630,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Sibaya_-_1ND1621326/Apartment_to_rent_in_Sibaya_-_1ND1621326 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Sibaya_-_1ND1621326/Apartment_to_rent_in_Sibaya_-_1ND1621326 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Sibaya_-_1ND1621326/Apartment_to_rent_in_Sibaya_-_1ND1621326 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Sibaya_-_1ND1621326/Apartment_to_rent_in_Sibaya_-_1ND1621326.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Sky Bar",
+      "24/7 Security",
+      "Pool"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.932Z",
+    "updatedAt": "2026-01-17T19:42:33.932Z"
+  },
+  {
+    "id": 45,
+    "title": "Cozy 2-Bed Apartment in St Georges Park",
+    "description": "Cozy and convenient 2-bedroom unit in St Georges Park. Close to all major transport routes and local amenities. Perfect lock-up-and-go lifestyle.",
+    "price": 8400,
+    "location": "St Georges Park",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "squareFeet": 885,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_St_Georges_Park_-_1PLZ1670356/Apartment_to_rent_in_St_Georges_Park_-_1PLZ1670356 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_St_Georges_Park_-_1PLZ1670356/Apartment_to_rent_in_St_Georges_Park_-_1PLZ1670356 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_St_Georges_Park_-_1PLZ1670356/Apartment_to_rent_in_St_Georges_Park_-_1PLZ1670356 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_St_Georges_Park_-_1PLZ1670356/Apartment_to_rent_in_St_Georges_Park_-_1PLZ1670356.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Built-in Cupboards",
+      "Security Gate",
+      "Prepaid Electricity",
+      "Close to Transport"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.936Z",
+    "updatedAt": "2026-01-17T19:42:33.936Z"
+  },
+  {
+    "id": 46,
+    "title": "Value 2-Bed Apartment in Three Anchor Bay",
+    "description": "Comfortable 2-bedroom starter home in Three Anchor Bay. Features practical layout and essential amenities for easy living.",
+    "price": 8200,
+    "location": "Three Anchor Bay",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "squareFeet": 987,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Three_Anchor_Bay_-_ASL1726327/Apartment_to_rent_in_Three_Anchor_Bay_-_ASL1726327 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Three_Anchor_Bay_-_ASL1726327/Apartment_to_rent_in_Three_Anchor_Bay_-_ASL1726327 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Three_Anchor_Bay_-_ASL1726327/Apartment_to_rent_in_Three_Anchor_Bay_-_ASL1726327 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Three_Anchor_Bay_-_ASL1726327/Apartment_to_rent_in_Three_Anchor_Bay_-_ASL1726327.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Close to Transport",
+      "Security Gate"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.939Z",
+    "updatedAt": "2026-01-17T19:42:33.939Z"
+  },
+  {
+    "id": 47,
+    "title": "Premium 1-Bed Apartment in uMhlanga Rocks",
+    "description": "A masterpiece of modern design, this spacious apartment in uMhlanga Rocks offers 1 bedrooms, state-of-the-art amenities, and breathtaking views. Perfect for the discerning professional.",
+    "price": 14700,
+    "location": "uMhlanga Rocks",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFeet": 406,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1601465/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1601465 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1601465/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1601465 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1601465/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1601465 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1601465/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1601465.jpg"
+    ],
+    "available": true,
+    "featured": true,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Spa",
+      "Private Elevator",
+      "Sky Bar",
+      "Ocean View",
+      "24/7 Security",
+      "Smart Home System"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.941Z",
+    "updatedAt": "2026-01-17T19:42:33.941Z"
+  },
+  {
+    "id": 48,
+    "title": "Premium 4-Bed Apartment in uMhlanga Rocks",
+    "description": "A masterpiece of modern design, this spacious apartment in uMhlanga Rocks offers 4 bedrooms, state-of-the-art amenities, and breathtaking views. Perfect for the discerning professional.",
+    "price": 33800,
+    "location": "uMhlanga Rocks",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "squareFeet": 1664,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1695404/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1695404 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1695404/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1695404 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1695404/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1695404 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1695404/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1695404.jpg"
+    ],
+    "available": true,
+    "featured": true,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Spa",
+      "Concierge",
+      "Backup Power",
+      "Private Elevator",
+      "Sauna",
+      "Gym"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.946Z",
+    "updatedAt": "2026-01-17T19:42:33.946Z"
+  },
+  {
+    "id": 49,
+    "title": "Executive 4-Bed Apartment in uMhlanga Rocks",
+    "description": "A masterpiece of modern design, this spacious apartment in uMhlanga Rocks offers 4 bedrooms, state-of-the-art amenities, and breathtaking views. Perfect for the discerning professional.",
+    "price": 32100,
+    "location": "uMhlanga Rocks",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "squareFeet": 1765,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1722089/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1722089 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1722089/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1722089 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1722089/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1722089 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1722089/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1722089.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Sky Bar",
+      "Backup Power",
+      "24/7 Security",
+      "Spa",
+      "Ocean View",
+      "Gym"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.950Z",
+    "updatedAt": "2026-01-17T19:42:33.950Z"
+  },
+  {
+    "id": 50,
+    "title": "Stylish 1-Bed Apartment in Waterfall Midrand",
+    "description": "Spacious 1-bedroom unit in a secure complex in Waterfall Midrand. Ideal for young professionals or small families looking for a vibrant community atmosphere.",
+    "price": 9500,
+    "location": "Waterfall Midrand",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFeet": 550,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL171831/Apartment_to_rent_in_Waterfall_Midrand_-_MDL171831 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL171831/Apartment_to_rent_in_Waterfall_Midrand_-_MDL171831 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL171831/Apartment_to_rent_in_Waterfall_Midrand_-_MDL171831 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL171831/Apartment_to_rent_in_Waterfall_Midrand_-_MDL171831.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Air Conditioning",
+      "Clubhouse",
+      "Garden"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.953Z",
+    "updatedAt": "2026-01-17T19:42:33.953Z"
+  },
+  {
+    "id": 51,
+    "title": "Stylish 2-Bed Apartment in Waterfall Midrand",
+    "description": "Modern and stylish 2-bedroom apartment located in the sought-after Waterfall Midrand area. Features contemporary finishes, great natural light, and convenient access to local shopping and dining.",
+    "price": 10900,
+    "location": "Waterfall Midrand",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "squareFeet": 760,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL171920/Apartment_to_rent_in_Waterfall_Midrand_-_MDL171920 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL171920/Apartment_to_rent_in_Waterfall_Midrand_-_MDL171920 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL171920/Apartment_to_rent_in_Waterfall_Midrand_-_MDL171920 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL171920/Apartment_to_rent_in_Waterfall_Midrand_-_MDL171920.jpg"
+    ],
+    "available": true,
+    "featured": true,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Pet Friendly",
+      "Fiber Ready",
+      "Balcony",
+      "Air Conditioning",
+      "Secure Parking"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.956Z",
+    "updatedAt": "2026-01-17T19:42:33.956Z"
+  },
+  {
+    "id": 52,
+    "title": "Stylish 3-Bed Apartment in Waterfall Midrand",
+    "description": "Spacious 3-bedroom unit in a secure complex in Waterfall Midrand. Ideal for young professionals or small families looking for a vibrant community atmosphere.",
+    "price": 16300,
+    "location": "Waterfall Midrand",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "squareFeet": 1194,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172193/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172193 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172193/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172193 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172193/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172193 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172193/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172193.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Pet Friendly",
+      "Balcony",
+      "Secure Parking"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.964Z",
+    "updatedAt": "2026-01-17T19:42:33.964Z"
+  },
+  {
+    "id": 53,
+    "title": "Stylish 3-Bed Apartment in Waterfall Midrand",
+    "description": "Beautifully appointed 3-bedroom home in Waterfall Midrand. Offers a perfect balance of comfort and convenience with modern amenities and secure living.",
+    "price": 17300,
+    "location": "Waterfall Midrand",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "squareFeet": 1302,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172535/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172535 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172535/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172535 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172535/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172535 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172535/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172535.jpg"
+    ],
+    "available": true,
+    "featured": true,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Garden",
+      "Pet Friendly",
+      "Balcony",
+      "Study Nook"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.968Z",
+    "updatedAt": "2026-01-17T19:42:33.968Z"
+  },
+  {
+    "id": 54,
+    "title": "Modern 1-Bed Apartment in Waterfall Midrand",
+    "description": "Beautifully appointed 1-bedroom home in Waterfall Midrand. Offers a perfect balance of comfort and convenience with modern amenities and secure living.",
+    "price": 8600,
+    "location": "Waterfall Midrand",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFeet": 378,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172560/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172560 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172560/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172560 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172560/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172560 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172560/Apartment_to_rent_in_Waterfall_Midrand_-_MDL172560.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Pet Friendly",
+      "Fiber Ready",
+      "Clubhouse",
+      "Study Nook",
+      "Air Conditioning",
+      "Garden"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.971Z",
+    "updatedAt": "2026-01-17T19:42:33.971Z"
+  },
+  {
+    "id": 55,
+    "title": "Secure 4-Bed Apartment in Waterkloof Glen",
+    "description": "Neat and well-maintained 4-bedroom apartment in Waterkloof Glen. Offers secure living and value for money in a central location.",
+    "price": 11000,
+    "location": "Waterkloof Glen",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "squareFeet": 1690,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Waterkloof_Glen_-_PTL1707267/Apartment_to_rent_in_Waterkloof_Glen_-_PTL1707267 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Waterkloof_Glen_-_PTL1707267/Apartment_to_rent_in_Waterkloof_Glen_-_PTL1707267 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Waterkloof_Glen_-_PTL1707267/Apartment_to_rent_in_Waterkloof_Glen_-_PTL1707267 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Waterkloof_Glen_-_PTL1707267/Apartment_to_rent_in_Waterkloof_Glen_-_PTL1707267.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Close to Transport"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.974Z",
+    "updatedAt": "2026-01-17T19:42:33.974Z"
+  },
+  {
+    "id": 56,
+    "title": "Stunning 3-Bed Apartment in Zimbali Estate",
+    "description": "A masterpiece of modern design, this spacious apartment in Zimbali Estate offers 3 bedrooms, state-of-the-art amenities, and breathtaking views. Perfect for the discerning professional.",
+    "price": 25500,
+    "location": "Zimbali Estate",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "squareFeet": 1324,
+    "images": [
+      "IMAGES/Apartment_to_rent_in_Zimbali_Estate_-_1BD1723825/Apartment_to_rent_in_Zimbali_Estate_-_1BD1723825 (1).jpg",
+      "IMAGES/Apartment_to_rent_in_Zimbali_Estate_-_1BD1723825/Apartment_to_rent_in_Zimbali_Estate_-_1BD1723825 (2).jpg",
+      "IMAGES/Apartment_to_rent_in_Zimbali_Estate_-_1BD1723825/Apartment_to_rent_in_Zimbali_Estate_-_1BD1723825 (3).jpg",
+      "IMAGES/Apartment_to_rent_in_Zimbali_Estate_-_1BD1723825/Apartment_to_rent_in_Zimbali_Estate_-_1BD1723825.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Spa",
+      "Gym",
+      "Smart Home System",
+      "Concierge"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.978Z",
+    "updatedAt": "2026-01-17T19:42:33.978Z"
+  },
+  {
+    "id": 57,
+    "title": "Cozy 1-Bed Apartment in Brooklyn Pretor",
+    "description": "Cozy and convenient 1-bedroom unit in Brooklyn Pretor. Close to all major transport routes and local amenities. Perfect lock-up-and-go lifestyle.",
+    "price": 5200,
+    "location": "Brooklyn Pretor",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFeet": 353,
+    "images": [
+      "IMAGES/Brooklyn_Pretor/Double-storey_apartment_to_rent_in_Brooklyn_Pretor.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Security Gate",
+      "Close to Transport",
+      "Built-in Cupboards"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.983Z",
+    "updatedAt": "2026-01-17T19:42:33.983Z"
+  },
+  {
+    "id": 58,
+    "title": "Secure 4-Bed Apartment in Brooklyn Pretor (1)",
+    "description": "Neat and well-maintained 4-bedroom apartment in Brooklyn Pretor (1). Offers secure living and value for money in a central location.",
+    "price": 11900,
+    "location": "Brooklyn Pretor (1)",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "squareFeet": 1716,
+    "images": [
+      "IMAGES/Brooklyn_Pretor (1)/Double-storey_apartment_to_rent_in_Brooklyn_Pretor (1).jpg"
+    ],
+    "available": true,
+    "featured": true,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Security Gate",
+      "Prepaid Electricity",
+      "Close to Transport",
+      "Built-in Cupboards"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.985Z",
+    "updatedAt": "2026-01-17T19:42:33.985Z"
+  },
+  {
+    "id": 59,
+    "title": "Secure 3-Bed Apartment in Brooklyn Pretor (2)",
+    "description": "Neat and well-maintained 3-bedroom apartment in Brooklyn Pretor (2). Offers secure living and value for money in a central location.",
+    "price": 8000,
+    "location": "Brooklyn Pretor (2)",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "squareFeet": 1208,
+    "images": [
+      "IMAGES/Brooklyn_Pretor (2)/Double-storey_apartment_to_rent_in_Brooklyn_Pretor (2).jpg"
+    ],
+    "available": true,
+    "featured": true,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Close to Transport",
+      "Security Gate",
+      "Prepaid Electricity"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.988Z",
+    "updatedAt": "2026-01-17T19:42:33.988Z"
+  },
+  {
+    "id": 60,
+    "title": "Charming 1-Bed Apartment in Brooklyn Pretor (3)",
+    "description": "Cozy and convenient 1-bedroom unit in Brooklyn Pretor (3). Close to all major transport routes and local amenities. Perfect lock-up-and-go lifestyle.",
+    "price": 6500,
+    "location": "Brooklyn Pretor (3)",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFeet": 500,
+    "images": [
+      "IMAGES/Brooklyn_Pretor (3)/Double-storey_apartment_to_rent_in_Brooklyn_Pretor (3).jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Built-in Cupboards",
+      "Prepaid Electricity",
+      "Security Gate"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.990Z",
+    "updatedAt": "2026-01-17T19:42:33.990Z"
+  },
+  {
+    "id": 61,
+    "title": "Executive 3-Bed Apartment in Clifton",
+    "description": "Experience the pinnacle of luxury living in this exclusive 3-bedroom residence. Featuring panoramic views and world-class finishes, this home offers an unmatched lifestyle in Clifton.",
+    "price": 26900,
+    "location": "Clifton",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "squareFeet": 1285,
+    "images": [
+      "IMAGES/Clifton/Double-storey_apartment_to_rent_in_Clifton_-_ASL17 (1).jpg",
+      "IMAGES/Clifton/Double-storey_apartment_to_rent_in_Clifton_-_ASL17 (2).jpg",
+      "IMAGES/Clifton/Double-storey_apartment_to_rent_in_Clifton_-_ASL17 (3).jpg",
+      "IMAGES/Clifton/Double-storey_apartment_to_rent_in_Clifton_-_ASL17.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Concierge",
+      "Pool",
+      "Spa"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:33.996Z",
+    "updatedAt": "2026-01-17T19:42:33.996Z"
+  },
+  {
+    "id": 62,
+    "title": "Value 3-Bed Apartment in Double-storey apartment to rent in Brooklyn Pretor",
+    "description": "Cozy and convenient 3-bedroom unit in Double-storey apartment to rent in Brooklyn Pretor. Close to all major transport routes and local amenities. Perfect lock-up-and-go lifestyle.",
+    "price": 8600,
+    "location": "Double-storey apartment to rent in Brooklyn Pretor",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "squareFeet": 1193,
+    "images": [
+      "IMAGES/Double-storey_apartment_to_rent_in_Brooklyn_Pretor/Double-storey_apartment_to_rent_in_Brooklyn_Pretor (1).jpg",
+      "IMAGES/Double-storey_apartment_to_rent_in_Brooklyn_Pretor/Double-storey_apartment_to_rent_in_Brooklyn_Pretor (2).jpg",
+      "IMAGES/Double-storey_apartment_to_rent_in_Brooklyn_Pretor/Double-storey_apartment_to_rent_in_Brooklyn_Pretor (3).jpg",
+      "IMAGES/Double-storey_apartment_to_rent_in_Brooklyn_Pretor/Double-storey_apartment_to_rent_in_Brooklyn_Pretor.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Security Gate",
+      "Close to Transport",
+      "Built-in Cupboards",
+      "Prepaid Electricity"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:34.000Z",
+    "updatedAt": "2026-01-17T19:42:34.000Z"
+  },
+  {
+    "id": 63,
+    "title": "Exclusive 4-Bed Apartment in Double-storey apartment to rent in Melrose Arch",
+    "description": "Experience the pinnacle of luxury living in this exclusive 4-bedroom residence. Featuring panoramic views and world-class finishes, this home offers an unmatched lifestyle in Double-storey apartment to rent in Melrose Arch.",
+    "price": 33300,
+    "location": "Double-storey apartment to rent in Melrose Arch",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "squareFeet": 1703,
+    "images": [
+      "IMAGES/Double-storey_apartment_to_rent_in_Melrose_Arch_-_/Double-storey_apartment_to_rent_in_Melrose_Arch_-_ (1).jpg",
+      "IMAGES/Double-storey_apartment_to_rent_in_Melrose_Arch_-_/Double-storey_apartment_to_rent_in_Melrose_Arch_-_ (2).jpg",
+      "IMAGES/Double-storey_apartment_to_rent_in_Melrose_Arch_-_/Double-storey_apartment_to_rent_in_Melrose_Arch_-_ (3).jpg",
+      "IMAGES/Double-storey_apartment_to_rent_in_Melrose_Arch_-_/Double-storey_apartment_to_rent_in_Melrose_Arch_-_.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Pool",
+      "Sky Bar",
+      "Ocean View",
+      "24/7 Security",
+      "Sauna"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:34.002Z",
+    "updatedAt": "2026-01-17T19:42:34.002Z"
+  },
+  {
+    "id": 64,
+    "title": "Contemporary 4-Bed Apartment in Dunkeld",
+    "description": "Spacious 4-bedroom unit in a secure complex in Dunkeld. Ideal for young professionals or small families looking for a vibrant community atmosphere.",
+    "price": 17100,
+    "location": "Dunkeld",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "squareFeet": 1692,
+    "images": [
+      "IMAGES/Dunkeld/Penthouse_apartment_to_rent_in_Dunkeld_-_JBL110829 (1).jpg",
+      "IMAGES/Dunkeld/Penthouse_apartment_to_rent_in_Dunkeld_-_JBL110829 (2).jpg",
+      "IMAGES/Dunkeld/Penthouse_apartment_to_rent_in_Dunkeld_-_JBL110829 (3).jpg",
+      "IMAGES/Dunkeld/Penthouse_apartment_to_rent_in_Dunkeld_-_JBL110829.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Fiber Ready",
+      "Pet Friendly",
+      "Study Nook",
+      "Secure Parking"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:34.006Z",
+    "updatedAt": "2026-01-17T19:42:34.006Z"
+  },
+  {
+    "id": 65,
+    "title": "Neat 3-Bed Apartment in Logos",
+    "description": "Neat and well-maintained 3-bedroom apartment in Logos. Offers secure living and value for money in a central location.",
+    "price": 8800,
+    "location": "Logos",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "squareFeet": 1340,
+    "images": [
+      "IMAGES/a_bedroom_with_a_bed_and_a_large_window_at_Odyssey.jpg",
+      "IMAGES/a_living_room_with_a_blue_couch_and_a_coffee_table.jpg",
+      "IMAGES/a_kitchen_with_a_counter_and_a_table_and_chairs_at.jpg",
+      "IMAGES/a_bathroom_with_a_tub_and_a_toilet_and_a_sink_at_O.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Security Gate",
+      "Close to Transport",
+      "Prepaid Electricity"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:34.008Z",
+    "updatedAt": "2026-01-17T20:16:48.018Z"
+  },
+  {
+    "id": 66,
+    "title": "Executive 2-Bed Apartment in Melrose Arch",
+    "description": "A masterpiece of modern design, this spacious apartment in Melrose Arch offers 2 bedrooms, state-of-the-art amenities, and breathtaking views. Perfect for the discerning professional.",
+    "price": 19000,
+    "location": "Melrose Arch",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "squareFeet": 775,
+    "images": [
+      "IMAGES/Melrose_Arch/Apartment_to_rent_in_Melrose_Arch_-_JBL1723405 (1).jpg",
+      "IMAGES/Melrose_Arch/Apartment_to_rent_in_Melrose_Arch_-_JBL1723405 (2).jpg",
+      "IMAGES/Melrose_Arch/Apartment_to_rent_in_Melrose_Arch_-_JBL1723405 (3).jpg",
+      "IMAGES/Melrose_Arch/Apartment_to_rent_in_Melrose_Arch_-_JBL1723405.jpg",
+      "IMAGES/Melrose_Arch/Penthouse_apartment_to_rent_in_Melrose_Arch_-_JBL1 (1).jpg",
+      "IMAGES/Melrose_Arch/Penthouse_apartment_to_rent_in_Melrose_Arch_-_JBL1 (2).jpg",
+      "IMAGES/Melrose_Arch/Penthouse_apartment_to_rent_in_Melrose_Arch_-_JBL1 (3).jpg",
+      "IMAGES/Melrose_Arch/Penthouse_apartment_to_rent_in_Melrose_Arch_-_JBL1.jpg"
+    ],
+    "available": true,
+    "featured": true,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "24/7 Security",
+      "Backup Power",
+      "Ocean View",
+      "Sky Bar",
+      "Smart Home System"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:34.016Z",
+    "updatedAt": "2026-01-17T19:42:34.016Z"
+  },
+  {
+    "id": 67,
+    "title": "Modern 2-Bed Apartment in Menlyn",
+    "description": "Beautifully appointed 2-bedroom home in Menlyn. Offers a perfect balance of comfort and convenience with modern amenities and secure living.",
+    "price": 13700,
+    "location": "Menlyn",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "squareFeet": 963,
+    "images": [
+      "IMAGES/Menlyn/Apartment_to_rent_in_Menlyn_-_PTL1692767 (1).jpg",
+      "IMAGES/Menlyn/Apartment_to_rent_in_Menlyn_-_PTL1692767 (2).jpg",
+      "IMAGES/Menlyn/Apartment_to_rent_in_Menlyn_-_PTL1692767 (3).jpg",
+      "IMAGES/Menlyn/Apartment_to_rent_in_Menlyn_-_PTL1692767.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Garden",
+      "Pet Friendly",
+      "Air Conditioning",
+      "Secure Parking"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:34.024Z",
+    "updatedAt": "2026-01-17T19:42:34.024Z"
+  },
+  {
+    "id": 68,
+    "title": "Secure 1-Bed Apartment in Misc",
+    "description": "Neat and well-maintained 1-bedroom apartment in Misc. Offers secure living and value for money in a central location.",
+    "price": 5000,
+    "location": "Misc",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFeet": 479,
+    "images": [
+      "IMAGES/a_small_bedroom_with_a_bed_and_two_lamps_at_Odysse.jpg",
+      "IMAGES/a_living_room_with_a_tv_on_a_wall_at_Odyssey_Luxur.jpg",
+      "IMAGES/a_kitchen_with_a_microwave_oven_and_a_dishwasher_a.jpg",
+      "IMAGES/a_bathroom_with_a_tub_and_a_toilet_and_a_sink_at_O (1).jpg"
+    ],
+    "available": true,
+    "featured": true,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Built-in Cupboards",
+      "Security Gate"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:34.032Z",
+    "updatedAt": "2026-01-17T19:42:34.032Z"
+  },
+  {
+    "id": 69,
+    "title": "Charming 2-Bed Apartment in Mouille Point",
+    "description": "Cozy and convenient 2-bedroom unit in Mouille Point. Close to all major transport routes and local amenities. Perfect lock-up-and-go lifestyle.",
+    "price": 7000,
+    "location": "Mouille Point",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "squareFeet": 950,
+    "images": [
+      "IMAGES/Mouille_Point/Apartment_to_rent_in_Mouille_Point_-_ASL1696266 (1).jpg",
+      "IMAGES/Mouille_Point/Apartment_to_rent_in_Mouille_Point_-_ASL1696266 (2).jpg",
+      "IMAGES/Mouille_Point/Apartment_to_rent_in_Mouille_Point_-_ASL1696266 (3).jpg",
+      "IMAGES/Mouille_Point/Apartment_to_rent_in_Mouille_Point_-_ASL1696266.jpg",
+      "IMAGES/Mouille_Point/Apartment_to_rent_in_Mouille_Point_-_ASL1700235 (1).jpg",
+      "IMAGES/Mouille_Point/Apartment_to_rent_in_Mouille_Point_-_ASL1700235 (2).jpg",
+      "IMAGES/Mouille_Point/Apartment_to_rent_in_Mouille_Point_-_ASL1700235 (3).jpg",
+      "IMAGES/Mouille_Point/Apartment_to_rent_in_Mouille_Point_-_ASL1700235.jpg",
+      "IMAGES/Mouille_Point/Apartment_to_rent_in_Mouille_Point_-_ASL1724859 (1).jpg",
+      "IMAGES/Mouille_Point/Apartment_to_rent_in_Mouille_Point_-_ASL1724859 (2).jpg",
+      "IMAGES/Mouille_Point/Apartment_to_rent_in_Mouille_Point_-_ASL1724859 (3).jpg",
+      "IMAGES/Mouille_Point/Apartment_to_rent_in_Mouille_Point_-_ASL1724859.jpg"
+    ],
+    "available": true,
+    "featured": true,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Security Gate",
+      "Prepaid Electricity",
+      "Close to Transport"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:34.036Z",
+    "updatedAt": "2026-01-17T19:42:34.036Z"
+  },
+  {
+    "id": 70,
+    "title": "Stylish 4-Bed Penthouse in Penthouse apartment to rent in Morningside Durban ",
+    "description": "Spacious 4-bedroom unit in a secure complex in Penthouse apartment to rent in Morningside Durban . Ideal for young professionals or small families looking for a vibrant community atmosphere.",
+    "price": 27450,
+    "location": "Penthouse apartment to rent in Morningside Durban ",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "squareFeet": 1559,
+    "images": [
+      "IMAGES/Penthouse_apartment_to_rent_in_Morningside_Durban_/Penthouse_apartment_to_rent_in_Morningside_Durban_ (1).jpg",
+      "IMAGES/Penthouse_apartment_to_rent_in_Morningside_Durban_/Penthouse_apartment_to_rent_in_Morningside_Durban_ (2).jpg",
+      "IMAGES/Penthouse_apartment_to_rent_in_Morningside_Durban_/Penthouse_apartment_to_rent_in_Morningside_Durban_ (3).jpg",
+      "IMAGES/Penthouse_apartment_to_rent_in_Morningside_Durban_/Penthouse_apartment_to_rent_in_Morningside_Durban_.jpg"
+    ],
+    "available": true,
+    "featured": true,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Garden",
+      "Clubhouse",
+      "Fiber Ready",
+      "Balcony",
+      "Pet Friendly",
+      "Study Nook"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:34.039Z",
+    "updatedAt": "2026-01-17T19:42:34.039Z"
+  },
+  {
+    "id": 71,
+    "title": "Value 1-Bed Apartment in Retirement apartment to rent in Century City",
+    "description": "Comfortable 1-bedroom starter home in Retirement apartment to rent in Century City. Features practical layout and essential amenities for easy living.",
+    "price": 5600,
+    "location": "Retirement apartment to rent in Century City",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFeet": 550,
+    "images": [
+      "IMAGES/Retirement_apartment_to_rent_in_Century_City_-_1TV/Retirement_apartment_to_rent_in_Century_City_-_1TV (1).jpg",
+      "IMAGES/Retirement_apartment_to_rent_in_Century_City_-_1TV/Retirement_apartment_to_rent_in_Century_City_-_1TV (2).jpg",
+      "IMAGES/Retirement_apartment_to_rent_in_Century_City_-_1TV/Retirement_apartment_to_rent_in_Century_City_-_1TV (3).jpg",
+      "IMAGES/Retirement_apartment_to_rent_in_Century_City_-_1TV/Retirement_apartment_to_rent_in_Century_City_-_1TV.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Close to Transport",
+      "Prepaid Electricity",
+      "Built-in Cupboards"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:34.042Z",
+    "updatedAt": "2026-01-17T19:42:34.042Z"
+  },
+  {
+    "id": 72,
+    "title": "Stylish 3-Bed Apartment in Sandhurst",
+    "description": "Beautifully appointed 3-bedroom home in Sandhurst. Offers a perfect balance of comfort and convenience with modern amenities and secure living.",
+    "price": 15700,
+    "location": "Sandhurst",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "squareFeet": 1204,
+    "images": [
+      "IMAGES/Sandhurst/Apartment_to_rent_in_Sandhurst_-_JBL1725811 (1).jpg",
+      "IMAGES/Sandhurst/Apartment_to_rent_in_Sandhurst_-_JBL1725811 (2).jpg",
+      "IMAGES/Sandhurst/Apartment_to_rent_in_Sandhurst_-_JBL1725811 (3).jpg",
+      "IMAGES/Sandhurst/Apartment_to_rent_in_Sandhurst_-_JBL1725811.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Garden",
+      "Clubhouse",
+      "Fiber Ready"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:34.047Z",
+    "updatedAt": "2026-01-17T19:42:34.047Z"
+  },
+  {
+    "id": 73,
+    "title": "Executive 1-Bed Apartment in Sandton",
+    "description": "A masterpiece of modern design, this spacious apartment in Sandton offers 1 bedrooms, state-of-the-art amenities, and breathtaking views. Perfect for the discerning professional.",
+    "price": 15100,
+    "location": "Sandton",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFeet": 359,
+    "images": [
+      "IMAGES/Sandton/Apartment_to_rent_in_Sandton_-_JBL1704834 (1).jpg",
+      "IMAGES/Sandton/Apartment_to_rent_in_Sandton_-_JBL1704834 (2).jpg",
+      "IMAGES/Sandton/Apartment_to_rent_in_Sandton_-_JBL1704834 (3).jpg",
+      "IMAGES/Sandton/Apartment_to_rent_in_Sandton_-_JBL1704834.jpg",
+      "IMAGES/Sandton/Apartment_to_rent_in_Sandton_-_JBL1717650 (1).jpg",
+      "IMAGES/Sandton/Apartment_to_rent_in_Sandton_-_JBL1717650 (2).jpg",
+      "IMAGES/Sandton/Apartment_to_rent_in_Sandton_-_JBL1717650 (3).jpg",
+      "IMAGES/Sandton/Apartment_to_rent_in_Sandton_-_JBL1717650.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Spa",
+      "Smart Home System",
+      "Concierge",
+      "Sky Bar",
+      "Pool"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:34.050Z",
+    "updatedAt": "2026-01-17T19:42:34.051Z"
+  },
+  {
+    "id": 74,
+    "title": "Spacious 4-Bed Apartment in Sea Point",
+    "description": "Beautifully appointed 4-bedroom home in Sea Point. Offers a perfect balance of comfort and convenience with modern amenities and secure living.",
+    "price": 20000,
+    "location": "Sea Point",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "squareFeet": 1774,
+    "images": [
+      "IMAGES/Sea_Point/Apartment_to_rent_in_Sea_Point_-_ASL1723738 (1).jpg",
+      "IMAGES/Sea_Point/Apartment_to_rent_in_Sea_Point_-_ASL1723738 (2).jpg",
+      "IMAGES/Sea_Point/Apartment_to_rent_in_Sea_Point_-_ASL1723738 (3).jpg",
+      "IMAGES/Sea_Point/Apartment_to_rent_in_Sea_Point_-_ASL1723738.jpg"
+    ],
+    "available": true,
+    "featured": true,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Fiber Ready",
+      "Clubhouse",
+      "Garden"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:34.053Z",
+    "updatedAt": "2026-01-17T19:42:34.053Z"
+  },
+  {
+    "id": 75,
+    "title": "Exclusive 4-Bed Apartment in Sibaya",
+    "description": "Experience the pinnacle of luxury living in this exclusive 4-bedroom residence. Featuring panoramic views and world-class finishes, this home offers an unmatched lifestyle in Sibaya.",
+    "price": 34100,
+    "location": "Sibaya",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "squareFeet": 1729,
+    "images": [
+      "IMAGES/Sibaya/Apartment_to_rent_in_Sibaya_-_1ND1710724 (1).jpg",
+      "IMAGES/Sibaya/Apartment_to_rent_in_Sibaya_-_1ND1710724 (2).jpg",
+      "IMAGES/Sibaya/Apartment_to_rent_in_Sibaya_-_1ND1710724 (3).jpg",
+      "IMAGES/Sibaya/Apartment_to_rent_in_Sibaya_-_1ND1710724.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Sky Bar",
+      "Private Elevator",
+      "Sauna",
+      "Gym",
+      "Smart Home System",
+      "Pool"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:34.057Z",
+    "updatedAt": "2026-01-17T19:42:34.057Z"
+  },
+  {
+    "id": 76,
+    "title": "Value 1-Bed Apartment in Steyn City",
+    "description": "Cozy and convenient 1-bedroom unit in Steyn City. Close to all major transport routes and local amenities. Perfect lock-up-and-go lifestyle.",
+    "price": 5500,
+    "location": "Steyn City",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFeet": 517,
+    "images": [
+      "IMAGES/Steyn_City/Apartment_to_rent_in_Steyn_City_-_1SY1678665 (1).jpg",
+      "IMAGES/Steyn_City/Apartment_to_rent_in_Steyn_City_-_1SY1678665 (2).jpg",
+      "IMAGES/Steyn_City/Apartment_to_rent_in_Steyn_City_-_1SY1678665 (3).jpg",
+      "IMAGES/Steyn_City/Apartment_to_rent_in_Steyn_City_-_1SY1678665.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Prepaid Electricity",
+      "Close to Transport",
+      "Built-in Cupboards"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:34.060Z",
+    "updatedAt": "2026-01-17T19:42:34.060Z"
+  },
+  {
+    "id": 77,
+    "title": "Cozy 4-Bed Apartment in Umdloti",
+    "description": "Neat and well-maintained 4-bedroom apartment in Umdloti. Offers secure living and value for money in a central location.",
+    "price": 9700,
+    "location": "Umdloti",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "squareFeet": 1629,
+    "images": [
+      "IMAGES/Umdloti/Apartment_to_rent_in_Umdloti_-_1ND1706497 (1).jpg",
+      "IMAGES/Umdloti/Apartment_to_rent_in_Umdloti_-_1ND1706497 (2).jpg",
+      "IMAGES/Umdloti/Apartment_to_rent_in_Umdloti_-_1ND1706497 (3).jpg",
+      "IMAGES/Umdloti/Apartment_to_rent_in_Umdloti_-_1ND1706497.jpg"
+    ],
+    "available": true,
+    "featured": true,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Security Gate",
+      "Built-in Cupboards"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:34.065Z",
+    "updatedAt": "2026-01-17T19:42:34.065Z"
+  },
+  {
+    "id": 78,
+    "title": "Executive 1-Bed Apartment in uMhlanga Rocks",
+    "description": "A masterpiece of modern design, this spacious apartment in uMhlanga Rocks offers 1 bedrooms, state-of-the-art amenities, and breathtaking views. Perfect for the discerning professional.",
+    "price": 15500,
+    "location": "uMhlanga Rocks",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFeet": 402,
+    "images": [
+      "IMAGES/uMhlanga_Rocks/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1598660 (1).jpg",
+      "IMAGES/uMhlanga_Rocks/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1598660 (2).jpg",
+      "IMAGES/uMhlanga_Rocks/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1598660 (3).jpg",
+      "IMAGES/uMhlanga_Rocks/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1598660.jpg",
+      "IMAGES/uMhlanga_Rocks/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1697700 (1).jpg",
+      "IMAGES/uMhlanga_Rocks/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1697700 (2).jpg",
+      "IMAGES/uMhlanga_Rocks/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1697700 (3).jpg",
+      "IMAGES/uMhlanga_Rocks/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1697700.jpg",
+      "IMAGES/uMhlanga_Rocks/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1697867 (1).jpg",
+      "IMAGES/uMhlanga_Rocks/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1697867 (2).jpg",
+      "IMAGES/uMhlanga_Rocks/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1697867 (3).jpg",
+      "IMAGES/uMhlanga_Rocks/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1697867.jpg",
+      "IMAGES/uMhlanga_Rocks/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1708445 (1).jpg",
+      "IMAGES/uMhlanga_Rocks/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1708445 (2).jpg",
+      "IMAGES/uMhlanga_Rocks/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1708445 (3).jpg",
+      "IMAGES/uMhlanga_Rocks/Apartment_to_rent_in_uMhlanga_Rocks_-_1ND1708445.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Smart Home System",
+      "Gym",
+      "Pool"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:34.069Z",
+    "updatedAt": "2026-01-17T19:42:34.069Z"
+  },
+  {
+    "id": 79,
+    "title": "Secure 4-Bed Apartment in  Misc",
+    "description": "Comfortable 4-bedroom starter home in  Misc. Features practical layout and essential amenities for easy living.",
+    "price": 9200,
+    "location": " Misc",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "squareFeet": 1635,
+    "images": [
+      "IMAGES/a_living_room_with_a_couch_and_a_table_at_Odyssey_.jpg",
+      "IMAGES/a_kitchen_with_wooden_cabinets_and_a_washer_and_dr.jpg",
+      "IMAGES/a_bedroom_with_a_bed_with_a_lamp_on_a_night_stand_.jpg",
+      "IMAGES/a_bathroom_with_a_tub_and_a_toilet_and_a_sink_at_O.jpg"
+    ],
+    "available": true,
+    "featured": false,
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Built-in Cupboards",
+      "Prepaid Electricity",
+      "Close to Transport"
+    ],
+    "address": {},
+    "createdAt": "2026-01-17T19:42:34.073Z",
+    "updatedAt": "2026-01-17T19:42:34.073Z"
+  }
+]

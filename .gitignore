@@ -20,5 +20,5 @@ Thumbs.db
 uploads/
 IMAGES/uploads/
 data/applications.json
-data/properties.json
+# data/properties.json
 data/messages.json
