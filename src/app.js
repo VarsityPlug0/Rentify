@@ -103,6 +103,8 @@ if (env.logging) {
 }
 
 // API Routes
+app.use(`${env.api.basePath}/webhook`, require('./routes/webhookRoutes'));
+app.use(`${env.api.basePath}/analytics`, require('./routes/analyticsRoutes'));
 app.use(`${env.api.basePath}/properties`, propertyRoutes);
 app.use(`${env.api.basePath}/application`, require('./routes/applicationRoutes'));
 app.use(`${env.api.basePath}/message`, require('./routes/messageRoutes'));

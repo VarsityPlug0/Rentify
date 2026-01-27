@@ -1,0 +1,201 @@
+[
+  {
+    "id": 1769539172133,
+    "type": "lead_created",
+    "leadId": 1769539172126,
+    "channel": "sms",
+    "data": {
+      "source": "sms",
+      "phone": "+27812345678"
+    },
+    "timestamp": "2026-01-27T18:39:32.133Z"
+  },
+  {
+    "id": 1769539172146,
+    "type": "conversation_started",
+    "leadId": 1769539172126,
+    "conversationId": 1769539172141,
+    "channel": "sms",
+    "data": {},
+    "timestamp": "2026-01-27T18:39:32.146Z"
+  },
+  {
+    "id": 1769539172155,
+    "type": "message_received",
+    "leadId": 1769539172126,
+    "conversationId": 1769539172141,
+    "channel": "sms",
+    "data": {
+      "intent": "unknown"
+    },
+    "timestamp": "2026-01-27T18:39:32.155Z"
+  },
+  {
+    "id": 1769539190751,
+    "type": "message_received",
+    "leadId": 1769539172126,
+    "conversationId": 1769539172141,
+    "channel": "sms",
+    "data": {
+      "intent": "unknown"
+    },
+    "timestamp": "2026-01-27T18:39:50.751Z"
+  },
+  {
+    "id": 1769539226868,
+    "type": "message_received",
+    "leadId": 1769539172126,
+    "conversationId": 1769539172141,
+    "channel": "sms",
+    "data": {
+      "intent": "unknown"
+    },
+    "timestamp": "2026-01-27T18:40:26.868Z"
+  },
+  {
+    "id": 1769539233059,
+    "type": "message_received",
+    "leadId": 1769539172126,
+    "conversationId": 1769539172141,
+    "channel": "sms",
+    "data": {
+      "intent": "unknown"
+    },
+    "timestamp": "2026-01-27T18:40:33.059Z"
+  },
+  {
+    "id": 1769539284615,
+    "type": "lead_created",
+    "leadId": 1769539284612,
+    "channel": "sms",
+    "data": {
+      "source": "sms",
+      "phone": "+27999888777"
+    },
+    "timestamp": "2026-01-27T18:41:24.615Z"
+  },
+  {
+    "id": 1769539284625,
+    "type": "conversation_started",
+    "leadId": 1769539284612,
+    "conversationId": 1769539284621,
+    "channel": "sms",
+    "data": {},
+    "timestamp": "2026-01-27T18:41:24.625Z"
+  },
+  {
+    "id": 1769539284637,
+    "type": "message_received",
+    "leadId": 1769539284612,
+    "conversationId": 1769539284621,
+    "channel": "sms",
+    "data": {
+      "intent": "unknown"
+    },
+    "timestamp": "2026-01-27T18:41:24.637Z"
+  },
+  {
+    "id": 1769539300863,
+    "type": "message_received",
+    "leadId": 1769539284612,
+    "conversationId": 1769539284621,
+    "channel": "sms",
+    "data": {
+      "intent": "unknown"
+    },
+    "timestamp": "2026-01-27T18:41:40.863Z"
+  },
+  {
+    "id": 1769539300983,
+    "type": "qualification_step",
+    "leadId": 1769539284612,
+    "channel": "sms",
+    "data": {
+      "field": "budget",
+      "value": "R5 000",
+      "qualificationComplete": false
+    },
+    "timestamp": "2026-01-27T18:41:40.983Z"
+  },
+  {
+    "id": 1769539317707,
+    "type": "message_received",
+    "leadId": 1769539284612,
+    "conversationId": 1769539284621,
+    "channel": "sms",
+    "data": {
+      "intent": "unknown"
+    },
+    "timestamp": "2026-01-27T18:41:57.707Z"
+  },
+  {
+    "id": 1769539317714,
+    "type": "qualification_step",
+    "leadId": 1769539284612,
+    "channel": "sms",
+    "data": {
+      "field": "location",
+      "value": "Sandton",
+      "qualificationComplete": false
+    },
+    "timestamp": "2026-01-27T18:41:57.714Z"
+  },
+  {
+    "id": 1769539323682,
+    "type": "message_received",
+    "leadId": 1769539284612,
+    "conversationId": 1769539284621,
+    "channel": "sms",
+    "data": {
+      "intent": "unknown"
+    },
+    "timestamp": "2026-01-27T18:42:03.682Z"
+  },
+  {
+    "id": 1769539323688,
+    "type": "qualification_step",
+    "leadId": 1769539284612,
+    "channel": "sms",
+    "data": {
+      "field": "moveInDate",
+      "value": "Next month",
+      "qualificationComplete": false
+    },
+    "timestamp": "2026-01-27T18:42:03.688Z"
+  },
+  {
+    "id": 1769539323692,
+    "type": "lead_qualified",
+    "leadId": 1769539284612,
+    "channel": "sms",
+    "data": {
+      "budget": "R5 000",
+      "location": "Sandton",
+      "moveInDate": null,
+      "bedrooms": null,
+      "completed": false
+    },
+    "timestamp": "2026-01-27T18:42:03.692Z"
+  },
+  {
+    "id": 1769539411340,
+    "type": "message_received",
+    "leadId": 1769539284612,
+    "conversationId": 1769539284621,
+    "channel": "sms",
+    "data": {
+      "intent": "scheduleViewing"
+    },
+    "timestamp": "2026-01-27T18:43:31.340Z"
+  },
+  {
+    "id": 1769539411344,
+    "type": "conversion",
+    "leadId": 1769539284612,
+    "channel": "sms",
+    "data": {
+      "action": "viewing_booked"
+    },
+    "timestamp": "2026-01-27T18:43:31.344Z"
+  }
+]

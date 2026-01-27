@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1769539172126,
+    "phone": "+27812345678",
+    "email": null,
+    "name": null,
+    "source": "sms",
+    "status": "new",
+    "propertyInterest": null,
+    "qualificationData": {
+      "budget": null,
+      "location": null,
+      "moveInDate": null,
+      "bedrooms": null,
+      "completed": false
+    },
+    "metadata": {},
+    "createdAt": "2026-01-27T18:39:32.126Z",
+    "updatedAt": "2026-01-27T18:39:32.126Z"
+  },
+  {
+    "id": 1769539284612,
+    "phone": "+27999888777",
+    "email": null,
+    "name": null,
+    "source": "sms",
+    "status": "qualified",
+    "propertyInterest": null,
+    "qualificationData": {
+      "budget": "R5 000",
+      "location": "Sandton",
+      "moveInDate": "Next month",
+      "bedrooms": null,
+      "completed": true
+    },
+    "metadata": {},
+    "createdAt": "2026-01-27T18:41:24.612Z",
+    "updatedAt": "2026-01-27T18:42:03.686Z"
+  }
+]

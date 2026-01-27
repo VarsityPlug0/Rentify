@@ -48,6 +48,22 @@ const config = {
     apiKey: process.env.RESEND_API_KEY,
     from: process.env.EMAIL_FROM || 'Rentify <onboarding@resend.dev>',
     ownerEmail: process.env.OWNER_EMAIL
+  },
+
+  // Twilio Configuration (SMS, WhatsApp, Voice)
+  twilio: {
+    accountSid: process.env.TWILIO_ACCOUNT_SID,
+    authToken: process.env.TWILIO_AUTH_TOKEN,
+    phoneNumber: process.env.TWILIO_PHONE_NUMBER
+  },
+
+  // AI Configuration (LLM, STT, TTS)
+  ai: {
+    llmApiKey: process.env.LLM_API_KEY,
+    llmModel: process.env.LLM_MODEL || 'gpt-4o-mini',
+    sttApiKey: process.env.STT_API_KEY,
+    ttsApiKey: process.env.TTS_API_KEY,
+    confidenceThreshold: parseFloat(process.env.AI_CONFIDENCE_THRESHOLD) || 0.7
   }
 };
 

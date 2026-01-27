@@ -1,0 +1,188 @@
+[
+  {
+    "id": 1769539172141,
+    "leadId": 1769539172126,
+    "channel": "sms",
+    "state": "GREETING",
+    "context": {
+      "currentField": null,
+      "collectedData": {},
+      "attempts": 0,
+      "lastIntent": null
+    },
+    "messages": [
+      {
+        "id": 1769539172151,
+        "role": "user",
+        "content": "Hi",
+        "confidence": null,
+        "intent": "unknown",
+        "timestamp": "2026-01-27T18:39:32.151Z"
+      },
+      {
+        "id": 1769539172165,
+        "role": "assistant",
+        "content": "Hi! 👋 Thanks for your interest in renting with Rentify. I'm here to help you find your perfect home.\n\nTo get started, could you tell me your approximate monthly budget for rent?",
+        "confidence": 0.8,
+        "intent": null,
+        "timestamp": "2026-01-27T18:39:32.165Z"
+      },
+      {
+        "id": 1769539190748,
+        "role": "user",
+        "content": "R5000",
+        "confidence": null,
+        "intent": "unknown",
+        "timestamp": "2026-01-27T18:39:50.748Z"
+      },
+      {
+        "id": 1769539190755,
+        "role": "assistant",
+        "content": "I didn't catch your budget. Could you tell me how much you're looking to spend on rent per month? (e.g., \"R5000\" or \"around R8000\")",
+        "confidence": 0.8,
+        "intent": null,
+        "timestamp": "2026-01-27T18:39:50.755Z"
+      },
+      {
+        "id": 1769539226866,
+        "role": "user",
+        "content": "Sandton",
+        "confidence": null,
+        "intent": "unknown",
+        "timestamp": "2026-01-27T18:40:26.866Z"
+      },
+      {
+        "id": 1769539226871,
+        "role": "assistant",
+        "content": "I didn't catch your budget. Could you tell me how much you're looking to spend on rent per month? (e.g., \"R5000\" or \"around R8000\")",
+        "confidence": 0.8,
+        "intent": null,
+        "timestamp": "2026-01-27T18:40:26.871Z"
+      },
+      {
+        "id": 1769539233056,
+        "role": "user",
+        "content": "next month",
+        "confidence": null,
+        "intent": "unknown",
+        "timestamp": "2026-01-27T18:40:33.056Z"
+      },
+      {
+        "id": 1769539233062,
+        "role": "assistant",
+        "content": "I didn't catch your budget. Could you tell me how much you're looking to spend on rent per month? (e.g., \"R5000\" or \"around R8000\")",
+        "confidence": 0.8,
+        "intent": null,
+        "timestamp": "2026-01-27T18:40:33.062Z"
+      }
+    ],
+    "handoffReason": null,
+    "handoffAt": null,
+    "closedAt": null,
+    "createdAt": "2026-01-27T18:39:32.141Z",
+    "updatedAt": "2026-01-27T18:40:33.062Z"
+  },
+  {
+    "id": 1769539284621,
+    "leadId": 1769539284612,
+    "channel": "sms",
+    "state": "ACTION",
+    "context": {
+      "currentField": null,
+      "collectedData": {
+        "budget": "R5 000",
+        "location": "Sandton",
+        "moveInDate": "Next month"
+      },
+      "attempts": 0,
+      "lastIntent": null
+    },
+    "messages": [
+      {
+        "id": 1769539284631,
+        "role": "user",
+        "content": "Hello",
+        "confidence": null,
+        "intent": "unknown",
+        "timestamp": "2026-01-27T18:41:24.631Z"
+      },
+      {
+        "id": 1769539284647,
+        "role": "assistant",
+        "content": "Hi! 👋 Thanks for your interest in renting with Rentify. I'm here to help you find your perfect home.\n\nTo get started, could you tell me your approximate monthly budget for rent?",
+        "confidence": 0.8,
+        "intent": null,
+        "timestamp": "2026-01-27T18:41:24.647Z"
+      },
+      {
+        "id": 1769539300861,
+        "role": "user",
+        "content": "R5000",
+        "confidence": null,
+        "intent": "unknown",
+        "timestamp": "2026-01-27T18:41:40.861Z"
+      },
+      {
+        "id": 1769539300995,
+        "role": "assistant",
+        "content": "Great! And which area or suburb are you looking to live in?",
+        "confidence": 0.8,
+        "intent": null,
+        "timestamp": "2026-01-27T18:41:40.995Z"
+      },
+      {
+        "id": 1769539317705,
+        "role": "user",
+        "content": "Sandton",
+        "confidence": null,
+        "intent": "unknown",
+        "timestamp": "2026-01-27T18:41:57.705Z"
+      },
+      {
+        "id": 1769539317720,
+        "role": "assistant",
+        "content": "Perfect! When are you looking to move in? (e.g., \"next month\", \"March 2026\", \"ASAP\")",
+        "confidence": 0.8,
+        "intent": null,
+        "timestamp": "2026-01-27T18:41:57.720Z"
+      },
+      {
+        "id": 1769539323679,
+        "role": "user",
+        "content": "next month",
+        "confidence": null,
+        "intent": "unknown",
+        "timestamp": "2026-01-27T18:42:03.679Z"
+      },
+      {
+        "id": 1769539323699,
+        "role": "assistant",
+        "content": "Excellent! Based on what you've shared:\n💰 Budget: R5 000\n📍 Location: Sandton\n📅 Move-in: Next month\n\nI can help you:\n1️⃣ View available properties matching your criteria\n2️⃣ Schedule a viewing\n3️⃣ Start an application\n\nReply with 1, 2, or 3 to continue, or type \"human\" to speak with our team.",
+        "confidence": 0.8,
+        "intent": null,
+        "timestamp": "2026-01-27T18:42:03.699Z"
+      },
+      {
+        "id": 1769539411338,
+        "role": "user",
+        "content": "2",
+        "confidence": null,
+        "intent": "scheduleViewing",
+        "timestamp": "2026-01-27T18:43:31.338Z"
+      },
+      {
+        "id": 1769539411348,
+        "role": "assistant",
+        "content": "Great! To schedule a viewing, please visit:\nhttps://rentify-yruw.onrender.com/contact.html\n\nOr reply \"call\" and we'll call you to arrange a time.",
+        "confidence": 0.8,
+        "intent": null,
+        "timestamp": "2026-01-27T18:43:31.348Z"
+      }
+    ],
+    "handoffReason": null,
+    "handoffAt": null,
+    "closedAt": null,
+    "createdAt": "2026-01-27T18:41:24.621Z",
+    "updatedAt": "2026-01-27T18:43:31.348Z"
+  }
+]
