@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "type": "confirmation",
+    "applicationId": 31,
+    "propertyId": 1,
+    "recipient": "mkhabelebevan@icloud.com",
+    "subject": "✅ Application Received: Stunning 2-Bed Home in Sandton, South Africa",
+    "status": "failed",
+    "error": "Email not configured",
+    "resendId": null,
+    "createdAt": "2026-01-23T02:53:25.554Z"
+  },
+  {
+    "id": 2,
+    "type": "confirmation",
+    "applicationId": 32,
+    "propertyId": 27,
+    "recipient": "MONEYBMAN0@GMAIL.COM",
+    "subject": "✅ Application Received: Stylish 4-Bed Apartment in La Lucia",
+    "status": "failed",
+    "error": "Email not configured",
+    "resendId": null,
+    "createdAt": "2026-01-23T02:56:07.329Z"
+  },
+  {
+    "id": 3,
+    "type": "confirmation",
+    "applicationId": 12345,
+    "propertyId": 1,
+    "recipient": "moneybman0@gmail.com",
+    "subject": "✅ Application Received: Modern 2BR Apartment",
+    "status": "sent",
+    "error": null,
+    "resendId": "25c0cef6-4232-4c46-ab3f-ea11f2ca5e4a",
+    "createdAt": "2026-01-27T16:10:29.133Z"
+  },
+  {
+    "id": 4,
+    "type": "status_update",
+    "propertyId": 1,
+    "recipient": "moneybman0@gmail.com",
+    "subject": "🎉 Application Approved: Modern 2BR Apartment",
+    "status": "sent",
+    "error": null,
+    "resendId": "6c8fdaed-0175-49d3-a42c-3fee70941b8f",
+    "createdAt": "2026-01-27T16:10:29.833Z"
+  }
+]

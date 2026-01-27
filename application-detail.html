@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Details | Rentify</title>
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-dark: #4338CA;
+            --secondary: #F8F8F8;
+            --text: #1F2937;
+            --muted: #6B7280;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+            background-color: var(--secondary);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: var(--primary);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+
+        .header nav a:hover {
+            opacity: 1;
+        }
+
+        /* Main Content */
+        .main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Status Banner */
+        .status-banner {
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .status-banner.pending {
+            background: #FEF3C7;
+        }
+
+        .status-banner.approved {
+            background: #D1FAE5;
+        }
+
+        .status-banner.rejected {
+            background: #FEE2E2;
+        }
+
+        .status-banner.withdrawn {
+            background: #F3F4F6;
+        }
+
+        .status-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .pending .status-icon {
+            background: #F59E0B;
+            color: white;
+        }
+
+        .approved .status-icon {
+            background: #10B981;
+            color: white;
+        }
+
+        .rejected .status-icon {
+            background: #EF4444;
+            color: white;
+        }
+
+        .withdrawn .status-icon {
+            background: #6B7280;
+            color: white;
+        }
+
+        .status-info h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .status-info p {
+            color: var(--muted);
+            font-size: 0.875rem;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        /* Property Card */
+        .property-card {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .property-image {
+            width: 200px;
+            height: 150px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .property-image.placeholder {
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            font-size: 2rem;
+        }
+
+        .property-info h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .property-location {
+            color: var(--muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .property-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .property-features {
+            display: flex;
+            gap: 1rem;
+            color: var(--muted);
+            font-size: 0.875rem;
+        }
+
+        .property-features span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .view-property-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .view-property-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .info-item label {
+            display: block;
+            color: var(--muted);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-item span {
+            font-weight: 500;
+        }
+
+        /* Admin Notes */
+        .admin-notes {
+            background: #EEF2FF;
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 1rem;
+        }
+
+        .admin-notes h4 {
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+        }
+
+        .admin-notes p {
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #E5E7EB;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .timeline-dot.secondary {
+            background: #E5E7EB;
+            box-shadow: 0 0 0 2px #E5E7EB;
+        }
+
+        .timeline-content h4 {
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-content p {
+            color: var(--muted);
+            font-size: 0.75rem;
+        }
+
+        /* Email History */
+        .email-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .email-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 1rem;
+            background: var(--secondary);
+            border-radius: 8px;
+        }
+
+        .email-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .email-icon.failed {
+            background: var(--danger);
+        }
+
+        .email-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .email-subject {
+            font-size: 0.875rem;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .email-meta {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        .email-status {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .email-status.sent {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+
+        .email-status.failed {
+            background: #FEE2E2;
+            color: #991B1B;
+        }
+
+        /* Loading & Error */
+        .loading,
+        .error-state {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .loading i {
+            font-size: 2rem;
+            color: var(--primary);
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .error-state i {
+            font-size: 3rem;
+            color: var(--danger);
+            margin-bottom: 1rem;
+        }
+
+        .error-state h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .error-state p {
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+
+        .error-state a {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--muted);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 600px) {
+            .property-card {
+                flex-direction: column;
+            }
+
+            .property-image {
+                width: 100%;
+                height: 180px;
+            }
+
+            .status-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="logo">Rentify</a>
+        <nav>
+            <a href="our-properties.html">Properties</a>
+            <a href="applicant-dashboard.html">My Applications</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <a href="#" class="back-link" id="backLink">
+            <i class="fas fa-arrow-left"></i> Back to My Applications
+        </a>
+
+        <!-- Loading State -->
+        <div class="loading" id="loadingState">
+            <i class="fas fa-spinner"></i>
+            <p>Loading application details...</p>
+        </div>
+
+        <!-- Error State -->
+        <div class="error-state" id="errorState" style="display: none;">
+            <i class="fas fa-exclamation-circle"></i>
+            <h2>Application Not Found</h2>
+            <p id="errorMessage">We couldn't find this application.</p>
+            <a href="applicant-dashboard.html">Return to Dashboard</a>
+        </div>
+
+        <!-- Application Content -->
+        <div id="applicationContent" style="display: none;">
+            <!-- Status Banner -->
+            <div class="status-banner" id="statusBanner">
+                <div class="status-icon" id="statusIcon"></div>
+                <div class="status-info">
+                    <h2 id="statusTitle">Application Status</h2>
+                    <p id="statusMessage">Updated on...</p>
+                </div>
+            </div>
+
+            <!-- Property Card -->
+            <div class="card">
+                <div class="card-title">Property</div>
+                <div class="property-card" id="propertyCard">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Applicant Information -->
+            <div class="card">
+                <div class="card-title">Your Information</div>
+                <div class="info-grid" id="applicantInfo">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Admin Notes (if any) -->
+            <div class="card" id="notesCard" style="display: none;">
+                <div class="card-title">Notes from Landlord</div>
+                <div class="admin-notes">
+                    <p id="adminNotesContent"></p>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="card">
+                <div class="card-title">Application Timeline</div>
+                <div class="timeline" id="timeline">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Email History -->
+            <div class="card" id="emailHistoryCard" style="display: none;">
+                <div class="card-title">Email Notifications</div>
+                <div class="email-list" id="emailHistory">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Rentify. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const API_BASE = '/api/application';
+
+        // Get params from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const applicationId = urlParams.get('id');
+        const email = urlParams.get('email');
+
+        // DOM Elements
+        const loadingState = document.getElementById('loadingState');
+        const errorState = document.getElementById('errorState');
+        const errorMessage = document.getElementById('errorMessage');
+        const applicationContent = document.getElementById('applicationContent');
+        const backLink = document.getElementById('backLink');
+
+        // Set back link
+        if (email) {
+            backLink.href = `applicant-dashboard.html?email=${encodeURIComponent(email)}`;
+        } else {
+            backLink.href = 'applicant-dashboard.html';
+        }
+
+        // Validate params
+        if (!applicationId || !email) {
+            showError('Missing application ID or email. Please return to the dashboard.');
+        } else {
+            loadApplication();
+        }
+
+        async function loadApplication() {
+            try {
+                const response = await fetch(`${API_BASE}/lookup/${applicationId}?email=${encodeURIComponent(email)}`);
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.message || 'Failed to load application');
+                }
+
+                renderApplication(data.data);
+
+            } catch (error) {
+                showError(error.message);
+            }
+        }
+
+        function renderApplication(app) {
+            loadingState.style.display = 'none';
+            applicationContent.style.display = 'block';
+
+            // Status Banner
+            const statusConfig = {
+                pending: { icon: 'fa-clock', title: 'Pending Review', message: 'Your application is being reviewed' },
+                approved: { icon: 'fa-check', title: 'Approved!', message: 'Congratulations! Your application has been approved' },
+                rejected: { icon: 'fa-times', title: 'Not Approved', message: 'Unfortunately, your application was not approved' },
+                withdrawn: { icon: 'fa-undo', title: 'Withdrawn', message: 'This application has been withdrawn' }
+            };
+
+            const status = statusConfig[app.status] || statusConfig.pending;
+            const statusBanner = document.getElementById('statusBanner');
+            statusBanner.className = `status-banner ${app.status}`;
+            document.getElementById('statusIcon').innerHTML = `<i class="fas ${status.icon}"></i>`;
+            document.getElementById('statusTitle').textContent = status.title;
+            document.getElementById('statusMessage').textContent = `${status.message} • Updated ${formatDate(app.updatedAt)}`;
+
+            // Property Card
+            const property = app.property || {};
+            document.getElementById('propertyCard').innerHTML = `
+        ${property.images?.[0]
+                    ? `<img src="${property.images[0]}" alt="${property.title}" class="property-image">`
+                    : `<div class="property-image placeholder"><i class="fas fa-home"></i></div>`
+                }
+        <div class="property-info">
+          <h3>${escapeHtml(property.title || 'Property #' + app.propertyId)}</h3>
+          <div class="property-location"><i class="fas fa-map-marker-alt"></i> ${escapeHtml(property.location || 'Unknown')}</div>
+          <div class="property-price">R${(property.price || 0).toLocaleString()}/mo</div>
+          <div class="property-features">
+            ${property.bedrooms ? `<span><i class="fas fa-bed"></i> ${property.bedrooms} bed</span>` : ''}
+            ${property.bathrooms ? `<span><i class="fas fa-bath"></i> ${property.bathrooms} bath</span>` : ''}
+          </div>
+          <a href="property-details.html?id=${app.propertyId}" class="view-property-btn">
+            <i class="fas fa-external-link-alt"></i> View Property
+          </a>
+        </div>
+      `;
+
+            // Applicant Info
+            document.getElementById('applicantInfo').innerHTML = `
+        <div class="info-item">
+          <label>Full Name</label>
+          <span>${escapeHtml(app.applicantName)}</span>
+        </div>
+        <div class="info-item">
+          <label>Email</label>
+          <span>${escapeHtml(app.applicantEmail)}</span>
+        </div>
+        <div class="info-item">
+          <label>Phone</label>
+          <span>${escapeHtml(app.applicantPhone)}</span>
+        </div>
+        <div class="info-item">
+          <label>Monthly Income</label>
+          <span>R${(app.applicantIncome || 0).toLocaleString()}</span>
+        </div>
+        <div class="info-item">
+          <label>Employment</label>
+          <span>${escapeHtml(app.applicantEmployment || 'N/A')}</span>
+        </div>
+        <div class="info-item">
+          <label>Occupants</label>
+          <span>${app.applicantOccupants || 'N/A'}</span>
+        </div>
+        <div class="info-item">
+          <label>Address</label>
+          <span>${escapeHtml([app.applicantAddress, app.applicantCity, app.applicantState, app.applicantZip].filter(Boolean).join(', ') || 'N/A')}</span>
+        </div>
+      `;
+
+            // Admin Notes
+            if (app.adminNotes) {
+                document.getElementById('notesCard').style.display = 'block';
+                document.getElementById('adminNotesContent').textContent = app.adminNotes;
+            }
+
+            // Timeline
+            const timelineItems = [
+                { date: app.createdAt, title: 'Application Submitted', primary: true }
+            ];
+
+            if (app.status !== 'pending' && app.updatedAt !== app.createdAt) {
+                const statusLabels = {
+                    approved: 'Application Approved',
+                    rejected: 'Application Not Approved',
+                    withdrawn: 'Application Withdrawn'
+                };
+                timelineItems.push({
+                    date: app.updatedAt,
+                    title: statusLabels[app.status] || 'Status Updated',
+                    primary: true
+                });
+            }
+
+            document.getElementById('timeline').innerHTML = timelineItems.map((item, i) => `
+        <div class="timeline-item">
+          <div class="timeline-dot ${i === 0 ? '' : 'secondary'}"></div>
+          <div class="timeline-content">
+            <h4>${item.title}</h4>
+            <p>${formatDateTime(item.date)}</p>
+          </div>
+        </div>
+      `).join('');
+
+            // Email History
+            if (app.emailHistory && app.emailHistory.length > 0) {
+                document.getElementById('emailHistoryCard').style.display = 'block';
+                document.getElementById('emailHistory').innerHTML = app.emailHistory.map(email => {
+                    const typeIcons = {
+                        'confirmation': 'fa-envelope-open-text',
+                        'status_update': 'fa-bell',
+                        'owner_notification': 'fa-user-tie'
+                    };
+                    const typeLabels = {
+                        'confirmation': 'Confirmation',
+                        'status_update': 'Status Update',
+                        'owner_notification': 'Owner Notification'
+                    };
+                    return `
+                    <div class="email-item">
+                        <div class="email-icon ${email.status === 'failed' ? 'failed' : ''}">
+                            <i class="fas ${typeIcons[email.type] || 'fa-envelope'}"></i>
+                        </div>
+                        <div class="email-details">
+                            <div class="email-subject">${escapeHtml(email.subject)}</div>
+                            <div class="email-meta">${typeLabels[email.type] || email.type} • ${formatDateTime(email.createdAt)}</div>
+                        </div>
+                        <span class="email-status ${email.status}">${email.status === 'sent' ? 'Delivered' : 'Failed'}</span>
+                    </div>
+                    `;
+                }).join('');
+            }
+        }
+
+        function showError(message) {
+            loadingState.style.display = 'none';
+            errorState.style.display = 'block';
+            errorMessage.textContent = message;
+        }
+
+        function formatDate(dateString) {
+            return new Date(dateString).toLocaleDateString('en-ZA', {
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric'
+            });
+        }
+
+        function formatDateTime(dateString) {
+            return new Date(dateString).toLocaleDateString('en-ZA', {
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+
+</html>

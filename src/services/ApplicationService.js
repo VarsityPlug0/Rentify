@@ -30,6 +30,15 @@ class ApplicationService {
         return applications.find(a => a.id === id);
     }
 
+    async getByEmail(email) {
+        const applications = await this.store.read();
+        const normalizedEmail = email.toLowerCase().trim();
+
+        return applications
+            .filter(a => a.applicantEmail?.toLowerCase().trim() === normalizedEmail)
+            .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    }
+
     async create(appData) {
         const applications = await this.store.read();
 

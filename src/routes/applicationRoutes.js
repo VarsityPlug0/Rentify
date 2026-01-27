@@ -7,10 +7,13 @@ const express = require('express');
 const router = express.Router();
 const ApplicationService = require('../services/ApplicationService');
 const PropertyService = require('../services/PropertyService');
+const EmailService = require('../services/EmailService');
+const EmailLogService = require('../services/EmailLogService');
 const AuthMiddleware = require('../middleware/AuthMiddleware');
 
 const applicationService = new ApplicationService();
 const propertyService = new PropertyService();
+const emailLogService = new EmailLogService();
 
 const documentUpload = require('../config/documentUpload');
 
@@ -98,37 +101,35 @@ router.post('/', documentUpload.fields([
       documents: documents
     });
 
-    // Send email notifications
-    console.log('📧 Notifications disabled (EmailService removed).');
-    /*
-    console.log('📧 Fetching property details for notifications...');
+    // Send email notifications (fire-and-forget, non-blocking)
     propertyService.getById(parseInt(propertyId)).then(property => {
       if (!property) {
-        console.warn('⚠️ Property not found for email notification. Sending with minimal data.');
-        property = { id: propertyId, title: 'Unknown Property', location: 'Unknown Location' }; // Fallback
+        console.warn('⚠️ Property not found for email notification. Using fallback data.');
+        property = { id: propertyId, title: 'Unknown Property', location: 'Unknown Location' };
       }
 
-      console.log('📧 Sending notifications...');
-      
       // 1. Notify Owner
       EmailService.sendOwnerNotification({
+        ...newApplication,
         propertyId: parseInt(propertyId),
         applicantName,
         applicantEmail,
         applicantPhone,
         applicantIncome: parseFloat(applicantIncome),
-        documents: documents
+        applicantEmployment,
+        applicantOccupants: parseInt(applicantOccupants),
+        applicantMessage: applicantMessage || '',
+        documents
       }, property).catch(err => console.error('Error sending owner notification:', err));
 
       // 2. Notify Applicant
       EmailService.sendApplicantConfirmation({
-        id: newApplication.id, // Pass application ID for reference
+        id: newApplication.id,
         propertyId: parseInt(propertyId),
         applicantName,
         applicantEmail
       }, property).catch(err => console.error('Error sending applicant confirmation:', err));
     }).catch(err => console.error('Error fetching property for notifications:', err));
-    */
 
     res.status(201).json({
       success: true,
@@ -138,6 +139,138 @@ router.post('/', documentUpload.fields([
 
   } catch (error) {
     console.error('Error submitting application:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error',
+      code: 'SERVER_ERROR'
+    });
+  }
+});
+
+// ============================================
+// PUBLIC APPLICANT LOOKUP ROUTES
+// ============================================
+
+// Lookup applications by email (public)
+router.post('/lookup', async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    if (!email) {
+      return res.status(400).json({
+        success: false,
+        message: 'Email is required',
+        code: 'VALIDATION_ERROR'
+      });
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid email format',
+        code: 'VALIDATION_ERROR'
+      });
+    }
+
+    const applications = await applicationService.getByEmail(email);
+
+    // Enrich with property data
+    const enrichedApps = await Promise.all(applications.map(async (app) => {
+      const property = await propertyService.getById(app.propertyId);
+      return {
+        id: app.id,
+        propertyId: app.propertyId,
+        propertyTitle: property?.title || `Property #${app.propertyId}`,
+        propertyLocation: property?.location || 'Unknown',
+        propertyImage: property?.images?.[0] || null,
+        status: app.status,
+        createdAt: app.createdAt,
+        updatedAt: app.updatedAt
+      };
+    }));
+
+    res.json({
+      success: true,
+      message: `Found ${enrichedApps.length} application(s)`,
+      data: enrichedApps
+    });
+
+  } catch (error) {
+    console.error('Error looking up applications:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error',
+      code: 'SERVER_ERROR'
+    });
+  }
+});
+
+// Get application details by ID with email verification (public)
+router.get('/lookup/:id', async (req, res) => {
+  try {
+    const applicationId = parseInt(req.params.id);
+    const { email } = req.query;
+
+    if (!email) {
+      return res.status(400).json({
+        success: false,
+        message: 'Email verification required',
+        code: 'VALIDATION_ERROR'
+      });
+    }
+
+    const application = await applicationService.getById(applicationId);
+
+    if (!application) {
+      return res.status(404).json({
+        success: false,
+        message: 'Application not found',
+        code: 'NOT_FOUND'
+      });
+    }
+
+    // Verify email matches
+    if (application.applicantEmail?.toLowerCase().trim() !== email.toLowerCase().trim()) {
+      return res.status(403).json({
+        success: false,
+        message: 'Email does not match this application',
+        code: 'FORBIDDEN'
+      });
+    }
+
+    // Enrich with property data
+    const property = await propertyService.getById(application.propertyId);
+
+    // Get email history for this application
+    const emailHistory = await emailLogService.getByApplicationId(applicationId);
+
+    res.json({
+      success: true,
+      data: {
+        ...application,
+        property: property ? {
+          id: property.id,
+          title: property.title,
+          location: property.location,
+          price: property.price,
+          images: property.images,
+          bedrooms: property.bedrooms,
+          bathrooms: property.bathrooms
+        } : null,
+        emailHistory: emailHistory.map(log => ({
+          id: log.id,
+          type: log.type,
+          subject: log.subject,
+          status: log.status,
+          createdAt: log.createdAt
+        }))
+      }
+    });
+
+  } catch (error) {
+    console.error('Error fetching application details:', error);
     res.status(500).json({
       success: false,
       message: 'Internal server error',
@@ -218,18 +351,13 @@ router.patch('/:id/status', AuthMiddleware.requireAdmin, async (req, res) => {
     try {
       const updatedApp = await applicationService.updateStatus(applicationId, status, adminNotes, adminId);
 
-      // Send status update email to applicant
-      console.log('📧 Status update notifications disabled (EmailService removed).');
-      /*
-      console.log(`📧 Sending status update (${status}) to applicant...`);
-      // We need to fetch property details for the status update too
+      // Send status update email to applicant (fire-and-forget, non-blocking)
       propertyService.getById(parseInt(updatedApp.propertyId)).then(property => {
         if (!property) property = { title: `Property #${updatedApp.propertyId}`, location: 'Unknown' };
 
         EmailService.sendStatusUpdate(updatedApp, status, adminNotes, property)
           .catch(err => console.error('Error sending status update email:', err));
       }).catch(err => console.error('Error fetching property for status update:', err));
-      */
 
       res.json({
         success: true,

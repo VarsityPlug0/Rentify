@@ -38,6 +38,16 @@ const config = {
   api: {
     basePath: '/api',
     version: 'v1'
+  },
+
+  // Base URL for email links
+  baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+
+  // Email Configuration (Resend)
+  email: {
+    apiKey: process.env.RESEND_API_KEY,
+    from: process.env.EMAIL_FROM || 'Rentify <onboarding@resend.dev>',
+    ownerEmail: process.env.OWNER_EMAIL
   }
 };
 
