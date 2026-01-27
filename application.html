@@ -105,7 +105,7 @@
                                             Phone Number <span class="required">*</span>
                                         </label>
                                         <input type="tel" class="form-control" id="applicant-phone"
-                                            name="applicant-phone" placeholder="(555) 123-4567" required>
+                                            name="applicant-phone" placeholder="072 123 4567" required>
                                     </div>
 
                                     <div class="form-group">
@@ -113,7 +113,7 @@
                                             Annual Household Income <span class="required">*</span>
                                         </label>
                                         <div class="input-group">
-                                            <span class="input-group-text">$</span>
+                                            <span class="input-group-text">R</span>
                                             <input type="number" class="form-control" id="applicant-income"
                                                 name="applicant-income" placeholder="75000" min="0" required>
                                         </div>
@@ -144,31 +144,35 @@
                                             City <span class="required">*</span>
                                         </label>
                                         <input type="text" class="form-control" id="applicant-city"
-                                            name="applicant-city" placeholder="Philadelphia" required>
+                                            name="applicant-city" placeholder="Johannesburg" required>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="applicant-state">
-                                            State <span class="required">*</span>
+                                            Province <span class="required">*</span>
                                         </label>
                                         <select class="form-control" id="applicant-state" name="applicant-state"
                                             required>
-                                            <option value="">Select State</option>
-                                            <option value="DE">Delaware</option>
-                                            <option value="NJ">New Jersey</option>
-                                            <option value="PA">Pennsylvania</option>
-                                            <option value="NY">New York</option>
-                                            <option value="MD">Maryland</option>
+                                            <option value="">Select Province</option>
+                                            <option value="GP">Gauteng</option>
+                                            <option value="WC">Western Cape</option>
+                                            <option value="KZN">KwaZulu-Natal</option>
+                                            <option value="EC">Eastern Cape</option>
+                                            <option value="FS">Free State</option>
+                                            <option value="LP">Limpopo</option>
+                                            <option value="MP">Mpumalanga</option>
+                                            <option value="NC">Northern Cape</option>
+                                            <option value="NW">North West</option>
                                             <option value="other">Other</option>
                                         </select>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="applicant-zip">
-                                            ZIP Code <span class="required">*</span>
+                                            Postal Code <span class="required">*</span>
                                         </label>
                                         <input type="text" class="form-control" id="applicant-zip" name="applicant-zip"
-                                            placeholder="19103" required>
+                                            placeholder="2000" required>
                                     </div>
                                 </div>
                             </div>
@@ -222,7 +226,8 @@
                                         <label for="doc-id">
                                             Government ID <span class="required">*</span>
                                             <span
-                                                style="display:block; font-size: 0.85em; color: var(--text-secondary); font-weight: normal;">(Driver's
+                                                style="display:block; font-size: 0.85em; color: var(--text-secondary); font-weight: normal;">(SA
+                                                ID Card, Driver's
                                                 License, Passport)</span>
                                         </label>
                                         <input type="file" class="form-control" id="doc-id" name="doc-id"
@@ -422,7 +427,7 @@
                             
                             <div class="property-price-section">
                                 <div class="price-label">Monthly rent</div>
-                                <div class="price-amount">$${property.price.toLocaleString()}</div>
+                                <div class="price-amount">R${property.price.toLocaleString()}</div>
                                 <div class="price-note">Plus utilities and deposits</div>
                                 <a href="property-details.html?id=${property.id}" class="view-property-btn">
                                     <i class="fas fa-eye"></i>

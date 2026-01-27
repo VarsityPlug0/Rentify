@@ -664,7 +664,7 @@ window.formatCurrency = (amount) => {
 };
 
 window.formatDate = (dateString) => {
-  return new Date(dateString).toLocaleDateString('en-US', {
+  return new Date(dateString).toLocaleDateString('en-ZA', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
