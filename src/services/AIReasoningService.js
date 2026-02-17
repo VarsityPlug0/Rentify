@@ -98,7 +98,7 @@ Always be warm, helpful, and concise. Use emoji sparingly but appropriately.`;
 const STATE_PROMPTS = {
     NEW_LEAD: `This is a new lead making first contact. Welcome them warmly and ask about their rental budget.`,
 
-    GREETING: `The user should be providing their budget. Extract the budget amount (in South African Rand) if mentioned. If unclear, politely ask for clarification.`,
+    GREETING: `The user should be providing their budget. Extract the budget amount (in USD) if mentioned. If unclear, politely ask for clarification.`,
 
     QUALIFICATION: `We are collecting lead information. Based on context, we need:
 - If asking for location: Extract the area/suburb they want to live in
@@ -248,15 +248,15 @@ function generateFallbackResponse(userMessage, context) {
 
         case 'GREETING':
             // Try to extract budget
-            const budgetMatch = lower.match(/(?:r|zar)?\s*(\d{1,3}(?:[,\s]?\d{3})*)/i);
+            const budgetMatch = lower.match(/(?:r|zar|\$|usd)?\s*(\d{1,3}(?:[,\s]?\d{3})*)/i);
             if (budgetMatch) {
                 const amount = parseInt(budgetMatch[1].replace(/[,\s]/g, ''));
                 if (amount >= 1000 && amount <= 100000) {
-                    extractedData.budget = `R${amount.toLocaleString()}`;
+                    extractedData.budget = `$${amount.toLocaleString()}`;
                     response = "Great! And which area or suburb are you looking to live in?";
                     intent = 'budget';
                 } else {
-                    response = "Could you tell me your monthly rent budget? For example, 'R5000' or 'around R8000'.";
+                    response = "Could you tell me your monthly rent budget? For example, '$5000' or 'around $8000'.";
                     intent = 'budget';
                 }
             } else {
@@ -314,7 +314,7 @@ function sanitizeExtractedData(data) {
         // Normalize budget format
         const amount = parseInt(String(data.budget).replace(/[^\d]/g, ''));
         if (amount >= 1000 && amount <= 100000) {
-            sanitized.budget = `R${amount.toLocaleString()}`;
+            sanitized.budget = `$${amount.toLocaleString()}`;
         }
     }
 

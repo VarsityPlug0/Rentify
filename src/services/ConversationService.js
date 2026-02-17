@@ -73,7 +73,7 @@ const HANDOFF_TRIGGERS = [
 
 // Keywords for intent detection (fallback)
 const INTENT_PATTERNS = {
-    budget: /(?:budget|afford|spend|pay|rent.*?(?:is|of|around|about)?)\s*(?:R|r|ZAR)?\s*(\d{1,3}(?:[,\s]?\d{3})*)/i,
+    budget: /(?:budget|afford|spend|pay|rent.*?(?:is|of|around|about)?)\s*(?:R|r|ZAR|\$|USD|usd)?\s*(\d{1,3}(?:[,\s]?\d{3})*)/i,
     location: /(?:in|at|near|around|looking for)\s+([A-Za-z\s]+?)(?:\s*(?:area|suburb|city|town)|$|[,.])/i,
     moveIn: /(?:move|start|from|by|in)\s*((?:january|february|march|april|may|june|july|august|september|october|november|december|\d{1,2}[\/\-]\d{1,2}(?:[\/\-]\d{2,4})?|asap|immediately|next\s+(?:week|month)|soon))/i,
     yes: /^(?:yes|yeah|yep|sure|ok|okay|1)$/i,
@@ -275,7 +275,7 @@ async function processWithTemplates(body, conversation, lead, leadModel, convers
                 newState = STATES.QUALIFICATION;
                 await analyticsService.logQualificationStep(lead, 'budget', budgetMatch);
             } else {
-                response = `I didn't catch your budget. Could you tell me how much you're looking to spend on rent per month? (e.g., "R5000" or "around R8000")`;
+                response = `I didn't catch your budget. Could you tell me how much you're looking to spend on rent per month? (e.g., "$5000" or "around $8000")`;
             }
             break;
 
@@ -434,12 +434,12 @@ function detectIntent(message) {
  * Extract budget from message
  */
 function extractBudget(message) {
-    // Match patterns like R5000, R 5000, 5000, R5,000, etc.
-    const match = message.match(/[Rr]?\s*(\d[\d,\s]*)/);
+    // Match patterns like $5000, $ 5000, 5000, R5000, etc.
+    const match = message.match(/(?:[Rr]|\$|USD|usd|ZAR)?\s*(\d[\d,\s]*)/);
     if (match) {
         const amount = parseInt(match[1].replace(/[,\s]/g, ''));
         if (amount >= 1000 && amount <= 100000) {
-            return `R${amount.toLocaleString()}`;
+            return `$${amount.toLocaleString()}`;
         }
     }
     return null;
